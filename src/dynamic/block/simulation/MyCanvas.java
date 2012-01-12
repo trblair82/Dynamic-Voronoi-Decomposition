@@ -30,6 +30,8 @@ import com.bulletphysics.linearmath.*;
 import com.bulletphysics.linearmath.Transform;
 import CGAL.Triangulation_3.*;
 import CGAL.*;
+import CGAL.Voronoi.CGAL_Voronoi;
+import CGAL.Voronoi.CGAL_VoronoiJNI;
 import CGAL.Kernel.Point_3;
 import CGAL.Triangulation_3.Delaunay_triangulation_3_Cell_handle;
 import CGAL.Triangulation_3.Delaunay_triangulation_3_Vertex_handle;
@@ -45,13 +47,15 @@ import org.apache.commons.math.geometry.RotationOrder;
 public class MyCanvas extends GLCanvas implements GLEventListener {
     private static int screenW = 800;
     private static int screenH = 600;
-    
+    public LinkedList<Point_3> input_points=new LinkedList<Point_3>();
     public float rotate = 0.0f;
     public int size = 10;
     public static DynamicsWorld dynamicWorld = null;
     public static RigidBody cube,ground;
     public double[] angles;
     public HashMap cell_vertices = new HashMap();
+    public HashMap voronoi_vertices = new HashMap();
+    
     public MyCanvas( ) {
         initPhysics();
         initWindow();
@@ -68,41 +72,56 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
         container.setResizable(false);
         container.setVisible(true);
         ArrayList cell_handles = new ArrayList();
+        
         int hashStart = 0;
-        LinkedList<Point_3> input_points=new LinkedList<Point_3>();
+        
         Delaunay_triangulation_3 dt = new Delaunay_triangulation_3();
         
-        for(int i = 0;i<20;i++){
-            double x = (Math.random()*1000)%20;
-            double y = (Math.random()*1000)%20;
-            double z = (Math.random()*1000)%20;
+        for(int i = 0;i<10;i++){
+            double x = (Math.random()*1000)%10;
+            double y = (Math.random()*1000)%10;
+            double z = (Math.random()*1000)%10;
             input_points.add(new Point_3(x,y,z));
         }
-//        dt.insert(new Point_3(4.0,1.0,5.0));
-//        dt.insert(new Point_3(2.0,1.5,4.0));
-//        dt.insert(new Point_3(6.0,3.0,8.0));
-//        dt.insert(new Point_3(1.0,7.0,4.0));
-//        dt.insert(new Point_3(4.0,5.0,5.0));
-//        dt.insert(new Point_3(4.0,1.0,10.0));
+        dt.insert(new Point_3(0.0,0.0,0.0));
+        dt.insert(new Point_3(10.0,0.0,0.0));
+        dt.insert(new Point_3(10.0,10.0,0.0));
+        dt.insert(new Point_3(0.0,10.0,0.0));
+        dt.insert(new Point_3(0.0,0.0,10.0));
+        dt.insert(new Point_3(0.0,10.0,10.0));
+        dt.insert(new Point_3(10.0,10.0,10.0));
+        dt.insert(new Point_3(10.0,0.0,10.0));
+        
         dt.insert(input_points.iterator());
         Delaunay_triangulation_3_All_cells_iterator cells = dt.all_cells();
         int c = dt.number_of_cells();
-        for(int i=0;i<c;i++){
+        while(cells.hasNext()){
             Delaunay_triangulation_3_Cell_handle ch = cells.next();
-            
-            
             ArrayList<Vector3f> vertices = new ArrayList<Vector3f>();
             for(int k=0;k<4;k++){
-                
+                boolean _valid = ch.is_valid();
                 Delaunay_triangulation_3_Vertex_handle v = ch.vertex(k);
                 Point_3 vertex = v.point();
                 Vector3f V1 = new Vector3f((float)vertex.x(),(float)vertex.y(),(float)vertex.z());
                 vertices.add(V1);
                 
-            boolean _valid = ch.is_valid();
+            
             }
-            if(!dt.is_infinite(ch)){
+            
+            if(!dt.is_infinite(ch)&&dt.is_valid(ch)) {
             cell_vertices.put(hashStart, vertices);
+            Point_3 circ = new Point_3();
+            CGAL_Voronoi.get_Voronoi(dt, ch, circ);
+            ArrayList voronoi = new ArrayList();
+            voronoi.add(circ);
+            
+                for(int i=0;i<4;i++){
+                    Point_3 v_neigh = new Point_3();
+                    Delaunay_triangulation_3_Cell_handle neigh = ch.neighbor(i);
+                    CGAL_Voronoi.get_Voronoi(dt, neigh, v_neigh);
+                    voronoi.add(v_neigh);
+            }
+            voronoi_vertices.put(hashStart, voronoi);
             hashStart++;
             }
             
@@ -202,16 +221,16 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
         GL gl = drawable.getGL();
         
         GLUT glut = new GLUT();
-        gl.glLightModeli(GL.GL_FRONT_FACE,GL.GL_TRUE);
-        gl.glLightfv(GL.GL_LIGHT1, GL.GL_POSITION, lightPos, 0);
-        gl.glLightfv(GL.GL_LIGHT1, GL.GL_AMBIENT, lightColorAmbient, 0);
-        gl.glLightfv(GL.GL_LIGHT1, GL.GL_SPECULAR, lightColorSpecular, 0);
-        gl.glEnable(GL.GL_LIGHT1);
-        gl.glEnable(GL.GL_LIGHTING);
-        float[] rgba = {0.3f, 0.5f, 1f};
-        gl.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, rgba, 0);
-        gl.glMaterialfv(GL.GL_FRONT, GL.GL_SPECULAR, rgba, 0);
-        gl.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 0.5f);
+//        gl.glLightModeli(GL.GL_FRONT_FACE,GL.GL_TRUE);
+//        gl.glLightfv(GL.GL_LIGHT1, GL.GL_POSITION, lightPos, 0);
+//        gl.glLightfv(GL.GL_LIGHT1, GL.GL_AMBIENT, lightColorAmbient, 0);
+//        gl.glLightfv(GL.GL_LIGHT1, GL.GL_SPECULAR, lightColorSpecular, 0);
+//        gl.glEnable(GL.GL_LIGHT1);
+//        gl.glEnable(GL.GL_LIGHTING);
+//        float[] rgba = {0.3f, 0.5f, 1f};
+//        gl.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, rgba, 0);
+//        gl.glMaterialfv(GL.GL_FRONT, GL.GL_SPECULAR, rgba, 0);
+//        gl.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 0.5f);
         gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
         
         gl.glLoadIdentity();
@@ -249,59 +268,85 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
 ////        
 //        glut.glutSolidCube(10.0f);
         
-        
-        
-        
-        Iterator cell_iter = cell_vertices.keySet().iterator();
-        while(cell_iter.hasNext()){
-            ArrayList<Vector3f> v1 = (ArrayList<Vector3f>)cell_vertices.get(cell_iter.next());
-            Vector3f test = v1.get(0);
-            Vector3f test1 =v1.get(1);
-            Vector3f test2 =v1.get(2);
-            Vector3f test3 =v1.get(3);
-//            Vector3f center = new Vector3f((test1.x+test2.x+test3.x)/3.0f,(test1.y+test2.y+test3.y)/3.0f,(test1.z+test2.z+test3.z)/3.0f);
-//            Vector3f centroid = new Vector3f(center.x+0.25f*(test.x-center.x),center.y+0.25f*(test.y-center.y),center.z+0.25f*(test.z-center.z));
-
-            gl.glTranslatef(0.0f,0.0f,-100);
-            gl.glBegin(GL.GL_LINES);
-            gl.glColor3f(255, 255, 0);
-            gl.glVertex3f(test.x,test.y,test.z);
-            gl.glVertex3f(test1.x,test1.y,test1.z);
-            gl.glVertex3f(test.x,test.y,test.z);
-            gl.glVertex3f(test2.x,test2.y,test2.z);
-            gl.glVertex3f(test.x,test.y,test.z);
-            gl.glVertex3f(test3.x,test3.y,test3.z);
+        Iterator voronoi_iter = voronoi_vertices.keySet().iterator();
+        while(voronoi_iter.hasNext()){
+            ArrayList adjacents = (ArrayList)voronoi_vertices.get(voronoi_iter.next());
+            Point_3 v = (Point_3)adjacents.get(0);
+            Point_3 a1 = (Point_3)adjacents.get(1);
+            Point_3 a2 = (Point_3)adjacents.get(2);
+            Point_3 a3 = (Point_3)adjacents.get(3);
+            Point_3 a4 = (Point_3)adjacents.get(4);
             
-            gl.glVertex3f(test1.x,test1.y,test1.z);
-            gl.glVertex3f(test2.x,test2.y,test2.z);
-            gl.glVertex3f(test1.x,test1.y,test1.z);
-            gl.glVertex3f(test3.x,test3.y,test3.z);
-            gl.glVertex3f(test2.x,test2.y,test2.z);
-            gl.glVertex3f(test3.x,test3.y,test3.z);
+                
+            
+            gl.glTranslatef(0.0f,0.0f,-100);
+            gl.glRotatef(rotate, 1, 1, 0.5f);
+            gl.glBegin(GL.GL_LINES);
+            gl.glColor3f(255, 0, 0);
+            gl.glVertex3d(v.x(), v.y(), v.z());
+            gl.glVertex3d(a1.x(), a1.y(), a1.z());
+            gl.glVertex3d(v.x(), v.y(), v.z());
+            gl.glVertex3d(a2.x(), a2.y(), a2.z());
+            gl.glVertex3d(v.x(), v.y(), v.z());
+            gl.glVertex3d(a3.x(), a3.y(), a3.z());
+            gl.glVertex3d(v.x(), v.y(), v.z());
+            gl.glVertex3d(a4.x(), a4.y(), a4.z());
+            
         }
         gl.glEnd();
         
-//        gl.glBegin(GL.GL_TRIANGLES);
-//        gl.glNormal3f(0.0f, 0.0f, 1.0f);
-//        gl.glVertex3f(0.0f, 5.0f, 0.0f);
-//        gl.glVertex3f(-5.0f, -5.0f, 5.0f);
-//        gl.glVertex3f(5.0f, -5.0f, 5.0f);
-//        gl.glNormal3f(0.0f, 0.0f, 1.0f);
-//        gl.glVertex3f(0.0f, 5.0f, 0.0f);
-//        gl.glVertex3f(5.0f, -5.0f, 5.0f);
-//        gl.glVertex3f(5.0f, -5.0f, -5.0f);
-//        gl.glNormal3f(0.0f, 0.0f, -1.0f);
-//        gl.glVertex3f(0.0f, 5.0f, 0.0f);
-//        gl.glVertex3f(5.0f, -5.0f, -5.0f);
-//        gl.glVertex3f(-5.0f, -5.0f, -5.0f);
-//        gl.glNormal3f(0.0f, 0.0f, -1.0f);
-//        gl.glVertex3f(0.0f, 5.0f, 0.0f);
-//        gl.glVertex3f(-5.0f, -5.0f, -5.0f);
-//        gl.glVertex3f(-5.0f, -5.0f, 5.0f);
+//        Iterator cell_iter = cell_vertices.keySet().iterator();
+//        while(cell_iter.hasNext()){
+//            ArrayList<Vector3f> v1 = (ArrayList<Vector3f>)cell_vertices.get(cell_iter.next());
+//            Vector3f test = v1.get(0);
+//            Vector3f test1 =v1.get(1);
+//            Vector3f test2 =v1.get(2);
+//            Vector3f test3 =v1.get(3);
+//            
+//           
+//            
+//            
+//            gl.glTranslatef(0.0f,0.0f,-100);
+//            gl.glRotatef(rotate, 1, 1, 0.5f);
+//            gl.glBegin(GL.GL_LINES);
+//            gl.glColor3f(0, 255, 0);
+//            gl.glVertex3f(test.x,test.y,test.z);
+//            gl.glVertex3f(test1.x,test1.y,test1.z);
+//            gl.glVertex3f(test.x,test.y,test.z);
+//            gl.glVertex3f(test2.x,test2.y,test2.z);
+//            gl.glVertex3f(test.x,test.y,test.z);
+//            gl.glVertex3f(test3.x,test3.y,test3.z);
+//            
+//            gl.glVertex3f(test1.x,test1.y,test1.z);
+//            gl.glVertex3f(test2.x,test2.y,test2.z);
+//            gl.glVertex3f(test1.x,test1.y,test1.z);
+//            gl.glVertex3f(test3.x,test3.y,test3.z);
+//            gl.glVertex3f(test2.x,test2.y,test2.z);
+//            gl.glVertex3f(test3.x,test3.y,test3.z);
+//        }
 //        gl.glEnd();
+        
+        
+        for(int p=0;p<input_points.size();p++){
+        Point_3 v_point = (Point_3)input_points.get(p);
+       
+        gl.glPointSize(3.0f);
+        gl.glBegin(GL.GL_POINTS);
+        gl.glColor3f(0, 255, 0);
+        
+        gl.glVertex3d(v_point.x(), v_point.y(), v_point.z());
+        
+        
+        }
+        gl.glEnd();
+        gl.glPushMatrix();
+        gl.glTranslatef(5.0f,5.0f,5.0f);
+        gl.glRotatef(rotate, 1, 1, 0.5f);
+        glut.glutWireCube(10);
+        gl.glPopMatrix();
         gl.glPopMatrix();
 
-        rotate += 0.1;
+        rotate += 0.5;
         dynamicWorld.stepSimulation(100);
     }
     @Override
