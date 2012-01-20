@@ -9,34 +9,8 @@ package dynamic.block.simulation;
  *
  * @author trblair
  */
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.Iterator;
 import javax.media.opengl.*;
 import javax.media.opengl.glu.GLU;
-import javax.media.opengl.GLCanvas;
-import com.sun.opengl.util.FPSAnimator;
-import com.sun.opengl.util.GLUT;
-import javax.swing.*;
-import java.awt.*;
-import java.util.LinkedList;
-import com.bulletphysics.collision.broadphase.*;
-import com.bulletphysics.collision.dispatch.*;
-import com.bulletphysics.collision.shapes.*;
-import com.bulletphysics.dynamics.*;
-import com.bulletphysics.collision.shapes.BU_Simplex1to4;
-import com.bulletphysics.dynamics.constraintsolver.SequentialImpulseConstraintSolver;
-import com.bulletphysics.linearmath.*;
-import com.bulletphysics.linearmath.Transform;
-import CGAL.Triangulation_3.*;
-import CGAL.Kernel.Point_3;
-import CGAL.Triangulation_3.Delaunay_triangulation_3_Cell_handle;
-import CGAL.Triangulation_3.Delaunay_triangulation_3_Vertex_handle;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.apache.commons.math.geometry.Rotation;
-import javax.vecmath.*;
-import org.apache.commons.math.geometry.RotationOrder;
 
 public class SetGL {
     public SetGL(){}
