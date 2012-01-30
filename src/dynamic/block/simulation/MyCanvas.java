@@ -42,6 +42,7 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
         container.setSize(screenW ,screenH);
         container.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         addGLEventListener(this);
+        container.addKeyListener(new DynamicKeyListener());
         container.getContentPane().add(this, BorderLayout.CENTER);
         container.setResizable(false);
         container.setVisible(true);
@@ -57,12 +58,18 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
         GL gl = drawable.getGL();
         GLU glu = new GLU();
         SetGL.startGL(gl, glu);
+        SetGL.setLighting(gl);
+        SetGL.setMaterial(gl);
+        try{ dt = new Delaunay(20,20.0f);
         
-        dt = new Delaunay(100);
+        }catch(Exception e){
+            e.printStackTrace();
+            System.exit(-1);
+        }
         world = new Physics();
         world.setGround();
         world.addDynamics(dt.cell_vertices); 
-        FPSAnimator animator = new FPSAnimator(this,32);
+        FPSAnimator animator = new FPSAnimator(this,60);
         animator.start();
         
     }
@@ -76,11 +83,11 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
         gl = drawable.getGL();
         gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
         gl.glLoadIdentity();
-        dt.drawVoronoi(gl, rotate);
+//        dt.drawVoronoi(gl, rotate);
         dt.drawDelaunay(gl, rotate);
         
         
-//        world.dynamicWorld.stepSimulation(100);
+        world.dynamicWorld.stepSimulation(1000);
         rotate += 0.5;
     }
     

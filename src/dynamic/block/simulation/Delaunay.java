@@ -20,84 +20,82 @@ import com.bulletphysics.linearmath.*;
 import com.bulletphysics.linearmath.Transform;
 import CGAL.Triangulation_3.*;
 import CGAL.Kernel.Point_3;
+import CGAL.Polyhedron_3.Polyhedron_3;
 import CGAL.Triangulation_3.Delaunay_triangulation_3_Cell_handle;
+import CGAL.Triangulation_3.Delaunay_triangulation_3_Facet;
 import CGAL.Triangulation_3.Delaunay_triangulation_3_Vertex_handle;
+import com.bulletphysics.collision.shapes.ConvexHullShape;
+import com.bulletphysics.util.ObjectArrayList;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.apache.commons.math.geometry.Rotation;
 import javax.vecmath.*;
-import javax.vecmath.Point3f;
+
 import org.apache.commons.math.geometry.RotationOrder;
 
 
 public class Delaunay {
     
     private LinkedList<Point_3> input_points=new LinkedList<Point_3>();
-    public HashMap cell_vertices = new HashMap();
-    public HashMap voronoi_vertices = new HashMap();
-    public HashMap voronoi_cells = new HashMap();
-    public int vcellHash = 0;
+    public ArrayList cell_vertices = new ArrayList();
+    public static ArrayList voronoi_cells = new ArrayList();
     public ArrayList voronoi_points = new ArrayList();
-    public ArrayList delaunay_cube = new ArrayList();
+    public ArrayList outer_intersection = new ArrayList();
+    public ArrayList points = new ArrayList();
+    public ArrayList outer_adjacents = new ArrayList();
     private Delaunay_triangulation_3 dt;
+    
     public double[] angles;
     public boolean hit = true;
-    public int out_hold;
-    public ArrayList test = new ArrayList();
-    
-    public float3 p1a = new float3(0.0f,0.0f,0.0f);
-    public float3 p1b = new float3(20.0f,0.0f,0.0f);
-    public float3 p1c = new float3(20.0f,20.0f,0.0f);
-    public float3 p2a = new float3(20.0f,0.0f,0.0f);
-    public float3 p2b = new float3(20.0f,0.0f,20.0f);
-    public float3 p2c = new float3(20.0f,20.0f,20.0f);
-    public float3 p3a = new float3(20.0f,0.0f,20.0f);
-    public float3 p3b = new float3(0.0f,0.0f,20.0f);
-    public float3 p3c = new float3(0.0f,20.0f,20.0f);
-    public float3 p4a = new float3(0.0f,0.0f,20.0f);
-    public float3 p4b = new float3(0.0f,0.0f,0.0f);
-    public float3 p4c = new float3(0.0f,20.0f,0.0f);
-    public float3 p5a = new float3(0.0f,0.0f,0.0f);
-    public float3 p5b = new float3(0.0f,0.0f,20.0f);
-    public float3 p5c = new float3(20.0f,0.0f,20.0f);
-    public float3 p6a = new float3(0.0f,20.0f,0.0f);
-    public float3 p6b = new float3(0.0f,20.0f,20.0f);
-    public float3 p6c = new float3(20.0f,20.0f,20.0f);
-    public Point3f intersect2,intersect1;
-    public Point_3 real_intersect,a1,a2,a3,a4;
-    public ArrayList realPoints = new ArrayList();
-    public ArrayList voronoi_intersect = new ArrayList();
-    public ArrayList out_voronoi= new ArrayList();
-    public ArrayList dcells = new ArrayList();
     
     
     
+    private float dt_size;
+    private BoundingBox dt_bounds;
+    private HashMap planes;
     
-    public Delaunay_triangulation_3_Cell_handle neigh;
-    public Delaunay(int num_points){   
-        
-        int hashStart = 0;
-        int v_hashStart = 0;
+    
+    public float3 dt_origin;
+    
+    public static int display_cell = 0;
+    
+    
+    
+    public Delaunay(int num_points,float size) throws Exception{   
+        dt_size = size;
+        ArrayList save_points = new ArrayList();
+        //create triangulation from random points within a bounding cube
         dt = new Delaunay_triangulation_3();
+        dt_origin = new float3(0.0f,0.0f,0.0f);
+        dt_bounds = new BoundingBox(dt_size,dt_origin);
+        dt_bounds.setPlanes();
+        planes = dt_bounds.getPlanes();
         
         
         for(int i = 0;i<num_points;i++){
             
-            double x = (Math.random()*1000)%20;
-            double y = (Math.random()*1000)%20;
-            double z = (Math.random()*1000)%20;
+            double x = (Math.random()*1000)%(dt_size);
+            double y = (Math.random()*1000)%(dt_size);
+            double z = (Math.random()*1000)%(dt_size);
             input_points.add(new Point_3(x,y,z));
+//            save_points.add(new Point3d(x,y,z));
+        }
+        ArrayList corners = dt_bounds.getCorners();
+        for(int i = 0;i<corners.size();i++){
+            float3 cornerf = (float3)corners.get(i);
+            Point_3 corner = new Point_3(cornerf.x,cornerf.y,cornerf.z);
+            input_points.add(corner);
+//            save_points.add(new Point3d(corner.x(),corner.y(),corner.z()));
         }
         
-        
-        input_points.add(new Point_3(0.0,0.0,0.0));
-        input_points.add(new Point_3(20.0,0.0,0.0));
-        input_points.add(new Point_3(20.0,20.0,0.0));
-        input_points.add(new Point_3(0.0,20.0,0.0));
-        input_points.add(new Point_3(0.0,0.0,20.0));
-        input_points.add(new Point_3(0.0,20.0,20.0));
-        input_points.add(new Point_3(20.0,20.0,20.0));
-        input_points.add(new Point_3(20.0,0.0,20.0));
+//        DelaunayPoints dt_points = new DelaunayPoints(save_points);
+//        dt_points.saveArray(save_points, "points.txt");
+//        save_points = dt_points.loadArray("points.txt");
+//        for(int i = 0;i<save_points.size();i++){
+//            Point3d p = (Point3d)save_points.get(i);
+//            Point_3 p1 = new Point_3(p.x,p.y,p.z);
+//            input_points.add(p1);
+//        }
         
         
         dt.insert(input_points.iterator());
@@ -105,11 +103,11 @@ public class Delaunay {
         
         Delaunay_triangulation_3_All_cells_iterator cells = dt.all_cells();
         
-        
+        //gets the vertices of each delaunay cell
         while(cells.hasNext()){
             
             Delaunay_triangulation_3_Cell_handle ch = cells.next();
-            dcells.add(ch);
+            
             ArrayList<Vector3f> vertices = new ArrayList<Vector3f>();
             
             
@@ -122,152 +120,165 @@ public class Delaunay {
             }
             
             
-            if(!dt.is_infinite(ch)&&dt.is_valid(ch)) {
+            if(!dt.is_infinite(ch)) {
                 
-                cell_vertices.put(hashStart, vertices);
+                cell_vertices.add(vertices);
                 
-                hashStart++;
+                //gets voronoi dual  of each cell
                 Point_3 circ = dt.dual(ch);
-                if(circ.x()>0.0&&circ.x()<20.0&&circ.y()>0.0&&circ.y()<20.0&&circ.z()>0.0&&circ.z()<20.0){
-                    ArrayList voronoi = new ArrayList();
-                    voronoi.add(circ);
+                float3 circf = new float3((float)circ.x(),(float)circ.y(),(float)circ.z());
+                //checks voronoi dual against bounding cube
+                if(dt_bounds.isWithin(circ)){
+                    
+                    //list of all valid voronoi duals
                     voronoi_points.add(circ);
-                    
-                        
-                    
+                    //finds adjacent duals from neighbors of delaunay cells
                     for(int i=0;i<4;i++){
-                         
-                        neigh = ch.neighbor(i);
-                        Point_3 v_neigh = dt.dual(neigh);
-                            
-                            
-                            
-                         if(v_neigh.x()<0.0||v_neigh.x()>20.0||v_neigh.y()<0.0||v_neigh.y()>20.0||v_neigh.z()<0.0||v_neigh.z()>20.0){
-                             out_voronoi.add(v_neigh);
-                             ArrayList points = new ArrayList();
-                             float3 outside = new float3((float)v_neigh.x(),(float)v_neigh.y(),(float)v_neigh.z());
-                             float3 inside = new float3((float)circ.x(),(float)circ.y(),(float)circ.z());
-                             Line.intersectPlane(points, outside, inside, p1a, p1b, p1c);
-                             Line.intersectPlane(points, outside, inside, p2a, p2b, p2c);
-                             Line.intersectPlane(points, outside, inside, p3a, p3b, p3c);
-                             Line.intersectPlane(points, outside, inside, p4a, p4b, p4c);
-                             Line.intersectPlane(points, outside, inside, p5a, p5b, p5c);
-                             Line.intersectPlane(points, outside, inside, p6a, p6b, p6c);
-                             Iterator iter = points.iterator();
-                             while(iter.hasNext()){
-                                Intersection inter = (Intersection)iter.next();
-                                float3 intersects = inter.intersection;
-                                if(intersects.x<-0.10f||intersects.x>20.10f){
-                                    
-                                } 
-                         
-                                else if(intersects.y<-0.10f||intersects.y>20.10f){
-                              
-                                }    
-                                else if(intersects.z<-0.10f||intersects.z>20.10f){
-                             
-                                }else{realPoints.add(intersects);}
-                             }    
-                         
-                             Point3f outsidef = new Point3f(outside.x,outside.y,outside.z);   
-                             if(realPoints.size()>1){
-                                float3 intersect1i = (float3)realPoints.get(0);
-                                Point3f intersect1 = new Point3f(intersect1i.x,intersect1i.y,intersect1i.z);
-                                float3 intersection2 = (float3)realPoints.get(1);
-                                intersect2 = new Point3f(intersection2.x,intersection2.y,intersection2.z);
-                             
-                                if(outsidef.distance(intersect1)>outsidef.distance(intersect2)){
-                                    v_neigh = new Point_3(intersect2.x,intersect2.y,intersect2.z); 
-                            
-                                }
-                                if(outsidef.distance(intersect1)<outsidef.distance(intersect2)){
-                                    v_neigh = new Point_3(intersect1.x,intersect1.y,intersect1.z);
-                                }
-                                if(realPoints.size()>2){
-                                    float3 intersect3i = (float3)realPoints.get(2);
-                                    Point3f intersect3 = new Point3f(intersect3i.x,intersect3i.y,intersect3i.z);
-                                    if(outsidef.distance(intersect1)<outsidef.distance(intersect2)&&outsidef.distance(intersect1)<outsidef.distance(intersect3)){
-                                        v_neigh = new Point_3(intersect1.x,intersect1.y,intersect1.z);
-                                    }
-                                    if(outsidef.distance(intersect2)<outsidef.distance(intersect1)&&outsidef.distance(intersect2)<outsidef.distance(intersect3)){
-                                        v_neigh = new Point_3(intersect2.x,intersect2.y,intersect2.z); 
-                                    }
-                                    if(outsidef.distance(intersect3)<outsidef.distance(intersect1)&&outsidef.distance(intersect3)<outsidef.distance(intersect2)){
-                                        v_neigh = new Point_3(intersect3.x,intersect3.y,intersect3.z);
-                                    }
-                                }
-                                
-                             }
-                             if(realPoints.size()==1){
-                                float3 intersect1i = (float3)realPoints.get(0);
-                                v_neigh = new Point_3(intersect1i.x,intersect1i.y,intersect1i.z);
-                                
-                             }
-                            
-                
-                             if(realPoints.isEmpty()){
-                                v_neigh = circ;
-                                
-                             }
-                         voronoi_points.add(v_neigh);   
-                         voronoi_intersect.add(v_neigh);
-                         voronoi.add(v_neigh);
-                         realPoints.clear();
-                         
-                         
-                     
-                        }else{voronoi.add(v_neigh);voronoi_points.add(v_neigh);  
-                                
-                         
-                    }
-                    if(!voronoi.isEmpty()){
+                        ArrayList outers = new ArrayList(); 
+                        Delaunay_triangulation_3_Cell_handle neigh = ch.neighbor(i);
                         
-                                
-                        voronoi_vertices.put(v_hashStart, voronoi);
-                        v_hashStart++;
-                    }
+                        //adjacent dual
+                        Point_3 v_neigh = dt.dual(neigh);
+                        voronoi_points.add(v_neigh);
+                        
+                           
+                    } 
                 }
             }
-        }
-    }   
+        }   
+        
+        
+        
         
         Delaunay_triangulation_3_All_vertices_iterator verts = dt.all_vertices();
              while(verts.hasNext()){
-                 ArrayList voronoi_cell = new ArrayList();
                  
                  Delaunay_triangulation_3_Vertex_handle delaunayP = verts.next();
+                 
                  Delaunay_triangulation_3_Finite_cells_iterator cells1 = dt.finite_cells();
+
+                 
+                 
+                 ArrayList voronoi_cell = new ArrayList();
+                 ArrayList final_cell = new ArrayList();
+                 ArrayList on_plane = new ArrayList();
+                 
+                 ArrayList voronoi_adjacents = new ArrayList();
+                 ArrayList cell_intersects = new ArrayList();
                  while(cells1.hasNext()){
-//                     
-                     Delaunay_triangulation_3_Cell_handle delaunayC = cells1.next();
-                     
+
+                    Delaunay_triangulation_3_Cell_handle delaunayC = cells1.next();
+
                      if(delaunayC.has_vertex(delaunayP)){
                          Point_3 vcell = dt.dual(delaunayC);
-                         for(int l=0;l<out_voronoi.size();l++){
-                             Point_3 out = (Point_3)out_voronoi.get(l);
-                             if(out.equals(vcell)){
-                                 vcell = (Point_3)voronoi_intersect.get(l);
-                             }
-                         }
-                       
-                         for(int i = 0;i<voronoi_points.size();i++){
-                             Point_3 test = (Point_3)voronoi_points.get(i);
-                             if(test.equals(vcell)){
-                                voronoi_cell.add(vcell);
-                                break;
-                             }
-                          }
-                          
-
                          
+                        ArrayList v_adjacents = new ArrayList();
+                        for(int i = 0;i<voronoi_points.size();i++){
+                            Point_3 test = (Point_3)voronoi_points.get(i); 
+                            float3 vcellf = new float3((float)vcell.x(),(float)vcell.y(),(float)vcell.z());
+                            if(test.equals(vcell)){
+                                
+                                voronoi_cell.add(vcell);
+                                if(dt_bounds.isClose(vcell)){
+                                    v_adjacents.add(vcell);
+                                    for(int ini=0;ini<4;ini++){
+                                        Delaunay_triangulation_3_Cell_handle ch = delaunayC.neighbor(ini);
+                                        Point_3 adj = dt.dual(ch);
+                                        
+                                        if(!dt_bounds.isClose(adj)){
+                                            Point_3 out_adjacent = dt_bounds.intersects(vcell, adj);
+                                            outer_adjacents.add(adj);
+                                            
+                                            
+                                            outer_intersection.add(out_adjacent);
+                                        }
+                                    
+                                    
+                                    
+
+                                    }
+                                }
+                                
+                             break;
+                             }
+                        }      
+
+
+
+
+
                      }
                  }
-                 if(voronoi_cell.size()>4){
-                    voronoi_cells.put(vcellHash, voronoi_cell);
-                    vcellHash++;
-                 }   
-             }
-              
+                 for(int i =0;i<voronoi_cell.size();i++){
+                     Point_3 cellp = (Point_3)voronoi_cell.get(i);
+                     for(int ini = 0;ini<outer_adjacents.size();ini++){
+                         Point_3 outp = (Point_3)outer_adjacents.get(ini);
+                         if(outp.equals(cellp)){
+                             cellp = (Point_3)outer_intersection.get(ini);
+                             
+                             on_plane.add(cellp);
+                             
+                             
+                         }
+                     }
+                     if(dt_bounds.isClose(cellp)){
+                        final_cell.add(cellp);
+                     }
+                 }
+                if(final_cell.size()>4){
+                    float3 centroid = new float3();
+                    for(int i = 0;i<final_cell.size();i++){
+                        Point_3 temp = (Point_3)final_cell.get(i);
+                
+                        centroid.x+=temp.x();centroid.y+=temp.y();centroid.z+=temp.z();
+                
+                    }
+                    centroid.x=centroid.x/final_cell.size();
+                    centroid.y=centroid.y/final_cell.size();
+                    centroid.z=centroid.z/final_cell.size();
+                     Iterator final_iter = final_cell.iterator();
+                     Delaunay_triangulation_3 vcell = new Delaunay_triangulation_3();
+                     vcell.insert(final_iter);
+                     ArrayList triangles = new ArrayList();
+                     Delaunay_triangulation_3_All_cells_iterator iter = vcell.all_cells();
+                     while(iter.hasNext()){
+                         Delaunay_triangulation_3_Cell_handle dc = iter.next();
+                         if(vcell.is_infinite(dc)){
+                             ArrayList triangle = new ArrayList();
+                             for(int i = 0;i<4;i++){
+                                 
+                                 Delaunay_triangulation_3_Vertex_handle vh = dc.vertex(i);
+                                 if(!vcell.is_infinite(vh)){
+                                     Point_3 p = vh.point();
+                                     float3 pf = new float3((float)p.x(),(float)p.y(),(float)p.z());
+                                     float3 end = float3.Subtract(pf, centroid);
+                                     Point_3 endp = new Point_3(end.x,end.y,end.z);
+                                     triangle.add(endp);
+                                 }
+                             }
+                             if(triangle.size()==3){
+                             triangles.add(triangle);}
+                         }
+                     }
+                     
+                     outer_adjacents.clear();
+                     outer_intersection.clear();
+                     HashMap cell = new HashMap();
+                     
+                     cell.put("vertices", final_cell);
+                     cell.put("edge_points", on_plane);
+                     
+                     cell.put("triangles", triangles);
+//                    
+                     cell.put("intersections", cell_intersects);
+                     voronoi_cells.add(cell);
+                }
+
+
+
+         }
+             
+             
     }
     
         
@@ -276,26 +287,29 @@ public class Delaunay {
      public void drawDelaunay(GL gl,float rotate){
          
         Vector3f force = new Vector3f(0.0f,5.0f,0.0f);
-        Iterator cell_iter = cell_vertices.keySet().iterator();
+        Iterator cell_iter = voronoi_cells.iterator();
         int t = 0;
         
         
         while(cell_iter.hasNext()){
+            HashMap c = (HashMap)cell_iter.next();
+//            HashMap c = (HashMap)voronoi_cells.get(10);
+            ArrayList tris = (ArrayList)c.get("triangles");
             
             
-            ArrayList<Vector3f> v1 = (ArrayList<Vector3f>)cell_vertices.get(cell_iter.next());
+////            ArrayList<Vector3f> v1 = (ArrayList<Vector3f>)cell_iter.next();
             Transform trans = new Transform();
             RigidBody tri = (RigidBody)Physics.tetrahedrons.get(t);t++;
             
             
-            if(hit){
-                tri.applyImpulse(force,force);
-            }
-            
-            
-            if(t>Physics.tetrahedrons.size()-1){
-                hit = false;
-            }
+//            if(hit){
+//                tri.applyImpulse(force,force);
+//            }
+//            
+//            
+//            if(t>Physics.tetrahedrons.size()-1){
+//                hit = false;
+//            }
             
             
             MotionState ms = tri.getMotionState();
@@ -332,46 +346,41 @@ public class Delaunay {
          
          
          
-            BU_Simplex1to4 shape = (BU_Simplex1to4)tri.getCollisionShape();
-            Vector3f test = new Vector3f();
-            Vector3f test1 =new Vector3f();
-            Vector3f test2 =new Vector3f();
-            Vector3f test3 =new Vector3f();
-            shape.getVertex(0, test);
-            shape.getVertex(1, test1);
-            shape.getVertex(2, test2);
-            shape.getVertex(3, test3);
+            
+            
+            
             gl.glPushMatrix();
-            gl.glTranslatef(-30, 0, -100);
-            gl.glRotatef(rotate, 1, 1, 1);
+//            gl.glTranslatef(-30, 0, -100);
+//            gl.glRotatef(rotate, 1, 1, 1);
             
-//            gl.glTranslatef(trans.origin.x-10, trans.origin.y, trans.origin.z-100);
-//            gl.glRotatef((float)angles[0]*(float)(180/Math.PI), 1, 0, 0);
-//            gl.glRotatef((float)angles[1]*(float)(180/Math.PI), 0, 1, 0);
-//            gl.glRotatef((float)angles[2]*(float)(180/Math.PI), 0, 0, 1);
+            gl.glTranslatef(trans.origin.x, trans.origin.y, trans.origin.z-200);
+            gl.glRotatef((float)angles[0]*(float)(180/Math.PI), 1, 0, 0);
+            gl.glRotatef((float)angles[1]*(float)(180/Math.PI), 0, 1, 0);
+            gl.glRotatef((float)angles[2]*(float)(180/Math.PI), 0, 0, 1);
             
-            gl.glBegin(GL.GL_LINES);
+            for(int i=0;i<tris.size();i++){
+                ArrayList triangle = (ArrayList)tris.get(i);
+                Point_3 v = (Point_3)triangle.get(0);
+                Point_3 v1 = (Point_3)triangle.get(1);
+                Point_3 v2 = (Point_3)triangle.get(2);
+                float3 x = new float3((float)(v.x()),(float)(v.y()),(float)(v.z()));
+                float3 x1 = new float3((float)(v1.x()),(float)(v1.y()),(float)(v1.z()));
+                float3 x2 = new float3((float)(v2.x()),(float)(v2.y()),(float)(v2.z()));
+                float3 n = float3.Subtract(x, x1);
+                float3 n1 = float3.Subtract(x1, x2);
+                float3 normal = float3.Cross(n, n1);
+                normal.normalize();
+                gl.glNormal3f(normal.x, normal.y, normal.z);
+                gl.glBegin(GL.GL_TRIANGLES);
+                gl.glVertex3d(v.x(), v.y(), v.z());
+                gl.glVertex3d(v1.x(), v1.y(), v1.z());
+                gl.glVertex3d(v2.x(), v2.y(), v2.z());
+                
+            }
             
             
-            gl.glColor3f(0, 255, 0);
             
-            gl.glVertex3f(test.x,test.y,test.z);
-            gl.glVertex3f(test1.x,test1.y,test1.z);
-            
-            gl.glVertex3f(test.x,test.y,test.z);
-            gl.glVertex3f(test2.x,test2.y,test2.z);
-            
-            gl.glVertex3f(test.x,test.y,test.z);
-            gl.glVertex3f(test3.x,test3.y,test3.z);
-            
-            gl.glVertex3f(test1.x,test1.y,test1.z);
-            gl.glVertex3f(test2.x,test2.y,test2.z);
-            
-            gl.glVertex3f(test1.x,test1.y,test1.z);
-            gl.glVertex3f(test3.x,test3.y,test3.z);
-            
-            gl.glVertex3f(test2.x,test2.y,test2.z);
-            gl.glVertex3f(test3.x,test3.y,test3.z);
+//            gl.glColor3f(0, 255, 0);
             
             
             gl.glEnd();
@@ -380,70 +389,58 @@ public class Delaunay {
         }
         
         
-        gl.glPushMatrix();
-        gl.glTranslatef(-30, 0, -100);
-        gl.glRotatef(rotate, 1, 1, 1);
-        Iterator voronoi_iter1 = voronoi_vertices.keySet().iterator();
+//        gl.glPushMatrix();
+//        gl.glTranslatef(-30, 0, -100);
+//        gl.glRotatef(rotate, 1, 1, 1);
         
-        
-        while(voronoi_iter1.hasNext()){
-            
-            ArrayList adjacents = (ArrayList)voronoi_vertices.get(voronoi_iter1.next());
-            
-            Point_3 v = (Point_3)adjacents.get(0);
-            gl.glPointSize(3.0f);
-            gl.glBegin(GL.GL_POINTS);
-            gl.glColor3f(255, 0, 0);
-            gl.glVertex3d(v.x(), v.y(), v.z());
-        }
             
         
-        gl.glEnd();
+        
         //outer cube
-        gl.glBegin(GL.GL_LINES);
-        gl.glColor3f(0, 0, 255);
-            
-        gl.glVertex3d(0.0,0.0,0.0);
-        gl.glVertex3d(0.0,0.0,20.0);
-            
-        gl.glVertex3d(0.0,0.0,0.0);
-        gl.glVertex3d(0.0,20.0,0.0);
-            
-        gl.glVertex3d(0.0,0.0,0.0);
-        gl.glVertex3d(20.0,0.0,0.0);
-            
-        gl.glVertex3d(20.0,0.0,0.0);
-        gl.glVertex3d(20.0,0.0,20.0);
-            
-        gl.glVertex3d(20.0,0.0,0.0);
-        gl.glVertex3d(20.0,20.0,0.0);
-
-        gl.glVertex3d(20.0,20.0,20.0);
-        gl.glVertex3d(20.0,0.0,20.0);
-
-        gl.glVertex3d(20.0,20.0,20.0);
-        gl.glVertex3d(20.0,20.0,0.0);
-
-        gl.glVertex3d(20.0,20.0,20.0);
-        gl.glVertex3d(0.0,20.0,20.0);
-
-        gl.glVertex3d(0.0,20.0,20.0);
-        gl.glVertex3d(0.0,0.0,20.0);
-
-        gl.glVertex3d(0.0,20.0,20.0);
-        gl.glVertex3d(0.0,20.0,0.0);
-
-        gl.glVertex3d(20.0,0.0,20.0);
-        gl.glVertex3d(0.0,0.0,20.0);
-
-        gl.glVertex3d(20.0,0.0,20.0);
-        gl.glVertex3d(0.0,0.0,20.0);
-
-        gl.glVertex3d(20.0,20.0,0.0);
-        gl.glVertex3d(0.0,20.0,0.0);
-        
-        gl.glEnd();
-        gl.glPopMatrix();
+//        gl.glBegin(GL.GL_LINES);
+//        gl.glColor3f(0, 0, 255);
+//            
+//        gl.glVertex3d(0.0,0.0,0.0);
+//        gl.glVertex3d(0.0,0.0,20.0);
+//            
+//        gl.glVertex3d(0.0,0.0,0.0);
+//        gl.glVertex3d(0.0,20.0,0.0);
+//            
+//        gl.glVertex3d(0.0,0.0,0.0);
+//        gl.glVertex3d(20.0,0.0,0.0);
+//            
+//        gl.glVertex3d(20.0,0.0,0.0);
+//        gl.glVertex3d(20.0,0.0,20.0);
+//            
+//        gl.glVertex3d(20.0,0.0,0.0);
+//        gl.glVertex3d(20.0,20.0,0.0);
+//
+//        gl.glVertex3d(20.0,20.0,20.0);
+//        gl.glVertex3d(20.0,0.0,20.0);
+//
+//        gl.glVertex3d(20.0,20.0,20.0);
+//        gl.glVertex3d(20.0,20.0,0.0);
+//
+//        gl.glVertex3d(20.0,20.0,20.0);
+//        gl.glVertex3d(0.0,20.0,20.0);
+//
+//        gl.glVertex3d(0.0,20.0,20.0);
+//        gl.glVertex3d(0.0,0.0,20.0);
+//
+//        gl.glVertex3d(0.0,20.0,20.0);
+//        gl.glVertex3d(0.0,20.0,0.0);
+//
+//        gl.glVertex3d(20.0,0.0,20.0);
+//        gl.glVertex3d(0.0,0.0,20.0);
+//
+//        gl.glVertex3d(20.0,0.0,20.0);
+//        gl.glVertex3d(0.0,0.0,20.0);
+//
+//        gl.glVertex3d(20.0,20.0,0.0);
+//        gl.glVertex3d(0.0,20.0,0.0);
+//        
+//        gl.glEnd();
+//        gl.glPopMatrix();
      }
 //     
      
@@ -458,108 +455,95 @@ public class Delaunay {
         
         
         
-        Iterator voronoiC_iter = voronoi_cells.keySet().iterator();
-//        while(voronoiC_iter.hasNext()){
-            gl.glTranslatef(10,-10 , -100);
-            gl.glRotatef(rotate, 1, 1, 1);
-            ArrayList points = (ArrayList)voronoi_cells.get(20);
-            
-            
-            
-            gl.glColor3f(0,0,255);
-            gl.glBegin(GL.GL_LINES);
-            for(int i=0;i<points.size();i++){
-            Point_3 point1 = (Point_3)points.get(i);
-            for(int in_i=0;in_i<points.size();in_i++){
-                Point_3 point2 = (Point_3)points.get(in_i);
-                gl.glVertex3d(point1.x(), point1.y(), point1.z());
-                gl.glVertex3d(point2.x(), point2.y(), point2.z());
-                
-            }
-            
-        }
-//        }
+
         
         
         
         
-        Iterator voronoi_iter2 = voronoi_vertices.keySet().iterator();
-        while(voronoi_iter2.hasNext()){
-            
-            ArrayList adjacents = (ArrayList)voronoi_vertices.get(voronoi_iter2.next());
-            Point_3 v = (Point_3)adjacents.get(0);
-            gl.glTranslatef(10,-10 , -100);
-            gl.glRotatef(rotate, 1, 1, 1);
-            gl.glBegin(GL.GL_LINES);
-            a1 = (Point_3)adjacents.get(1);
-            gl.glColor3f(255, 0, 0);
-            
-            gl.glVertex3d(v.x(), v.y(), v.z());
-            gl.glVertex3d(a1.x(), a1.y(), a1.z());
-            
-            
-            if(adjacents.size()>2){
-                a2 = (Point_3)adjacents.get(2);
-                gl.glVertex3d(v.x(), v.y(), v.z());
-                gl.glVertex3d(a2.x(), a2.y(), a2.z());
-                
-                
+//        Iterator voronoi_iter2 = voronoi_cells.iterator();
+//        while(voronoi_iter2.hasNext()){
+//            HashMap cell = (HashMap)voronoi_iter2.next();
+            HashMap cell = (HashMap)voronoi_cells.get(display_cell);
+//            ArrayList vertices = (ArrayList)cell.get("adjacents");
+            ArrayList vertices = (ArrayList)cell.get("triangles");
+            Iterator a_iter = vertices.iterator();
+//            ArrayList adjacents = (ArrayList)voronoi_iter2.next();
+//            Iterator a_iter = adjacents.iterator();
+            while(a_iter.hasNext()){
+                ArrayList adjacents = (ArrayList)a_iter.next();
+                if(!adjacents.isEmpty()){
+//                    Point_3 v = (Point_3)adjacents.get(0);
+                    gl.glTranslatef(-10,-10 , -100);
+                    gl.glRotatef(rotate, 1, 1, 1);
+//                    gl.glBegin(GL.GL_LINES);
+                    gl.glBegin(GL.GL_TRIANGLES);
+
+                    gl.glColor3f(255, 0, 0);
+                    Point_3 v = (Point_3)adjacents.get(0);
+                    Point_3 v1 = (Point_3)adjacents.get(1);
+                    Point_3 v2 = (Point_3)adjacents.get(2);
+                    float3 x = new float3((float)(v.x()),(float)(v.y()),(float)(v.z()));
+                    float3 x1 = new float3((float)(v1.x()),(float)(v1.y()),(float)(v1.z()));
+                    float3 x2 = new float3((float)(v2.x()),(float)(v2.y()),(float)(v2.z()));
+                    float3 n = float3.Subtract(x, x1);
+                    float3 n1 = float3.Subtract(x1, x2);
+                    float3 normal = float3.Cross(n, n1);
+                    normal.normalize();
+                    gl.glNormal3f(normal.x, normal.y, normal.z);
+                    gl.glVertex3d(v.x(), v.y(), v.z());
+                    gl.glVertex3d(v1.x(), v1.y(), v1.z());
+                    gl.glVertex3d(v2.x(), v2.y(), v2.z());
+//                    for(int i = 0;i<adjacents.size();i++){
+//                        Point_3 adj = (Point_3)adjacents.get(i);
+//                        gl.glVertex3d(v.x(), v.y(), v.z());
+//                        gl.glVertex3d(adj.x(), adj.y(), adj.z());
+//                    }
+                }
+//            }
             }
-             if(adjacents.size()>3){
-                a3 = (Point_3)adjacents.get(3);
-                gl.glVertex3d(v.x(), v.y(), v.z());
-                gl.glVertex3d(a3.x(), a3.y(), a3.z());
-                
-            }
-             if(adjacents.size()>4){
-                a4 = (Point_3)adjacents.get(4);
-                gl.glVertex3d(v.x(), v.y(), v.z());
-                gl.glVertex3d(a4.x(), a4.y(), a4.z());
-                
-            }
-        }
+            gl.glEnd();
             //outer cube
         gl.glBegin(GL.GL_LINES);
             gl.glColor3f(0, 0, 255);
             
-            gl.glVertex3d(0.0,0.0,0.0);
-            gl.glVertex3d(0.0,0.0,20.0);
+            gl.glVertex3d(dt_origin.x,dt_origin.y,dt_origin.z);
+            gl.glVertex3d(dt_origin.x,dt_origin.y,dt_origin.z+dt_size);
             
-            gl.glVertex3d(0.0,0.0,0.0);
-            gl.glVertex3d(0.0,20.0,0.0);
+            gl.glVertex3d(dt_origin.x,dt_origin.y,dt_origin.z);
+            gl.glVertex3d(dt_origin.x,dt_origin.y+dt_size,dt_origin.z);
             
-            gl.glVertex3d(0.0,0.0,0.0);
-            gl.glVertex3d(20.0,0.0,0.0);
+            gl.glVertex3d(dt_origin.x,dt_origin.y,dt_origin.z);
+            gl.glVertex3d(dt_origin.x+dt_size,dt_origin.y,dt_origin.z);
             
-            gl.glVertex3d(20.0,0.0,0.0);
-            gl.glVertex3d(20.0,0.0,20.0);
+            gl.glVertex3d(dt_origin.x+dt_size,dt_origin.y,dt_origin.z);
+            gl.glVertex3d(dt_origin.x+dt_size,dt_origin.y,dt_origin.z+dt_size);
             
-            gl.glVertex3d(20.0,0.0,0.0);
-            gl.glVertex3d(20.0,20.0,0.0);
+            gl.glVertex3d(dt_origin.x+dt_size,dt_origin.y,dt_origin.z);
+            gl.glVertex3d(dt_origin.x+dt_size,dt_origin.y+dt_size,dt_origin.z);
             
-            gl.glVertex3d(20.0,20.0,20.0);
-            gl.glVertex3d(20.0,0.0,20.0);
+            gl.glVertex3d(dt_origin.x+dt_size,dt_origin.y+dt_size,dt_origin.z+dt_size);
+            gl.glVertex3d(dt_origin.x+dt_size,dt_origin.y,dt_origin.z+dt_size);
             
-            gl.glVertex3d(20.0,20.0,20.0);
-            gl.glVertex3d(20.0,20.0,0.0);
+            gl.glVertex3d(dt_origin.x+dt_size,dt_origin.y+dt_size,dt_origin.z+dt_size);
+            gl.glVertex3d(dt_origin.x+dt_size,dt_origin.y+dt_size,dt_origin.z);
             
-            gl.glVertex3d(20.0,20.0,20.0);
-            gl.glVertex3d(0.0,20.0,20.0);
+            gl.glVertex3d(dt_origin.x+dt_size,dt_origin.y+dt_size,dt_origin.z+dt_size);
+            gl.glVertex3d(dt_origin.x,dt_origin.y+dt_size,dt_origin.z+dt_size);
             
-            gl.glVertex3d(0.0,20.0,20.0);
-            gl.glVertex3d(0.0,0.0,20.0);
+            gl.glVertex3d(dt_origin.x,dt_origin.y+dt_size,dt_origin.z+dt_size);
+            gl.glVertex3d(dt_origin.x,dt_origin.y,dt_origin.z+dt_size);
             
-            gl.glVertex3d(0.0,20.0,20.0);
-            gl.glVertex3d(0.0,20.0,0.0);
+            gl.glVertex3d(dt_origin.x,dt_origin.y+dt_size,dt_origin.z+dt_size);
+            gl.glVertex3d(dt_origin.x,dt_origin.y+dt_size,dt_origin.z);
             
-            gl.glVertex3d(20.0,0.0,20.0);
-            gl.glVertex3d(0.0,0.0,20.0);
+            gl.glVertex3d(dt_origin.x+dt_size,dt_origin.y,dt_origin.z+dt_size);
+            gl.glVertex3d(dt_origin.x,dt_origin.y,dt_origin.z+dt_size);
             
-            gl.glVertex3d(20.0,0.0,20.0);
-            gl.glVertex3d(0.0,0.0,20.0);
+            gl.glVertex3d(dt_origin.x+dt_size,dt_origin.y,dt_origin.z+dt_size);
+            gl.glVertex3d(dt_origin.x,dt_origin.y,dt_origin.z+dt_size);
             
-            gl.glVertex3d(20.0,20.0,0.0);
-            gl.glVertex3d(0.0,20.0,0.0);
+            gl.glVertex3d(dt_origin.x+dt_size,dt_origin.y+dt_size,dt_origin.z);
+            gl.glVertex3d(dt_origin.x,dt_origin.y+dt_size,dt_origin.z);
             
 //        }
         
@@ -568,17 +552,25 @@ public class Delaunay {
         
         
 //        draws delaunay triangulation vertices
-        for(int p=0;p<input_points.size();p++){
-            
-            Point_3 v_point = (Point_3)input_points.get(p);
-            gl.glPointSize(3.0f);
-            gl.glBegin(GL.GL_POINTS);
-            gl.glColor3f(0, 255, 0);
-            gl.glVertex3d(v_point.x(), v_point.y(), v_point.z());
-        }
-        
-        
-        gl.glEnd();
+//        HashMap cell1 =(HashMap)voronoi_cells.get(display_cell);
+//        ArrayList voronoi = (ArrayList)cell1.get("intersections");
+//        for(int p=0;p<voronoi.size();p++){
+//            
+//            Point_3 v_point = (Point_3)voronoi.get(p);
+//            gl.glPointSize(5.0f);
+//            gl.glBegin(GL.GL_POINTS);
+//            gl.glColor3f(0, 255, 0);
+//            gl.glVertex3d(v_point.x(), v_point.y(), v_point.z());
+//        }
+//        ArrayList test = (ArrayList)cell1.get("vertices");
+//        for(int i = 0;i<test.size();i++){
+//           Point_3 point = (Point_3)test.get(i);
+//            gl.glPointSize(5.0f);
+//            gl.glBegin(GL.GL_POINTS);
+//            gl.glColor3f(0, 0, 255);
+//            gl.glVertex3d(point.x(), point.y(), point.z()); 
+//        }
+//        gl.glEnd();
         
         
         gl.glPopMatrix();
