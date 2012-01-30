@@ -83,7 +83,7 @@ public class Physics {
             ObjectArrayList testL = new ObjectArrayList();
             ConvexHullShape cell_shape = new ConvexHullShape(testL);
             
-            float mass = 1.0f;
+            float mass = 2.0f;
             
             origin.x = origin.x/vec.size();
             origin.y = origin.y/vec.size();
@@ -114,7 +114,7 @@ public class Physics {
             tetrahedron = new RigidBody(rbInfo);
             tetrahedron.setRestitution(0.1f);
             tetrahedron.setFriction(0.50f);
-            tetrahedron.setDamping(0.1f, 0.1f);
+            tetrahedron.setDamping(0.0f, 0.0f);
             dynamicWorld.addRigidBody(tetrahedron);
             tetrahedrons.add(tetrahedron);
         

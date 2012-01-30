@@ -286,7 +286,7 @@ public class Delaunay {
     
      public void drawDelaunay(GL gl,float rotate){
          
-        Vector3f force = new Vector3f(0.0f,5.0f,0.0f);
+        Vector3f force = new Vector3f(0.0f,50.0f,0.0f);
         Iterator cell_iter = voronoi_cells.iterator();
         int t = 0;
         
@@ -315,11 +315,14 @@ public class Delaunay {
             MotionState ms = tri.getMotionState();
             trans = ms.getWorldTransform(trans);
             Quat4f quat = new Quat4f();
+            float[] floats = new float[16];
+            trans.getOpenGLMatrix(floats);
             quat = trans.getRotation(quat);
             float degrees = (float)quat.w*(float)(180/Math.PI);
             Matrix3f basis = trans.basis;
             float[][] basisF = new float[3][3];
             double[][] basisD = new double[3][3];
+            
             
         
             for (int i = 0; i < 3; i++){
@@ -350,6 +353,7 @@ public class Delaunay {
             
             
             gl.glPushMatrix();
+//            gl.glLoadMatrixf(floats, 4);
 //            gl.glTranslatef(-30, 0, -100);
 //            gl.glRotatef(rotate, 1, 1, 1);
             
@@ -367,7 +371,7 @@ public class Delaunay {
                 float3 x1 = new float3((float)(v1.x()),(float)(v1.y()),(float)(v1.z()));
                 float3 x2 = new float3((float)(v2.x()),(float)(v2.y()),(float)(v2.z()));
                 float3 n = float3.Subtract(x, x1);
-                float3 n1 = float3.Subtract(x1, x2);
+                float3 n1 = float3.Subtract(x, x2);
                 float3 normal = float3.Cross(n, n1);
                 normal.normalize();
                 gl.glNormal3f(normal.x, normal.y, normal.z);
@@ -486,7 +490,7 @@ public class Delaunay {
                     float3 x1 = new float3((float)(v1.x()),(float)(v1.y()),(float)(v1.z()));
                     float3 x2 = new float3((float)(v2.x()),(float)(v2.y()),(float)(v2.z()));
                     float3 n = float3.Subtract(x, x1);
-                    float3 n1 = float3.Subtract(x1, x2);
+                    float3 n1 = float3.Subtract(x, x2);
                     float3 normal = float3.Cross(n, n1);
                     normal.normalize();
                     gl.glNormal3f(normal.x, normal.y, normal.z);

@@ -28,6 +28,7 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
     public Physics world;
     public Delaunay dt;
     public static GL gl;
+    private float timeStep;
     
     public MyCanvas( ) {
        initWindow(); 
@@ -60,7 +61,7 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
         SetGL.startGL(gl, glu);
         SetGL.setLighting(gl);
         SetGL.setMaterial(gl);
-        try{ dt = new Delaunay(20,20.0f);
+        try{ dt = new Delaunay(10,20.0f);
         
         }catch(Exception e){
             e.printStackTrace();
@@ -69,7 +70,8 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
         world = new Physics();
         world.setGround();
         world.addDynamics(dt.cell_vertices); 
-        FPSAnimator animator = new FPSAnimator(this,60);
+        FPSAnimator animator = new FPSAnimator(this,32);
+        
         animator.start();
         
     }
@@ -79,7 +81,7 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
     //open gl display method (main looop)
     @Override
     public void display(GLAutoDrawable drawable){
-        
+        long startTime = System.currentTimeMillis();
         gl = drawable.getGL();
         gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
         gl.glLoadIdentity();
@@ -87,8 +89,14 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
         dt.drawDelaunay(gl, rotate);
         
         
-        world.dynamicWorld.stepSimulation(1000);
+        
+        
+        
         rotate += 0.5;
+        long currentTime = System.currentTimeMillis();
+        long deltaTime = currentTime-startTime;
+        timeStep = (float)deltaTime;
+        world.dynamicWorld.stepSimulation(timeStep);
     }
     
     
