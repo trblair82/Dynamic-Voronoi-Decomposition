@@ -145,7 +145,7 @@ public class BoundingBox {
     
     public boolean isWithin(Point_3 point){
         float3 pointf = new float3((float)point.x(),(float)point.y(),(float)point.z());
-        if(pointf.x<origin.x||pointf.x>origin.x+size||pointf.y<origin.y||pointf.y>origin.y+size||pointf.z<origin.z||pointf.z>origin.z+size){
+        if(pointf.x<origin.x+0.1||pointf.x>origin.x+size-0.1||pointf.y<origin.y+0.1||pointf.y>origin.y+size-0.1||pointf.z<origin.z+0.1||pointf.z>origin.z+size-0.1){
             return false;
         }else{return true;}
     }

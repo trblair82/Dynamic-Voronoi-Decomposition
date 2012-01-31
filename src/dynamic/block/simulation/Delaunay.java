@@ -26,6 +26,7 @@ import CGAL.Triangulation_3.Delaunay_triangulation_3_Facet;
 import CGAL.Triangulation_3.Delaunay_triangulation_3_Vertex_handle;
 import com.bulletphysics.collision.shapes.ConvexHullShape;
 import com.bulletphysics.util.ObjectArrayList;
+import com.sun.opengl.util.GLUT;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.apache.commons.math.geometry.Rotation;
@@ -44,9 +45,10 @@ public class Delaunay {
     public ArrayList points = new ArrayList();
     public ArrayList outer_adjacents = new ArrayList();
     private Delaunay_triangulation_3 dt;
-    
+    public ArrayList final_voronoi = new ArrayList();
     public double[] angles;
     public boolean hit = true;
+    public ArrayList infinite_cells = new ArrayList();
     
     
     
@@ -209,6 +211,7 @@ public class Delaunay {
 
                      }
                  }
+                 float3 centroid = new float3();
                  for(int i =0;i<voronoi_cell.size();i++){
                      Point_3 cellp = (Point_3)voronoi_cell.get(i);
                      for(int ini = 0;ini<outer_adjacents.size();ini++){
@@ -223,16 +226,13 @@ public class Delaunay {
                      }
                      if(dt_bounds.isClose(cellp)){
                         final_cell.add(cellp);
+                        final_voronoi.add(cellp);
+                        centroid.x+=cellp.x();centroid.y+=cellp.y();centroid.z+=cellp.z();
                      }
                  }
-                if(final_cell.size()>4){
-                    float3 centroid = new float3();
-                    for(int i = 0;i<final_cell.size();i++){
-                        Point_3 temp = (Point_3)final_cell.get(i);
-                
-                        centroid.x+=temp.x();centroid.y+=temp.y();centroid.z+=temp.z();
-                
-                    }
+                if(final_cell.size()>3){       //if delaunay cell is infinite create cell with centroid of finite facet and three neighboring voronoi
+                    
+                    
                     centroid.x=centroid.x/final_cell.size();
                     centroid.y=centroid.y/final_cell.size();
                     centroid.z=centroid.z/final_cell.size();
@@ -272,11 +272,41 @@ public class Delaunay {
 //                    
                      cell.put("intersections", cell_intersects);
                      voronoi_cells.add(cell);
+                }else if(!final_cell.isEmpty()){infinite_cells.add(final_cell);
+                    
+                    
                 }
 
 
 
          }
+         Iterator iter = final_voronoi.iterator();
+         Delaunay_triangulation_3 voronoi = new Delaunay_triangulation_3();
+         voronoi.insert(iter);
+         for(int i = 0; i<infinite_cells.size();i++){
+             ArrayList final_infinite = new ArrayList();
+             HashMap infinite_cell = new HashMap();
+             ArrayList triangles = new ArrayList();
+             ArrayList cell = (ArrayList)infinite_cells.get(i);
+             Point_3 v = (Point_3)cell.get(0);
+             Delaunay_triangulation_3_Vertex_handle vh = voronoi.nearest_vertex(v);
+             Delaunay_triangulation_3_All_cells_iterator c = voronoi.all_cells();
+             while(c.hasNext()){
+                  Delaunay_triangulation_3_Cell_handle ch = c.next();
+                  if(ch.has_vertex(vh)&&voronoi.is_infinite(ch)){
+                      for(int ini = 0;ini<4;ini++){
+                          Delaunay_triangulation_3_Vertex_handle vh1 = ch.vertex(i);
+                          ArrayList triangle = new ArrayList();
+                          final_infinite.add(ch.vertex(i));
+                      }
+                   break;   
+                      
+                  }
+             
+             }
+             infinite_cell.put("vertices", final_infinite);
+         }
+         
              
              
     }
@@ -289,7 +319,7 @@ public class Delaunay {
         Vector3f force = new Vector3f(0.0f,50.0f,0.0f);
         Iterator cell_iter = voronoi_cells.iterator();
         int t = 0;
-        
+//        
         
         while(cell_iter.hasNext()){
             HashMap c = (HashMap)cell_iter.next();
