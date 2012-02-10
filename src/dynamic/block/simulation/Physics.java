@@ -26,9 +26,12 @@ import javax.vecmath.*;
 
 public class Physics {
     public DynamicsWorld dynamicWorld = null;
-    public RigidBody tetrahedron, ground;
+    public RigidBody polyhedron,tetrahedron, ground;
+    public static ArrayList polyhedrons = new ArrayList();
     public static ArrayList tetrahedrons = new ArrayList();
-    
+    public boolean addition = false;
+    public static ArrayList renderVoronoi = new ArrayList();
+    public static ArrayList renderDelaunay = new ArrayList();
     public Physics(){
         //initializes and configures physics world
         DefaultCollisionConfiguration collisionConfiguration = new DefaultCollisionConfiguration();
@@ -60,64 +63,77 @@ public class Physics {
         dynamicWorld.addRigidBody(ground);
     }
     
-    public void addDynamics(ArrayList cell_vertices){
+    
+    
+    public void addVoronoi(){
         //initilizes tetrahedrons dynamic body and adds to world
         Iterator iter1 = Delaunay.voronoi_cells.iterator();
-        
+        ArrayList newCells = new ArrayList();
         Vector3f localInertia = new Vector3f(0,0,0);
         while(iter1.hasNext()){
             int c = 0;
             HashMap cell = (HashMap)iter1.next();
-            ArrayList vc = (ArrayList)cell.get("vertices");
             
-            Vector3f origin = new Vector3f();
-            ObjectArrayList vec = new ObjectArrayList();
-            for(int i = 0;i<vc.size();i++){
-                Point_3 temp = (Point_3)vc.get(i);
-                Vector3f end = new Vector3f((float)temp.x(),(float)temp.y(),(float)temp.z());
-                origin.x+=end.x;origin.y+=end.y;origin.z+=end.z;
-                vec.add(end);
-            }
+                ArrayList vc = (ArrayList)cell.get("vertices");
+                    ArrayList tri = (ArrayList)cell.get("triangles");
+                    
+                    
+                    HashMap newCell = new HashMap();
+                    newCell.put("triangles", tri);
+                    newCells.add(newCell);
+                
+                Vector3f origin = new Vector3f();
+                ObjectArrayList vec = new ObjectArrayList();
+                for(int i = 0;i<vc.size();i++){
+                    Point_3 temp = (Point_3)vc.get(i);
+                    Vector3f end = new Vector3f((float)temp.x(),(float)temp.y(),(float)temp.z());
+                    origin.x+=end.x;origin.y+=end.y;origin.z+=end.z;
+                    vec.add(end);
+                }
+
+
+                ObjectArrayList testL = new ObjectArrayList();
+                ConvexHullShape cell_shape = new ConvexHullShape(testL);
+
+                float mass = 2.0f;
+
+                origin.x = origin.x/vec.size();
+                origin.y = origin.y/vec.size();
+                origin.z = origin.z/vec.size();
+
+
+                float3 originf = new float3(origin.x,origin.y,origin.z);
+                
+                for(int i = 0;i<vec.size();i++){
+                    Vector3f point = (Vector3f)vec.get(i);
+                    float3 pointf = new float3(point.x,point.y,point.z);
+                    float3 finalp = float3.Subtract(pointf, originf);
+                    Vector3f finalv = new Vector3f(finalp.x,finalp.y,finalp.z);
+                    
+                    cell_shape.addPoint(finalv);
+                }
+                Transform cell_transform = new Transform();
+                cell_transform.setIdentity();
+                cell_transform.origin.set(origin);
+    
+                cell_shape.calculateLocalInertia(mass, localInertia);
+                
+
+                DefaultMotionState ms = new DefaultMotionState(cell_transform);
+                RigidBodyConstructionInfo rbInfo = new RigidBodyConstructionInfo(mass, ms, cell_shape,localInertia);
+                polyhedron = new RigidBody(rbInfo);
+                polyhedron.setRestitution(0.1f);
+                polyhedron.setFriction(0.50f);
+                polyhedron.setDamping(0.0f, 0.0f);
+                dynamicWorld.addRigidBody(polyhedron);
+                polyhedrons.add(polyhedron);
+                
+
             
-            
-            ObjectArrayList testL = new ObjectArrayList();
-            ConvexHullShape cell_shape = new ConvexHullShape(testL);
-            
-            float mass = 2.0f;
-            
-            origin.x = origin.x/vec.size();
-            origin.y = origin.y/vec.size();
-            origin.z = origin.z/vec.size();
-            
-            
-            float3 originf = new float3(origin.x,origin.y,origin.z);
-            ObjectArrayList true_points = new ObjectArrayList();
-            for(int i = 0;i<vec.size();i++){
-                Vector3f point = (Vector3f)vec.get(i);
-                float3 pointf = new float3(point.x,point.y,point.z);
-                float3 finalp = float3.Subtract(pointf, originf);
-                Vector3f finalv = new Vector3f(finalp.x,finalp.y,finalp.z);
-                true_points.add(finalv);
-                cell_shape.addPoint(finalv);
-            }
-            Transform cell_transform = new Transform();
-            cell_transform.setIdentity();
-            cell_transform.origin.set(origin);
-//            cell_transform.transform(origin);
-            
-//            ConvexHullShape cell_shape = new ConvexHullShape(true_points);
-            cell_shape.calculateLocalInertia(mass, localInertia);
-            boolean test =cell_shape.isConvex();
-            
-            DefaultMotionState ms = new DefaultMotionState(cell_transform);
-            RigidBodyConstructionInfo rbInfo = new RigidBodyConstructionInfo(mass, ms, cell_shape,localInertia);
-            tetrahedron = new RigidBody(rbInfo);
-            tetrahedron.setRestitution(0.1f);
-            tetrahedron.setFriction(0.50f);
-            tetrahedron.setDamping(0.0f, 0.0f);
-            dynamicWorld.addRigidBody(tetrahedron);
-            tetrahedrons.add(tetrahedron);
-        
         }
+        
+        renderVoronoi.addAll(newCells);
+        Delaunay.voronoi_cells.clear();
     }
+    
 }

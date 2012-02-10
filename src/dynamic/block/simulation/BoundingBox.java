@@ -157,6 +157,85 @@ public class BoundingBox {
         }else{return true;}
     }
     
+    public String onPlane(Point_3 point){
+        if(point.x()<origin.x+0.1){return "Xleft";}if(point.x()>origin.x+size-0.1){return "Xright";}
+        if(point.y()<origin.y+0.1){return "Ybottom";}if(point.y()>origin.y+size-0.1){return "Ytop";}
+        if(point.z()<origin.z+0.1){return "Zback";}if(point.z()>origin.z+size-0.1){return "Zfront";}
+        else return null;
+    }
+    
+    public Point_3 getEdge(Point_3 point, float threshold){
+        String p = this.onPlane(point);
+        if(p!=null){
+            Point_3 edgep = null;
+            Point_3 edgep1 = null;
+            Float distance = null;
+            Float old_distance = null;
+            Point3f pointf =new Point3f((float)point.x(),(float)point.y(),(float)point.z());
+            ArrayList edge = new ArrayList();
+            ArrayList temp = (ArrayList)corner_points.clone();
+            Iterator iter = temp.iterator();
+            while(iter.hasNext()){
+                ArrayList corner = (ArrayList)iter.next();
+                float3 ctemp = (float3)corner.get(0);
+                Point_3 cp = new Point_3(ctemp.x,ctemp.y,ctemp.z);
+                Point3f cpf = new Point3f((float)cp.x(),(float)cp.y(),(float)cp.z());
+                distance = cpf.distance(pointf);
+                if(old_distance == null){old_distance = distance;edgep = cp;}
+                if(distance<old_distance){old_distance = distance;edgep = cp;}
+
+
+
+            }
+//            Point3f edgepf = new Point3f((float)edgep.x(),(float)edgep.y(),(float)edgep.z());
+//            if(pointf.distance(edgepf)<threshold){
+//                return edgep;
+//            }else return point;
+            edge.add(edgep);
+            distance = null;old_distance = null;
+            Iterator iter1 = corner_points.iterator();
+            while(iter1.hasNext()){
+                ArrayList corner = (ArrayList)iter1.next();
+                float3 ctemp = (float3)corner.get(0);
+                Point_3 cp = new Point_3(ctemp.x,ctemp.y,ctemp.z);
+                if(!cp.equals(edgep)){
+                    Point3f cpf = new Point3f((float)cp.x(),(float)cp.y(),(float)cp.z());
+                    distance = cpf.distance(pointf);
+                    if(old_distance == null){old_distance = distance;edgep1 = cp;}
+                    if(distance<old_distance){old_distance = distance;edgep1 = cp;}
+                } 
+
+
+            }
+            edge.add(edgep1);
+            if(edgep.x()!=edgep1.x()){
+                Point_3 xp = new Point_3(point.x(),edgep.y(),edgep.z());
+                Point3f xpf = new Point3f((float)xp.x(),(float)xp.y(),(float)xp.z());
+                if(pointf.distance(xpf)<threshold){
+                    return xp;
+                }else return point;
+            }
+            if(edgep.y()!=edgep1.y()){
+                Point_3 yp = new Point_3(edgep.x(),point.y(),edgep.z());
+                Point3f ypf = new Point3f((float)yp.x(),(float)yp.y(),(float)yp.z());
+                if(pointf.distance(ypf)<threshold){
+                    return yp;
+                }else return point;
+            }
+            if(edgep.z()!=edgep1.z()){
+                Point_3 zp = new Point_3(edgep.x(),edgep.y(),point.z());
+                Point3f zpf = new Point3f((float)zp.x(),(float)zp.y(),(float)zp.z());
+                if(pointf.distance(zpf)<threshold){
+                    return zp;
+                }else return point;
+            }
+            else return point;
+        }
+        else return point;
+        
+    }
+    
+    
     public void setPlanes(){
          
         float3 a_origin = new float3(origin.x+size,origin.y+size,origin.z+size);

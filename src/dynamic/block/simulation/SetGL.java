@@ -15,14 +15,14 @@ import javax.media.opengl.glu.GLU;
 public class SetGL {
     public SetGL(){}
     
-    public static void setLighting(GL gl, float[] lightpos){
+    public static void setLighting(GL gl){
         float SHINE_ALL_DIRECTIONS = 1;
         float[] lightPos = {-30, 0, 0, SHINE_ALL_DIRECTIONS};
         float[] lightColorAmbient = {0.2f, 0.2f, 0.2f, 1f};
         float[] lightColorSpecular = {0.8f, 0.8f, 0.8f, 1f};
         gl.glLightModeli(GL.GL_FRONT_FACE,GL.GL_TRUE);
         gl.glLightfv(GL.GL_LIGHT1, GL.GL_POSITION, lightPos, 0);
-        gl.glLightfv(GL.GL_LIGHT1, GL.GL_AMBIENT, lightColorAmbient, 1);
+        gl.glLightfv(GL.GL_LIGHT1, GL.GL_AMBIENT, lightColorAmbient, 0);
         gl.glLightfv(GL.GL_LIGHT1, GL.GL_SPECULAR, lightColorSpecular, 0);
         gl.glEnable(GL.GL_LIGHT1);
         gl.glEnable(GL.GL_LIGHTING);
