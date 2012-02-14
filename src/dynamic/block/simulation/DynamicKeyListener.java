@@ -25,16 +25,16 @@ public class DynamicKeyListener implements KeyListener {
             MyCanvas.keys[ke.getKeyCode()] = true;
          }       
         if(key == KeyEvent.VK_RIGHT){
-            int i = Delaunay.voronoi_cells.size();
-            if(Delaunay.display_cell<i-1){
-            Delaunay.display_cell++;}
+            
         }
         if(key == KeyEvent.VK_LEFT){
-            if(Delaunay.display_cell>0){
-            Delaunay.display_cell--;}
+            
         }
         if(key == KeyEvent.VK_SPACE){
-            MyCanvas.startPhysics = true;
+            if(!MyCanvas.startPhysics){
+                MyCanvas.startPhysics = true;
+            }else MyCanvas.startPhysics = false;
+            
         }
     }
 

@@ -31,7 +31,7 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
     public Delaunay dt;
     public static GL gl;
     private float timeStep;
-    
+    public boolean debug = false;
     public boolean voronoi = false;
     public long voronoi_start_time =0;
     public boolean drawV = false;
@@ -98,9 +98,9 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
         double radius = 10;
         
         long startTime = System.currentTimeMillis();
-        float xTrans = -xpos;
+        float xTrans = -1*xpos;
         float yTrans =  walkbias-0.43f;
-        float zTrans = -zpos;
+        float zTrans = -1*zpos;
         float[] light = {xTrans,yTrans,zTrans,0.0f};
         float px = 0.0f;
         float py = -20.0f+(float)radius ;
@@ -120,7 +120,15 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
         gl.glRotatef(sceneroty, 0.0f, 1.0f, 0.0f);
         gl.glTranslatef(xTrans, yTrans, zTrans);
         
-
+        if(keys[KeyEvent.VK_B]&&!startPhysics){
+            debug = true;
+            
+        }
+        
+        if(keys[KeyEvent.VK_P]){
+            debug = false;
+            
+        }
         
         if(keys[KeyEvent.VK_Q]&&first){
             voronoi = true;
@@ -130,7 +138,7 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
         
         
         if(voronoi){
-            try{ dt = new Delaunay(1000,20.0f);
+            try{ dt = new Delaunay(10,20.0f);
         
             }catch(Exception e){
                 e.printStackTrace();
@@ -142,7 +150,7 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
             drawV = true;
         }
         
-        if(drawV){dt.drawVoronoiCells(gl, rotate);}
+        if(drawV){dt.drawVoronoiCells(gl, rotate, debug);}
         
         
         if (keys[KeyEvent.VK_RIGHT]) {
@@ -209,13 +217,16 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
         
         
         
+        if(debug){
+           rotate += 0.5; 
+        }
         
-        rotate += 0.5;
         long currentTime = System.currentTimeMillis();
         long deltaTime = currentTime-startTime;
         timeStep = (float)deltaTime;
         
-        if(startPhysics){
+        if(startPhysics&&!debug){
+            rotate = 0;
             world.dynamicWorld.stepSimulation(timeStep);
             long current_voronoi_time = System.currentTimeMillis();
             long voronoi_delta_time = current_voronoi_time - voronoi_start_time;

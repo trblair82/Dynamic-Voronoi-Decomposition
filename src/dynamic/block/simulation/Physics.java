@@ -25,6 +25,7 @@ import javax.vecmath.*;
 
 
 public class Physics {
+    public static int y_offset = 30;
     public DynamicsWorld dynamicWorld = null;
     public RigidBody polyhedron,tetrahedron, ground;
     public static ArrayList polyhedrons = new ArrayList();
@@ -53,7 +54,7 @@ public class Physics {
         groundShape.calculateLocalInertia(groundMass, localInertia);
         Transform groundTransform = new Transform();
 	groundTransform.setIdentity();
-	groundTransform.origin.set(0, -20, 0);
+	groundTransform.origin.set(0, -40, 0);
         DefaultMotionState groundMS = new DefaultMotionState(groundTransform);
         RigidBodyConstructionInfo ground_rbInfo = new RigidBodyConstructionInfo(groundMass, groundMS, groundShape,localInertia);
         ground = new RigidBody(ground_rbInfo);
@@ -112,6 +113,7 @@ public class Physics {
                     
                     cell_shape.addPoint(finalv);
                 }
+                
                 Transform cell_transform = new Transform();
                 cell_transform.setIdentity();
                 cell_transform.origin.set(origin);

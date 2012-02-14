@@ -216,13 +216,20 @@ public class Delaunay {
                              for(int i = 0;i<4;i++){
                                  
                                  Delaunay_triangulation_3_Vertex_handle vh = dc.vertex(i);
-                                 if(!vcell.is_infinite(vh)){
-                                     Point_3 p = vh.point();
-                                     float3 pf = new float3((float)p.x(),(float)p.y(),(float)p.z());
-                                     float3 end = float3.Subtract(pf, centroid);
-                                     Point_3 endp = new Point_3(end.x,end.y,end.z);
-//                                     
-                                     triangle.add(endp);
+                                 if(vcell.is_infinite(vh)){
+                                     Triangle_3 test = vcell.triangle(dc, i);
+                                     for(int ini = 0;ini<3;ini++){
+                                         Point_3 p = test.vertex(ini);
+                                         float3 pf = new float3((float)p.x(),(float)p.y(),(float)p.z());
+                                         float3 end = float3.Subtract(pf, centroid);
+                                         Point_3 endp = new Point_3(end.x,end.y,end.z);
+                                         triangle.add(endp);
+                                     }
+                                     
+                                     
+                                     
+                                     
+                                     
                                      
                                  }
                              }
@@ -248,7 +255,13 @@ public class Delaunay {
                     
              }          
                     
-             
+             for(int i = 0;i<corners.size();i++){
+                 float3 cornerf = (float3)corners.get(i);
+                 Point_3 corner = new Point_3(cornerf.x,cornerf.y,cornerf.z);
+                 String s = corner.toString();
+                 String md5 = DigestUtils.md5Hex(s);
+                 boulder_hull.put(md5, corner);
+             }
              
              
              ArrayList vertices = new ArrayList();
@@ -262,10 +275,10 @@ public class Delaunay {
                  Point_3 point = (Point_3)boulder_hull.get(iter3.next());
                  
                  
-                     
+                     if(point.x()>10){
                      test.insert(point);
                      
-                     vertices.add(point);
+                     vertices.add(point);}
                  
              }
              
@@ -290,7 +303,7 @@ public class Delaunay {
              }
              outer_hull.put("triangles", triangles);
              outer_hull.put("vertices", vertices);
-
+//             voronoi_cells.add(outer_hull);
                      
              
              
@@ -312,12 +325,18 @@ public class Delaunay {
         
     
     }
-     public void drawVoronoiCells(GL gl,float rotate){
+     public void drawVoronoiCells(GL gl,float rotate, boolean debug){
+         
+         
+         gl.glPushMatrix();
+         gl.glTranslatef(0, 20, -200);
+         gl.glRotatef(rotate, 1, 1, 1);
+         
          
         GLUT glut = new GLUT();
         gl.glPushMatrix();
-        gl.glTranslatef(10, 10, -190);
-//        gl.glRotatef(rotate, 1, 1, 1);
+        gl.glTranslatef(10, 10, 10);
+        
         glut.glutWireCube(20);
         gl.glPopMatrix();
         Iterator cell_iter = Physics.renderVoronoi.iterator();
@@ -326,11 +345,11 @@ public class Delaunay {
         
         while(cell_iter.hasNext()){
             HashMap c = (HashMap)cell_iter.next();
-//            HashMap c = (HashMap)voronoi_cells.get(10);
+
             ArrayList tris = (ArrayList)c.get("triangles");
             
             
-////            ArrayList<Vector3f> v1 = (ArrayList<Vector3f>)cell_iter.next();
+
             Transform trans = new Transform();
             RigidBody tri = (RigidBody)Physics.polyhedrons.get(t);t++;
             
@@ -379,33 +398,43 @@ public class Delaunay {
             
             gl.glPushMatrix();
 
-//            gl.glTranslatef(0, 0, -200);
-//            gl.glRotatef(rotate, 1, 1, 1);
-            gl.glTranslatef(trans.origin.x, trans.origin.y, trans.origin.z-200);
+
+            
+            gl.glTranslatef(trans.origin.x, trans.origin.y, trans.origin.z);
+            
             gl.glRotatef((float)angles[0]*(float)(180/Math.PI), 1, 0, 0);
             gl.glRotatef((float)angles[1]*(float)(180/Math.PI), 0, 1, 0);
             gl.glRotatef((float)angles[2]*(float)(180/Math.PI), 0, 0, 1);
             gl.glBegin(GL.GL_TRIANGLES);
+            
             for(int i=0;i<tris.size();i++){
                 ArrayList triangle = (ArrayList)tris.get(i);
-                Point_3 v = (Point_3)triangle.get(0);
-                Point_3 v1 = (Point_3)triangle.get(1);
-                Point_3 v2 = (Point_3)triangle.get(2);
-                float3 x = new float3((float)(v.x()),(float)(v.y()),(float)(v.z()));
-                float3 x1 = new float3((float)(v1.x()),(float)(v1.y()),(float)(v1.z()));
-                float3 x2 = new float3((float)(v2.x()),(float)(v2.y()),(float)(v2.z()));
+                float3 centroid = new float3();
                 
-                float3 n = float3.Subtract(x1, x);
-                float3 n1 = float3.Subtract(x2, x);
+                Point_3 vertex1 = (Point_3)triangle.get(0);
+                Point_3 vertex2 = (Point_3)triangle.get(1);
+                Point_3 vertex3 = (Point_3)triangle.get(2);
+                
+                float3 vertexf1 = new float3((float)(vertex1.x()),(float)(vertex1.y()),(float)(vertex1.z()));
+                float3 vertexf2 = new float3((float)(vertex2.x()),(float)(vertex2.y()),(float)(vertex2.z()));
+                float3 vertexf3 = new float3((float)(vertex3.x()),(float)(vertex3.y()),(float)(vertex3.z()));
+                
+                centroid.x = (vertexf1.x+vertexf2.x+vertexf3.x)/3;
+                centroid.y = (vertexf1.y+vertexf2.y+vertexf3.y)/3;
+                centroid.z = (vertexf1.z+vertexf2.z+vertexf3.z)/3;
+                
+                float3 n = float3.Subtract(vertexf2, vertexf1);
+                float3 n1 = float3.Subtract(vertexf3, vertexf1);
                 float3 normal = float3.Cross(n, n1);
+                
+
                 normal.normalize();
-                
                 gl.glNormal3f(normal.x, normal.y, normal.z);
-                gl.glVertex3f(x.x, x.y, x.z);
+                gl.glVertex3f(vertexf1.x, vertexf1.y, vertexf1.z);
                 
-                gl.glVertex3f(x1.x, x1.y, x1.z);
+                gl.glVertex3f(vertexf2.x, vertexf2.y, vertexf2.z);
                 
-                gl.glVertex3f(x2.x, x2.y, x2.z);
+                gl.glVertex3f(vertexf3.x, vertexf3.y, vertexf3.z);
                 
                 
                 
@@ -420,6 +449,8 @@ public class Delaunay {
             gl.glPopMatrix();
             
         }
+        
+        gl.glPopMatrix(); 
         
         
 
