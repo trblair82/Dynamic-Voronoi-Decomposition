@@ -104,12 +104,16 @@ public class BoundingBox {
         float3 outer = new float3((float)outside.x(),(float)outside.y(),(float)outside.z());
         Point3f outerf = new Point3f(outer.x,outer.y,outer.z);
         Float old_distance = null;
+        Integer plane_int = null;
         ArrayList intersections = new ArrayList();
+        ArrayList plane_keys = new ArrayList();
         ArrayList real_intersections = new ArrayList();
         Iterator planes_iter = planes.keySet().iterator();
         
         while(planes_iter.hasNext()){
-            ArrayList plane = (ArrayList)planes.get(planes_iter.next());
+            String plane_key = (String)planes_iter.next();
+            ArrayList plane = (ArrayList)planes.get(plane_key);
+            
             Line.intersectPlane(intersections, outer, inner, (float3)plane.get(0), (float3)plane.get(1), (float3)plane.get(2));
             
             if(!intersections.isEmpty()){
@@ -120,6 +124,7 @@ public class BoundingBox {
                                      
                 if(this.isClose(intersects)){
                     real_intersections.add(intersectsf);
+                    plane_keys.add(plane_key);
                     
                 }
             }
@@ -133,14 +138,26 @@ public class BoundingBox {
             if(old_distance == null){
                 old_distance = distance;
                 to_return = shortest;
+                plane_int = i;
+                
             }
             if(distance<old_distance){
                 old_distance = distance;
                 to_return = shortest;
+                plane_int = i;
             }
                   
         }
-        return to_return;
+        String plane_key = (String)plane_keys.get(plane_int);
+        float3 to_returnf = new float3((float)to_return.x(),(float)to_return.y(),(float)to_return.z());
+        if(to_returnf.x<0.1&&to_returnf.x>-0.1){to_returnf.x=0;}
+        if(to_returnf.x<20.1&&to_returnf.x>19.9){to_returnf.x=20;}
+        if(to_returnf.y<0.1&&to_returnf.y>-0.1){to_returnf.y=0;}
+        if(to_returnf.y<20.1&&to_returnf.y>19.9){to_returnf.y=20;}
+        if(to_returnf.z<0.1&&to_returnf.z>-0.1){to_returnf.z=0;}
+        if(to_returnf.z<20.1&&to_returnf.z>19.9){to_returnf.z=20;}
+        Point_3 end_return = new Point_3(to_returnf.x,to_returnf.y,to_returnf.z);
+        return end_return;
     }
     
     public boolean isWithin(Point_3 point){
@@ -158,9 +175,16 @@ public class BoundingBox {
     }
     
     public String onPlane(Point_3 point){
-        if(point.x()<origin.x+0.1){return "Xleft";}if(point.x()>origin.x+size-0.1){return "Xright";}
-        if(point.y()<origin.y+0.1){return "Ybottom";}if(point.y()>origin.y+size-0.1){return "Ytop";}
-        if(point.z()<origin.z+0.1){return "Zback";}if(point.z()>origin.z+size-0.1){return "Zfront";}
+        if(point.x()==0){return "Xleft";}if(point.x()==20){return "Xright";}
+        if(point.y()==0){return "Ybottom";}if(point.y()==20){return "Ytop";}
+        if(point.z()==0){return "Zback";}if(point.z()==20){return "Zfront";}
+        else return null;
+    }
+    public Point_3 fixPlane(Point_3 point){
+        
+        if(point.x()<origin.x+0.1){Point_3 new_point = new Point_3(0,point.y(),point.z());return new_point;}if(point.x()>origin.x+size-0.1){Point_3 new_point = new Point_3(20,point.y(),point.z());return new_point;}
+        if(point.y()<origin.y+0.1){Point_3 new_point = new Point_3(point.x(),0,point.z());return new_point;}if(point.y()>origin.y+size-0.1){Point_3 new_point = new Point_3(point.x(),20,point.z());return new_point;}
+        if(point.z()<origin.z+0.1){Point_3 new_point = new Point_3(point.x(),point.y(),0);return new_point;}if(point.z()>origin.z+size-0.1){Point_3 new_point = new Point_3(point.x(),point.y(),20);return new_point;}
         else return null;
     }
     

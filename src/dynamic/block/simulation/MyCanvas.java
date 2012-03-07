@@ -99,7 +99,7 @@ public class MyCanvas extends GLCanvas implements GLEventListener {
         
         long startTime = System.currentTimeMillis();
         float xTrans = -1*xpos;
-        float yTrans =  walkbias-0.43f;
+        float yTrans =  walkbias-35.43f;
         float zTrans = -1*zpos;
         float[] light = {xTrans,yTrans,zTrans,0.0f};
         float px = 0.0f;

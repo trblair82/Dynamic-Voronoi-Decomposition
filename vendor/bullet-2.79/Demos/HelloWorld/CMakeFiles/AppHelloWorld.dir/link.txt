@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3 -DNDEBUG -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/AppHelloWorld.dir/HelloWorld.o  -o AppHelloWorld  ../../src/BulletDynamics/libBulletDynamics.a ../../src/BulletCollision/libBulletCollision.a ../../src/LinearMath/libLinearMath.a 

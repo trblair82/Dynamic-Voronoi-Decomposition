@@ -12,7 +12,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>../../Build/bullet-2.79/Extras/HACD/hacdHACD.cpp</itemPath>
+      <itemPath>../bullet-2.79/Extras/HACD/hacdHACD.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -40,13 +40,13 @@
       <compileType>
         <ccTool>
           <incDir>
-            <pElem>../../Build/bullet-2.79/Extras/HACD</pElem>
+            <pElem>../bullet-2.79/Extras/HACD</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
           <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hacdtest</output>
           <linkerAddLib>
-            <pElem>../../Build/bullet-2.79/Extras/HACD</pElem>
+            <pElem>../bullet-2.79/lib</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibLibItem>HACD</linkerLibLibItem>

@@ -10,6 +10,7 @@ package dynamic.block.simulation;
  * @author trblair
  */
 
+import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Iterator;
@@ -30,6 +31,12 @@ import CGAL.Triangulation_3.Delaunay_triangulation_3_Vertex_handle;
 import com.bulletphysics.collision.shapes.ConvexHullShape;
 import com.bulletphysics.util.ObjectArrayList;
 import com.sun.opengl.util.GLUT;
+import java.io.BufferedWriter;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.apache.commons.math.geometry.Rotation;
@@ -84,18 +91,18 @@ public class Delaunay {
             double y = (Math.random()*1000)%(dt_size);
             double z = (Math.random()*1000)%(dt_size);
             input_points.add(new Point_3(x,y,z));
-//            save_points.add(new Point3d(x,y,z));
+            save_points.add(new Point3d(x,y,z));
         }
         ArrayList corners = dt_bounds.getCorners();
         for(int i = 0;i<corners.size();i++){
             float3 cornerf = (float3)corners.get(i);
             Point_3 corner = new Point_3(cornerf.x,cornerf.y,cornerf.z);
             input_points.add(corner);
-//            save_points.add(new Point3d(corner.x(),corner.y(),corner.z()));
+            save_points.add(new Point3d(corner.x(),corner.y(),corner.z()));
         }
         
-//        DelaunayPoints dt_points = new DelaunayPoints(save_points);
-//        dt_points.saveArray(save_points, "points.txt");
+        DelaunayPoints dt_points = new DelaunayPoints(save_points);
+        dt_points.saveArray(save_points, "points.txt");
 //        save_points = dt_points.loadArray("points.txt");
 //        for(int i = 0;i<save_points.size();i++){
 //            Point3d p = (Point3d)save_points.get(i);
@@ -148,7 +155,7 @@ public class Delaunay {
                                         if(!dt_bounds.isClose(adj)){
                                             
                                             Point_3 out_adjacent = dt_bounds.intersects(vcell, adj);
-//                                            
+                                            String plane_string = dt_bounds.onPlane(out_adjacent);
                                             outer_adjacents.add(adj);
                                             
                                             
@@ -177,17 +184,17 @@ public class Delaunay {
                          Point_3 outp = (Point_3)outer_adjacents.get(ini);
                          if(outp.equals(cellp)){
                              cellp = (Point_3)outer_intersection.get(ini);
+                              
                              String s = cellp.toString();
-                             
-                             String sh = DigestUtils.md5Hex(s);
-                             boulder_hull.put(sh, cellp);
-                             on_plane.add(cellp);
+                            
+                            String sh = DigestUtils.md5Hex(s);
+                            boulder_hull.put(sh, cellp);
                              
                              
                          }
                      }
                      if(dt_bounds.isClose(cellp)){
-                        
+                            
                         
                             
                             final_cell.add(cellp);
@@ -203,19 +210,19 @@ public class Delaunay {
                     centroid.y=centroid.y/final_cell.size();
                     centroid.z=centroid.z/final_cell.size();
                      Iterator final_iter = final_cell.iterator();
-                     Delaunay_triangulation_3 vcell = new Delaunay_triangulation_3();
+                     Triangulation_3 vcell = new Triangulation_3();
                      boolean edge_case = false;
                      vcell.insert(final_iter);
                      ArrayList triangles = new ArrayList();
-                     Delaunay_triangulation_3_All_cells_iterator iter = vcell.all_cells();
+                     Triangulation_3_All_cells_iterator iter = vcell.all_cells();
                      while(iter.hasNext()){
-                         Delaunay_triangulation_3_Cell_handle dc = iter.next();
+                         Triangulation_3_Cell_handle dc = iter.next();
                          if(vcell.is_infinite(dc)){
                              ArrayList triangle = new ArrayList();
 //                             
                              for(int i = 0;i<4;i++){
                                  
-                                 Delaunay_triangulation_3_Vertex_handle vh = dc.vertex(i);
+                                 Triangulation_3_Vertex_handle vh = dc.vertex(i);
                                  if(vcell.is_infinite(vh)){
                                      Triangle_3 test = vcell.triangle(dc, i);
                                      for(int ini = 0;ini<3;ini++){
@@ -250,18 +257,12 @@ public class Delaunay {
                      cell.put("triangles", triangles);
 //                    
                      
-                     voronoi_cells.add(cell);
+//                     voronoi_cells.add(cell);
                 }
                     
              }          
                     
-             for(int i = 0;i<corners.size();i++){
-                 float3 cornerf = (float3)corners.get(i);
-                 Point_3 corner = new Point_3(cornerf.x,cornerf.y,cornerf.z);
-                 String s = corner.toString();
-                 String md5 = DigestUtils.md5Hex(s);
-                 boulder_hull.put(md5, corner);
-             }
+             
              
              
              ArrayList vertices = new ArrayList();
@@ -269,16 +270,17 @@ public class Delaunay {
              Iterator iter3 = boulder_hull.keySet().iterator();
              Triangulation_3 test = new Triangulation_3();
              ArrayList triangles = new ArrayList();
+             
              HashMap outer_hull = new HashMap();
              
              while(iter3.hasNext()){
                  Point_3 point = (Point_3)boulder_hull.get(iter3.next());
                  
                  
-                     if(point.x()>10){
+                     
                      test.insert(point);
                      
-                     vertices.add(point);}
+                     vertices.add(point);
                  
              }
              
@@ -287,24 +289,107 @@ public class Delaunay {
                  Triangulation_3_Cell_handle t = all_iter.next();
                  if(test.is_infinite(t)){
                      ArrayList triangle = new ArrayList();
+                     ArrayList planes = new ArrayList();
                      for(int i=0;i<4;i++){
                          Triangulation_3_Vertex_handle v = t.vertex(i);
-                         if(!test.is_infinite(v)){
-                             Point_3 p = v.point();
+                         if(test.is_infinite(v)){
+                             Triangle_3 tri3 = test.triangle(t, i);
+                             for(int ini = 0;ini<3;ini++){
+                                 Point_3 p = tri3.vertex(ini);
+                                 triangle.add(p);
+                                 String plane_s = dt_bounds.onPlane(p);
+                                 planes.add(plane_s);
+                             }
                              
                              
-                             triangle.add(p);
+                             
                          }
                      }
                      if(triangle.size()==3){
-                     triangles.add(triangle);}
+                         String Zfront = "Zfront";
+                         Point_3 tri1 = (Point_3)triangle.get(0);
+                         
+                         Point_3 tri2 = (Point_3)triangle.get(1);
+                         Point_3 tri3 = (Point_3)triangle.get(2);
+                         
+                         if(tri1.x()==0&&tri2.x()==0&&tri3.x()==0){}else if(tri1.x()==20&&tri2.x()==20&&tri3.x()==20){}
+                         else if(tri1.y()==0&&tri2.y()==0&&tri3.y()==0){}else if(tri1.y()==20&&tri2.y()==20&&tri3.y()==20){}
+                         else if(tri1.z()==0&&tri2.z()==0&&tri3.z()==0){}else if(tri1.z()==20&&tri2.z()==20&&tri3.z()==20){}
+                             
+                         
+                         else triangles.add(triangle);
+                        
+                     }
                      
                  }
              }
+             
+
+             for(int i = 0;i<corners.size();i++){
+                 float3 cornerf = (float3)corners.get(i);
+                 Point_3 corner = new Point_3(cornerf.x,cornerf.y,cornerf.z);
+                 test.insert(corner);
+
+             }
+             Triangulation_3_All_cells_iterator all_iter1 = test.all_cells();
+             while(all_iter1.hasNext()){
+                 Triangulation_3_Cell_handle tri = all_iter1.next();
+                 if(test.is_infinite(tri)){
+                     ArrayList triangle = new ArrayList();
+                    
+                     for(int i=0;i<4;i++){
+                         Triangulation_3_Vertex_handle v = tri.vertex(i);
+                         if(test.is_infinite(v)){
+                             Triangle_3 tri3 = test.triangle(tri, i);
+                             for(int ini = 0;ini<3;ini++){
+                                 Point_3 p = tri3.vertex(ini);
+                                 triangle.add(p);
+                                 
+                             }
+                             
+                             
+                             
+                         }
+                     }
+                     if(triangle.size()==3){
+                         
+                         Point_3 vertex1 = (Point_3)triangle.get(0);
+                         Point_3 vertex2 = (Point_3)triangle.get(1);
+                         Point_3 vertex3 = (Point_3)triangle.get(2);
+                         for(int i =0;i<corners.size();i++){
+                             float3 cornerf = (float3)corners.get(i);
+                             Point_3 corner = new Point_3(cornerf.x,cornerf.y,cornerf.z);
+                             if(corner.equals(vertex1)||corner.equals(vertex2)||corner.equals(vertex3)){
+                                 triangles.add(triangle);
+                             }
+                         }
+                        
+                     }
+                     
+                 }
+             }
+             outer_hull.put("inner_tris", triangles);
              outer_hull.put("triangles", triangles);
              outer_hull.put("vertices", vertices);
-//             voronoi_cells.add(outer_hull);
+             voronoi_cells.add(outer_hull);
+             
+             float[][][] primitives = new float[triangles.size()][3][3];
+             
+             for(int i = 0;i<triangles.size();i++){
+                 ArrayList triangle = (ArrayList)triangles.get(i);
+                 for(int ini = 0;ini<3;ini++){
+                     Point_3 point = (Point_3)triangle.get(ini);
+                     primitives[i][ini][0] = (float)point.x();
+                     this.writeFloat((float)point.x(), "triangles.txt");
+                     primitives[i][ini][1] = (float)point.y();
+                     this.writeFloat((float)point.y(), "triangles.txt");
+                     primitives[i][ini][2] = (float)point.z();
+                     this.writeFloat((float)point.z(), "triangles.txt");
+                 }
+             }
+             
                      
+             
              
              
              
@@ -323,7 +408,25 @@ public class Delaunay {
     
     
         
-    
+             
+    }
+    public void writeFloat(Float f, String file_name) throws FileNotFoundException{
+        try{
+             File file = new File(file_name);
+             FileWriter fstream = new FileWriter(file_name,true);
+             BufferedWriter out = new BufferedWriter(fstream);
+             String s = f.toString();
+             out.write(s);
+             out.newLine();
+             out.close();
+              
+              
+              
+              
+        }catch (IOException e)
+    {
+      System.out.println("IOException : " + e);
+    }
     }
      public void drawVoronoiCells(GL gl,float rotate, boolean debug){
          
@@ -337,7 +440,7 @@ public class Delaunay {
         gl.glPushMatrix();
         gl.glTranslatef(10, 10, 10);
         
-        glut.glutWireCube(20);
+//        glut.glutWireCube(20);
         gl.glPopMatrix();
         Iterator cell_iter = Physics.renderVoronoi.iterator();
         int t = 0;
@@ -426,8 +529,8 @@ public class Delaunay {
                 float3 n = float3.Subtract(vertexf2, vertexf1);
                 float3 n1 = float3.Subtract(vertexf3, vertexf1);
                 float3 normal = float3.Cross(n, n1);
+                normal.x=-1*normal.x;normal.y=-1*normal.y;normal.z=-1*normal.z;
                 
-
                 normal.normalize();
                 gl.glNormal3f(normal.x, normal.y, normal.z);
                 gl.glVertex3f(vertexf1.x, vertexf1.y, vertexf1.z);
@@ -435,6 +538,7 @@ public class Delaunay {
                 gl.glVertex3f(vertexf2.x, vertexf2.y, vertexf2.z);
                 
                 gl.glVertex3f(vertexf3.x, vertexf3.y, vertexf3.z);
+                
                 
                 
                 

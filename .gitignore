@@ -1,3 +1,9 @@
 /dist/
 /build/
 /nbproject/private/
+/vendor/HACD/nbproject/private/
+/vendor/HACDTest/build/Debug/
+/vendor/HACDTest/dist/Debug/
+/vendor/HACDTest/nbproject/private/
+/vendor/HACD/
+/vendor/bullet-2.79/Extras/HACD/
