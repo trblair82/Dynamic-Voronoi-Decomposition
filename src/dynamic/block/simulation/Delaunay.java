@@ -85,30 +85,30 @@ public class Delaunay {
         planes = dt_bounds.getPlanes();
         
         
-        for(int i = 0;i<num_points;i++){
-            
-            double x = (Math.random()*1000)%(dt_size);
-            double y = (Math.random()*1000)%(dt_size);
-            double z = (Math.random()*1000)%(dt_size);
-            input_points.add(new Point_3(x,y,z));
-            save_points.add(new Point3d(x,y,z));
-        }
+//        for(int i = 0;i<num_points;i++){
+//            
+//            double x = (Math.random()*1000)%(dt_size);
+//            double y = (Math.random()*1000)%(dt_size);
+//            double z = (Math.random()*1000)%(dt_size);
+//            input_points.add(new Point_3(x,y,z));
+//            save_points.add(new Point3d(x,y,z));
+//        }
         ArrayList corners = dt_bounds.getCorners();
-        for(int i = 0;i<corners.size();i++){
-            float3 cornerf = (float3)corners.get(i);
-            Point_3 corner = new Point_3(cornerf.x,cornerf.y,cornerf.z);
-            input_points.add(corner);
-            save_points.add(new Point3d(corner.x(),corner.y(),corner.z()));
-        }
+//        for(int i = 0;i<corners.size();i++){
+//            float3 cornerf = (float3)corners.get(i);
+//            Point_3 corner = new Point_3(cornerf.x,cornerf.y,cornerf.z);
+//            input_points.add(corner);
+//            save_points.add(new Point3d(corner.x(),corner.y(),corner.z()));
+//        }
         
         DelaunayPoints dt_points = new DelaunayPoints(save_points);
-        dt_points.saveArray(save_points, "points.txt");
-//        save_points = dt_points.loadArray("points.txt");
-//        for(int i = 0;i<save_points.size();i++){
-//            Point3d p = (Point3d)save_points.get(i);
-//            Point_3 p1 = new Point_3(p.x,p.y,p.z);
-//            input_points.add(p1);
-//        }
+//        dt_points.saveArray(save_points, "points.txt");
+        save_points = dt_points.loadArray("points.txt");
+        for(int i = 0;i<save_points.size();i++){
+            Point3d p = (Point3d)save_points.get(i);
+            Point_3 p1 = new Point_3(p.x,p.y,p.z);
+            input_points.add(p1);
+        }
         
         
         dt.insert(input_points.iterator());
@@ -268,6 +268,7 @@ public class Delaunay {
              ArrayList vertices = new ArrayList();
              
              Iterator iter3 = boulder_hull.keySet().iterator();
+             int balls = boulder_hull.size();
              Triangulation_3 test = new Triangulation_3();
              ArrayList triangles = new ArrayList();
              
@@ -331,6 +332,7 @@ public class Delaunay {
                  test.insert(corner);
 
              }
+             int balls1 = test.number_of_vertices();
              Triangulation_3_All_cells_iterator all_iter1 = test.all_cells();
              while(all_iter1.hasNext()){
                  Triangulation_3_Cell_handle tri = all_iter1.next();

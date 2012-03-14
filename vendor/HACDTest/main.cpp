@@ -9,6 +9,8 @@
 #include "hacdHACD.h"
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
+#include <iomanip.h>
 using namespace std;
 
 /*
@@ -19,6 +21,7 @@ int main(int argc, char** argv) {
     int num_triangles = 105;
     float primitives[945];
     ifstream filenumbers;
+    ofstream output;
     filenumbers.open("triangles.txt",fstream::in);
     while(!filenumbers.eof()){
         filenumbers >> primitives[i];
@@ -26,8 +29,20 @@ int main(int argc, char** argv) {
             i++;
         }
     }
-    JNAConvexDecomposition(primitives, num_triangles);
-     float test1 = primitives[0];
+    filenumbers.close();
+    float** clusters = JNAConvexDecomposition(primitives, num_triangles);
+    int* cluster_size = GetClusterSize();
+    output.open("hacd.txt");
+    int num_clusters = GetNclusters();
+    
+    for(int i = 0;i<num_clusters;i++){
+       for(int j =0;j<cluster_size[i]*3;j++){
+           double d = clusters[i][j];
+            output << fixed << setprecision(5) << clusters[i][j] << endl;
+       }
+       output << "next\n";
+    }
+    output.close();
     return 0;
 }
 
