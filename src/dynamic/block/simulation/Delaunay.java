@@ -32,8 +32,10 @@ import com.bulletphysics.collision.shapes.ConvexHullShape;
 import com.bulletphysics.util.ObjectArrayList;
 import com.sun.opengl.util.GLUT;
 import java.io.BufferedWriter;
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -257,7 +259,7 @@ public class Delaunay {
                      cell.put("triangles", triangles);
 //                    
                      
-//                     voronoi_cells.add(cell);
+                     voronoi_cells.add(cell);
                 }
                     
              }          
@@ -373,7 +375,7 @@ public class Delaunay {
              outer_hull.put("inner_tris", triangles);
              outer_hull.put("triangles", triangles);
              outer_hull.put("vertices", vertices);
-             voronoi_cells.add(outer_hull);
+//             voronoi_cells.add(outer_hull);
              
              float[][][] primitives = new float[triangles.size()][3][3];
              
@@ -389,6 +391,90 @@ public class Delaunay {
                      this.writeFloat((float)point.z(), "triangles.txt");
                  }
              }
+             ArrayList decomp = new ArrayList();
+             this.readData(decomp);
+             ArrayList decompCells = new ArrayList();
+             HashMap decompCell = new HashMap();
+             ArrayList decompVertices = new ArrayList();
+             
+             for(int i = 0;i<decomp.size();i++){
+                 String fileString = (String)decomp.get(i);
+                 if(fileString.contains("next")&& !decompVertices.isEmpty()){
+                     ArrayList decompEndV = (ArrayList)decompVertices.clone();
+                     decompCell.put("vertices", decompEndV);
+                     HashMap decompEnd = (HashMap)decompCell.clone();
+                     decompCells.add(decompEnd);
+                     decompCell.clear();
+                     decompVertices.clear();
+                     
+                     
+                 }else{ 
+                     Float decompFloat = new Float(fileString);
+                     decompVertices.add(decompFloat);
+                 
+                 
+                 }
+                 
+                 
+             }
+             for(int i =0;i<decompCells.size();i++){
+                 float3 centroid = new float3();
+                 ArrayList endVertices = new ArrayList();
+                 ArrayList endTriangles = new ArrayList();
+                 HashMap cluster = (HashMap)decompCells.get(i);
+                 ArrayList clusterFloats = (ArrayList)cluster.get("vertices");
+                 Triangulation_3 decompTriangulation = new Triangulation_3();
+                 for(int j = 0;j<clusterFloats.size()/3;j++){
+                     Float x = (Float)clusterFloats.get(j*3);
+                     Float y = (Float)clusterFloats.get(j*3+1);
+                     Float z = (Float)clusterFloats.get(j*3+2);
+                     Point_3 vertex = new Point_3(x,y,z);
+                     endVertices.add(vertex);
+                     centroid.x+=x;centroid.y+=y;centroid.z+=z;
+                     decompTriangulation.insert(vertex);
+                     
+                     
+                 }
+                 centroid.x = centroid.x/endVertices.size();
+                 centroid.y = centroid.y/endVertices.size();
+                 centroid.z = centroid.z/endVertices.size();
+                 cluster.put("vertices", endVertices);
+                 Triangulation_3_All_cells_iterator decompTriIter = decompTriangulation.all_cells();
+                 while(decompTriIter.hasNext()){
+                     Triangulation_3_Cell_handle tri = decompTriIter.next();
+                 if(decompTriangulation.is_infinite(tri)){
+                     ArrayList triangle = new ArrayList();
+                    
+                     for(int k=0;k<4;k++){
+                         Triangulation_3_Vertex_handle v = tri.vertex(k);
+                         if(decompTriangulation.is_infinite(v)){
+                             Triangle_3 tri3 = decompTriangulation.triangle(tri, k);
+                             for(int l = 0;l<3;l++){
+                                 Point_3 point = tri3.vertex(l);
+                                 float3 pointf = new float3((float)point.x(),(float)point.y(),(float)point.z());
+                                 float3 endf = float3.Subtract(pointf, centroid);
+                                 Point_3 endp = new Point_3(endf.x,endf.y,endf.z);
+                                 triangle.add(endp);
+                                 
+                             }
+                             
+                             
+                             
+                         }
+                         endTriangles.add(triangle);
+                     }
+                     
+                 }
+                 
+                 
+                
+             }
+             cluster.put("triangles", endTriangles);
+             if(endVertices.size()<20){
+                 voronoi_cells.add(cluster);
+             }
+             
+             }   
              
                      
              
@@ -412,6 +498,25 @@ public class Delaunay {
         
              
     }
+    
+    public void readData(ArrayList list)
+   {
+      try
+      {
+         DataInputStream dataIn = new DataInputStream(new FileInputStream("hacd.txt"));
+         String line;
+         while ( (line = dataIn.readLine()) != null)
+           list.add(line); 
+         dataIn.close();
+         
+      }
+      catch(IOException e)
+      {
+         System.out.println("Problem finding file");
+      }
+   }
+    
+    
     public void writeFloat(Float f, String file_name) throws FileNotFoundException{
         try{
              File file = new File(file_name);
@@ -531,7 +636,7 @@ public class Delaunay {
                 float3 n = float3.Subtract(vertexf2, vertexf1);
                 float3 n1 = float3.Subtract(vertexf3, vertexf1);
                 float3 normal = float3.Cross(n, n1);
-                normal.x=-1*normal.x;normal.y=-1*normal.y;normal.z=-1*normal.z;
+//                normal.x=-1*normal.x;normal.y=-1*normal.y;normal.z=-1*normal.z;
                 
                 normal.normalize();
                 gl.glNormal3f(normal.x, normal.y, normal.z);
