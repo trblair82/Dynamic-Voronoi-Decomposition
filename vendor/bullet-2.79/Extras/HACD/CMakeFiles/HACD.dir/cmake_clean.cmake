@@ -4,7 +4,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/HACD.dir/hacdICHull.o"
   "CMakeFiles/HACD.dir/hacdManifoldMesh.o"
   "libHACD.pdb"
-  "libHACD.a"
+  "libHACD.dylib"
+  "libHACD.2.79.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -22,9 +22,15 @@
 #include <set>
 #include <vector>
 #include <queue>
-extern "C" float** JNAConvexDecomposition(float* inputConcave,int num_triangles);
-extern "C" int GetNclusters();
-extern "C" int* GetClusterSize();
+struct JNACluster {
+    float* floats;
+    int size;
+    int total;
+
+} ;       
+
+extern "C" void JNAConvexDecomposition(float* inputConcave,int num_triangles, int *pcount);
+
 namespace HACD
 {
     const double                                    sc_pi = 3.14159265;

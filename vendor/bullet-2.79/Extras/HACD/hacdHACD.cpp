@@ -31,10 +31,10 @@
 #include <cstdlib>
 #include <iomanip.h>
 #include <fstream.h>
-size_t num_clusters = 2;
-int* cluster_size;
-float** JNAConvexDecomposition(float* inputConcave, int num_triangles){
+    
+void JNAConvexDecomposition(float* inputConcave, int num_triangles, int *pcount){
     int float_count = 0;
+    pcount[0] = 90;
     std::map<std::string,HACD::Vec3<HACD::Real>* > my_map;
     float*** triangles = (float ***) malloc (num_triangles * sizeof(float **));
     //float*** triangles = float[num_triangles][3][3];
@@ -48,8 +48,8 @@ float** JNAConvexDecomposition(float* inputConcave, int num_triangles){
             }
         }
     }
-    
-    
+//    
+//    
     for(int i = 0;i<num_triangles;i++){
         for(int j =0;j<3;j++){
             HACD::Vec3<HACD::Real>* point = new HACD::Vec3<HACD::Real>(triangles[i][j][0],triangles[i][j][1],triangles[i][j][2]);
@@ -101,12 +101,12 @@ float** JNAConvexDecomposition(float* inputConcave, int num_triangles){
         key_count++;
     }
     
-    
-    
-    
+//    
+//    
+//    
     HACD::Vec3<long>* end_triangles = (HACD::Vec3<long>*) malloc (num_triangles * sizeof(HACD::Vec3<long>));
     for(int i = 0;i<num_triangles;i++){
-        long* index = (long*) malloc (3 * sizeof(long));
+        long index[3];
         int index_count = 0;
         for(int j =0;j<3;j++){
             HACD::Vec3<HACD::Real>* point = new HACD::Vec3<HACD::Real>(triangles[i][j][0],triangles[i][j][1],triangles[i][j][2]);
@@ -144,28 +144,29 @@ float** JNAConvexDecomposition(float* inputConcave, int num_triangles){
     }
     HACD::HACD my_hacd;
     
-    my_hacd.SetPoints(&end_points[0]);
-    my_hacd.SetNPoints(my_map.size());
-    my_hacd.SetTriangles(&end_triangles[0]);
     my_hacd.SetNTriangles(num_triangles);
+    my_hacd.SetNPoints(my_map.size());
+    
+    my_hacd.SetPoints(end_points);
+    my_hacd.SetTriangles(end_triangles);
+    
     my_hacd.SetCompacityWeight(0.1);
     my_hacd.SetVolumeWeight(0.0);
-    my_hacd.SetNClusters(num_clusters);                     // minimum number of clusters
+    my_hacd.SetNClusters(2);                     // minimum number of clusters
     my_hacd.SetNVerticesPerCH(100);                      // max of 100 vertices per convex-hull
     my_hacd.SetConcavity(100);                     // maximum concavity
     my_hacd.SetAddExtraDistPoints(true);   
     my_hacd.SetAddNeighboursDistPoints(true);   
     my_hacd.SetAddFacesPoints(true); 
     my_hacd.Compute();
+//    
+    int num_clusters = my_hacd.GetNClusters();
+    pcount[0] = num_clusters;
     
-    num_clusters = my_hacd.GetNClusters();
     
-            
-
-    
-    float** clusters = (float**)malloc(num_clusters*sizeof(float*));
+    JNACluster* clusters = (JNACluster*)malloc(num_clusters*sizeof(JNACluster));
     int cluster_count =0;
-    cluster_size = (int*)malloc(num_clusters*sizeof(int));
+    int* cluster_size = (int*)malloc(num_clusters*sizeof(int));
     for(size_t i = 0;i<num_clusters;i++){
        size_t nPoints = my_hacd.GetNPointsCH(i);
        cluster_size[i] = nPoints;
@@ -187,35 +188,19 @@ float** JNAConvexDecomposition(float* inputConcave, int num_triangles){
          
            
        }
-       double bitch = bitches[1];
-       clusters[cluster_count] = bitches;
+       int n_points = my_hacd.GetNPointsCH(cluster_count);
+       clusters[cluster_count].floats = bitches;
+       clusters[cluster_count].size = n_points*3;
+       clusters[cluster_count].total = num_clusters;
        cluster_count++; 
-//        delete[] bitches;
+
         delete[] cluster_points;
         delete[] cluster_triangles;
     }
-    double d = clusters[0][1];
-    return clusters;
     
+//    return clusters;
+}
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    int balls = 0; 
-}
-int GetNclusters(){
-    return num_clusters;
-}
-int* GetClusterSize(){
-    return cluster_size;
-}
 namespace HACD
 { 
 	double  HACD::Concavity(ICHull & ch, std::map<long, DPoint> & distPoints)

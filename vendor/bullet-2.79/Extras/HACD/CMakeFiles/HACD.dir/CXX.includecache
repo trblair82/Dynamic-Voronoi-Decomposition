@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Extras/HACD/hacdGraph.cpp
-hacdGraph.h
--
-
 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Extras/HACD/hacdHACD.cpp
 sstream
 -
@@ -33,15 +29,13 @@ hacdVector.h
 -
 vector
 -
-
-/Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Extras/HACD/hacdICHull.cpp
-hacdICHull.h
+iostream
 -
-limits
+cstdlib
 -
-
-/Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Extras/HACD/hacdManifoldMesh.cpp
-hacdManifoldMesh.h
+iomanip.h
+-
+fstream.h
 -
 
 Extras/HACD/hacdCircularList.h
