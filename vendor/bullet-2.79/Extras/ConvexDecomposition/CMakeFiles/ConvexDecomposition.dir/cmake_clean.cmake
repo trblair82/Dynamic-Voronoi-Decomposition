@@ -14,7 +14,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/ConvexDecomposition.dir/planetri.o"
   "CMakeFiles/ConvexDecomposition.dir/splitplane.o"
   "libConvexDecomposition.pdb"
-  "libConvexDecomposition.a"
+  "libConvexDecomposition.dylib"
+  "libConvexDecomposition.2.79.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

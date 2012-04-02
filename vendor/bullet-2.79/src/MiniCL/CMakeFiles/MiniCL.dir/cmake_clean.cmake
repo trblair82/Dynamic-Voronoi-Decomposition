@@ -3,7 +3,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/MiniCL.dir/MiniCLTaskScheduler.o"
   "CMakeFiles/MiniCL.dir/MiniCLTask/MiniCLTask.o"
   "libMiniCL.pdb"
-  "libMiniCL.a"
+  "libMiniCL.dylib"
+  "libMiniCL.2.79.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

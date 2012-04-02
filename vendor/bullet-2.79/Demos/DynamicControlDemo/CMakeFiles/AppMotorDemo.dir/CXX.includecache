@@ -6,31 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/Users/trblair/Build/bullet-2.79/Demos/DynamicControlDemo/MotorDemo.cpp
+/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/MotorDemo.cpp
 btBulletDynamicsCommon.h
-/Users/trblair/Build/bullet-2.79/Demos/DynamicControlDemo/btBulletDynamicsCommon.h
+/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/btBulletDynamicsCommon.h
 GlutStuff.h
-/Users/trblair/Build/bullet-2.79/Demos/DynamicControlDemo/GlutStuff.h
+/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/GlutStuff.h
 GL_ShapeDrawer.h
-/Users/trblair/Build/bullet-2.79/Demos/DynamicControlDemo/GL_ShapeDrawer.h
+/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/GL_ShapeDrawer.h
 LinearMath/btIDebugDraw.h
-/Users/trblair/Build/bullet-2.79/Demos/DynamicControlDemo/LinearMath/btIDebugDraw.h
+/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/LinearMath/btIDebugDraw.h
 GLDebugDrawer.h
-/Users/trblair/Build/bullet-2.79/Demos/DynamicControlDemo/GLDebugDrawer.h
+/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/GLDebugDrawer.h
 MotorDemo.h
-/Users/trblair/Build/bullet-2.79/Demos/DynamicControlDemo/MotorDemo.h
+/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/MotorDemo.h
 
-/Users/trblair/Build/bullet-2.79/Demos/DynamicControlDemo/MotorDemo.h
+/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/MotorDemo.h
 GlutDemoApplication.h
-/Users/trblair/Build/bullet-2.79/Demos/DynamicControlDemo/GlutDemoApplication.h
+/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/GlutDemoApplication.h
 LinearMath/btAlignedObjectArray.h
-/Users/trblair/Build/bullet-2.79/Demos/DynamicControlDemo/LinearMath/btAlignedObjectArray.h
+/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/LinearMath/btAlignedObjectArray.h
 
-/Users/trblair/Build/bullet-2.79/Demos/DynamicControlDemo/main.cpp
+/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/main.cpp
 MotorDemo.h
-/Users/trblair/Build/bullet-2.79/Demos/DynamicControlDemo/MotorDemo.h
+/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/MotorDemo.h
 GlutStuff.h
-/Users/trblair/Build/bullet-2.79/Demos/DynamicControlDemo/GlutStuff.h
+/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/GlutStuff.h
 
 Demos/OpenGL/DemoApplication.h
 GlutStuff.h

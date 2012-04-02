@@ -32,7 +32,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/GLUI.dir/glui_separator.o"
   "CMakeFiles/GLUI.dir/glui_tree.o"
   "libGLUI.pdb"
-  "libGLUI.a"
+  "libGLUI.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

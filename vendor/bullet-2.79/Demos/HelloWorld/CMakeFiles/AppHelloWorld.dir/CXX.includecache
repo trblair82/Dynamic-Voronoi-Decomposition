@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/trblair/Build/bullet-2.79/Demos/HelloWorld/HelloWorld.cpp
+/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/HelloWorld/HelloWorld.cpp
 btBulletDynamicsCommon.h
-/Users/trblair/Build/bullet-2.79/Demos/HelloWorld/btBulletDynamicsCommon.h
+/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/HelloWorld/btBulletDynamicsCommon.h
 stdio.h
 -
 

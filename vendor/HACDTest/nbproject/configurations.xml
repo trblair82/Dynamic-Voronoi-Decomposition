@@ -12,7 +12,6 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>../bullet-2.79/Extras/HACD/hacdHACD.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -28,7 +27,7 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>../../Build/bullet-2.79/Extras/HACD</Elem>
+    <Elem>../bullet-2.79/Extras/HACD</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -45,14 +44,11 @@
         </ccTool>
         <linkerTool>
           <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hacdtest</output>
-          <linkerAddLib>
-            <pElem>../bullet-2.79/lib</pElem>
-          </linkerAddLib>
           <linkerLibItems>
-            <linkerLibLibItem>HACD</linkerLibLibItem>
             <linkerLibLibItem>crypto</linkerLibLibItem>
             <linkerLibLibItem>ssl</linkerLibLibItem>
             <linkerLibLibItem>z</linkerLibLibItem>
+            <linkerLibFileItem>../bullet-2.79/Extras/HACD/libHACD.dylib</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

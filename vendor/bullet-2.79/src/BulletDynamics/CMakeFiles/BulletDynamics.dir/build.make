@@ -511,33 +511,37 @@ BulletDynamics_OBJECTS = \
 # External object files for target BulletDynamics
 BulletDynamics_EXTERNAL_OBJECTS =
 
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/Character/btKinematicCharacterController.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btConeTwistConstraint.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btContactConstraint.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btGeneric6DofConstraint.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btGeneric6DofSpringConstraint.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btHinge2Constraint.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btHingeConstraint.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btPoint2PointConstraint.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btSequentialImpulseConstraintSolver.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btSliderConstraint.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btSolve2LinearConstraint.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btTypedConstraint.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btUniversalConstraint.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/Dynamics/btDiscreteDynamicsWorld.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/Dynamics/btRigidBody.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/Dynamics/btSimpleDynamicsWorld.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/Dynamics/Bullet-C-API.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/Vehicle/btRaycastVehicle.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/Vehicle/btWheelInfo.o
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/build.make
-src/BulletDynamics/libBulletDynamics.a: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libBulletDynamics.a"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletDynamics && $(CMAKE_COMMAND) -P CMakeFiles/BulletDynamics.dir/cmake_clean_target.cmake
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/Character/btKinematicCharacterController.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btConeTwistConstraint.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btContactConstraint.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btGeneric6DofConstraint.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btGeneric6DofSpringConstraint.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btHinge2Constraint.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btHingeConstraint.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btPoint2PointConstraint.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btSequentialImpulseConstraintSolver.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btSliderConstraint.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btSolve2LinearConstraint.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btTypedConstraint.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/ConstraintSolver/btUniversalConstraint.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/Dynamics/btDiscreteDynamicsWorld.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/Dynamics/btRigidBody.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/Dynamics/btSimpleDynamicsWorld.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/Dynamics/Bullet-C-API.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/Vehicle/btRaycastVehicle.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/Vehicle/btWheelInfo.o
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletCollision/libBulletCollision.2.79.dylib
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/LinearMath/libLinearMath.2.79.dylib
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/build.make
+src/BulletDynamics/libBulletDynamics.2.79.dylib: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library libBulletDynamics.dylib"
 	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletDynamics && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BulletDynamics.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletDynamics && $(CMAKE_COMMAND) -E cmake_symlink_library libBulletDynamics.2.79.dylib libBulletDynamics.2.79.dylib libBulletDynamics.dylib
+
+src/BulletDynamics/libBulletDynamics.dylib: src/BulletDynamics/libBulletDynamics.2.79.dylib
 
 # Rule to build all files generated by this target.
-src/BulletDynamics/CMakeFiles/BulletDynamics.dir/build: src/BulletDynamics/libBulletDynamics.a
+src/BulletDynamics/CMakeFiles/BulletDynamics.dir/build: src/BulletDynamics/libBulletDynamics.dylib
 .PHONY : src/BulletDynamics/CMakeFiles/BulletDynamics.dir/build
 
 src/BulletDynamics/CMakeFiles/BulletDynamics.dir/requires: src/BulletDynamics/CMakeFiles/BulletDynamics.dir/Character/btKinematicCharacterController.o.requires

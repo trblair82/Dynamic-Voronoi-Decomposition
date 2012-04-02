@@ -12,7 +12,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/OpenGLSupport.dir/stb_image.o"
   "CMakeFiles/OpenGLSupport.dir/Win32DemoApplication.o"
   "libOpenGLSupport.pdb"
-  "libOpenGLSupport.a"
+  "libOpenGLSupport.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

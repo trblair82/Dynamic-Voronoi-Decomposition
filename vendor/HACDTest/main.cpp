@@ -30,19 +30,28 @@ int main(int argc, char** argv) {
         }
     }
     filenumbers.close();
-    float** clusters = JNAConvexDecomposition(primitives, num_triangles);
-    int* cluster_size = GetClusterSize();
-    output.open("hacd.txt");
-    int num_clusters = GetNclusters();
+    int pcount = 10;
+    JNACluster* clusters = JNAConvexDecomposition(primitives, num_triangles, &pcount);
+    int testPcount = pcount;
+    int balls = 0;
     
-    for(int i = 0;i<num_clusters;i++){
-       for(int j =0;j<cluster_size[i]*3;j++){
-           double d = clusters[i][j];
-            output << fixed << setprecision(5) << clusters[i][j] << endl;
-       }
-       output << "next\n";
-    }
-    output.close();
-    return 0;
+//    JNACluster first = clusters[0];
+//    int size = first.size;
+//    int total = first.total;
+//    float* points = first.floats;
+//    float point = points[10];
+//    
+//    int* cluster_size = GetClusterSize();
+//    output.open("hacd.txt");
+//    
+//    for(int i = 0;i<num_clusters;i++){
+//       for(int j =0;j<cluster_size[i]*3;j++){
+//           double d = clusters[i][j];
+//            output << fixed << setprecision(5) << clusters[i][j] << endl;
+//       }
+//       output << "next\n";
+//    }
+//    output.close();
+//    return 0;
 }
 

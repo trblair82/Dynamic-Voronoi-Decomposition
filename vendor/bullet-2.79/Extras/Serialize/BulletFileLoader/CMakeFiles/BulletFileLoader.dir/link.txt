@@ -1,2 +1,1 @@
-/usr/bin/ar cr libBulletFileLoader.a  CMakeFiles/BulletFileLoader.dir/bChunk.o CMakeFiles/BulletFileLoader.dir/bDNA.o CMakeFiles/BulletFileLoader.dir/bFile.o CMakeFiles/BulletFileLoader.dir/btBulletFile.o
-/usr/bin/ranlib libBulletFileLoader.a
+/usr/bin/c++  -g -D_DEBUG -arch i386 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.7.sdk -dynamiclib -Wl,-headerpad_max_install_names   -o libBulletFileLoader.dylib -install_name /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Extras/Serialize/BulletFileLoader/libBulletFileLoader.dylib CMakeFiles/BulletFileLoader.dir/bChunk.o CMakeFiles/BulletFileLoader.dir/bDNA.o CMakeFiles/BulletFileLoader.dir/bFile.o CMakeFiles/BulletFileLoader.dir/btBulletFile.o ../../../src/LinearMath/libLinearMath.2.79.dylib 

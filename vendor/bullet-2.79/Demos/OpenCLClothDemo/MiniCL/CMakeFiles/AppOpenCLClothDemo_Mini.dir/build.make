@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/cmake"
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/bin/ccmake
+CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/ccmake"
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_SOURCE_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_BINARY_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # Include any dependencies generated for this target.
 include Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/depend.make
@@ -51,17 +51,17 @@ include Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/flag
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/cl_cloth_demo.o: Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/flags.make
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/cl_cloth_demo.o: Demos/OpenCLClothDemo/cl_cloth_demo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/cl_cloth_demo.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/cl_cloth_demo.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/cl_cloth_demo.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/cl_cloth_demo.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/cl_cloth_demo.cpp
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/cl_cloth_demo.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/cl_cloth_demo.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/cl_cloth_demo.cpp > CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/cl_cloth_demo.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/cl_cloth_demo.cpp > CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/cl_cloth_demo.i
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/cl_cloth_demo.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/cl_cloth_demo.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/cl_cloth_demo.cpp -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/cl_cloth_demo.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/cl_cloth_demo.cpp -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/cl_cloth_demo.s
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/cl_cloth_demo.o.requires:
 .PHONY : Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/cl_cloth_demo.o.requires
@@ -74,17 +74,17 @@ Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/cl_cloth_
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/gl_win.o: Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/flags.make
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/gl_win.o: Demos/OpenCLClothDemo/gl_win.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/gl_win.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/gl_win.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/gl_win.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/gl_win.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/gl_win.cpp
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/gl_win.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/gl_win.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/gl_win.cpp > CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/gl_win.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/gl_win.cpp > CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/gl_win.i
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/gl_win.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/gl_win.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/gl_win.cpp -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/gl_win.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/gl_win.cpp -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/gl_win.s
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/gl_win.o.requires:
 .PHONY : Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/gl_win.o.requires
@@ -97,17 +97,17 @@ Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/gl_win.o.
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/clstuff.o: Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/flags.make
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/clstuff.o: Demos/OpenCLClothDemo/clstuff.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/clstuff.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/clstuff.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/clstuff.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/clstuff.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/clstuff.cpp
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/clstuff.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/clstuff.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/clstuff.cpp > CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/clstuff.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/clstuff.cpp > CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/clstuff.i
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/clstuff.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/clstuff.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/clstuff.cpp -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/clstuff.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/clstuff.cpp -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/clstuff.s
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/clstuff.o.requires:
 .PHONY : Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/clstuff.o.requires
@@ -120,17 +120,17 @@ Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/clstuff.o
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.o: Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/flags.make
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.o: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.cpp
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.cpp > CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.cpp > CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.i
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.cpp -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.cpp -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.s
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.o.requires:
 .PHONY : Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.o.requires
@@ -143,17 +143,17 @@ Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclUtils.o: Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/flags.make
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclUtils.o: Demos/SharedOpenCL/btOclUtils.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclUtils.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclUtils.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/SharedOpenCL/btOclUtils.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclUtils.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/SharedOpenCL/btOclUtils.cpp
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclUtils.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclUtils.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/SharedOpenCL/btOclUtils.cpp > CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclUtils.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/SharedOpenCL/btOclUtils.cpp > CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclUtils.i
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclUtils.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclUtils.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/SharedOpenCL/btOclUtils.cpp -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclUtils.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/SharedOpenCL/btOclUtils.cpp -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclUtils.s
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclUtils.o.requires:
 .PHONY : Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclUtils.o.requires
@@ -166,17 +166,17 @@ Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/Shared
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclCommon.o: Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/flags.make
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclCommon.o: Demos/SharedOpenCL/btOclCommon.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclCommon.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclCommon.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/SharedOpenCL/btOclCommon.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclCommon.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/SharedOpenCL/btOclCommon.cpp
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclCommon.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclCommon.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/SharedOpenCL/btOclCommon.cpp > CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclCommon.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/SharedOpenCL/btOclCommon.cpp > CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclCommon.i
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclCommon.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclCommon.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/SharedOpenCL/btOclCommon.cpp -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclCommon.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/SharedOpenCL/btOclCommon.cpp -o CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclCommon.s
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclCommon.o.requires:
 .PHONY : Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclCommon.o.requires
@@ -205,20 +205,20 @@ Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: Demos/OpenCLClothDemo/Mini
 Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/__/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.o
 Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclUtils.o
 Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/__/__/SharedOpenCL/btOclCommon.o
-Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: Demos/OpenGL/libOpenGLSupport.a
-Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/libBulletSoftBodySolvers_OpenCL_Mini.a
-Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: src/BulletMultiThreaded/GpuSoftBodySolvers/CPU/libBulletSoftBodySolvers_CPU.a
-Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: src/MiniCL/libMiniCL.a
-Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: src/BulletMultiThreaded/libBulletMultiThreaded.a
-Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: src/BulletSoftBody/libBulletSoftBody.a
-Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: src/BulletDynamics/libBulletDynamics.a
-Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: src/BulletCollision/libBulletCollision.a
-Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: src/LinearMath/libLinearMath.a
+Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: Demos/OpenGL/libOpenGLSupport.dylib
+Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/libBulletSoftBodySolvers_OpenCL_Mini.2.79.dylib
+Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: src/BulletMultiThreaded/GpuSoftBodySolvers/CPU/libBulletSoftBodySolvers_CPU.2.79.dylib
+Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: src/MiniCL/libMiniCL.2.79.dylib
+Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib
+Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: src/BulletSoftBody/libBulletSoftBody.2.79.dylib
+Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: src/BulletDynamics/libBulletDynamics.2.79.dylib
+Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: src/BulletCollision/libBulletCollision.2.79.dylib
+Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: src/LinearMath/libLinearMath.2.79.dylib
 Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/build.make
 Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini: Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable AppOpenCLClothDemo_Mini"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppOpenCLClothDemo_Mini.dir/link.txt --verbose=$(VERBOSE)
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && /usr/local/bin/cmake -E copy_if_different /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/bullet_logo.png /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppOpenCLClothDemo_Mini.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E copy_if_different /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/bullet_logo.png /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL
 
 # Rule to build all files generated by this target.
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/build: Demos/OpenCLClothDemo/MiniCL/AppOpenCLClothDemo_Mini
@@ -233,10 +233,10 @@ Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/requires: De
 .PHONY : Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/requires
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/clean:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && $(CMAKE_COMMAND) -P CMakeFiles/AppOpenCLClothDemo_Mini.dir/cmake_clean.cmake
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL && $(CMAKE_COMMAND) -P CMakeFiles/AppOpenCLClothDemo_Mini.dir/cmake_clean.cmake
 .PHONY : Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/clean
 
 Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/depend:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Demos/OpenCLClothDemo/MiniCL/CMakeFiles/AppOpenCLClothDemo_Mini.dir/depend
 

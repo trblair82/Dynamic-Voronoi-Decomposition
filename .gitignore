@@ -6,3 +6,5 @@
 /vendor/HACDTest/dist/Debug/
 /vendor/HACDTest/nbproject/private/
 /vendor/HACD/
+!/vendor/bullet-2.79/Extras/HACD/hacdHACD.cpp
+!/vendor/bullet-2.79/Extras/HACD/hacdHACD.h

@@ -19,7 +19,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/BulletDynamics.dir/Vehicle/btRaycastVehicle.o"
   "CMakeFiles/BulletDynamics.dir/Vehicle/btWheelInfo.o"
   "libBulletDynamics.pdb"
-  "libBulletDynamics.a"
+  "libBulletDynamics.dylib"
+  "libBulletDynamics.2.79.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

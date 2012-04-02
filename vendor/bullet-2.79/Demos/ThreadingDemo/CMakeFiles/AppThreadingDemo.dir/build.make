@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/cmake"
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/bin/ccmake
+CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/ccmake"
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_SOURCE_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_BINARY_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # Include any dependencies generated for this target.
 include Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/depend.make
@@ -51,17 +51,17 @@ include Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/flags.make
 
 Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/main.o: Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/flags.make
 Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/main.o: Demos/ThreadingDemo/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/main.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppThreadingDemo.dir/main.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo/main.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppThreadingDemo.dir/main.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo/main.cpp
 
 Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/main.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppThreadingDemo.dir/main.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo/main.cpp > CMakeFiles/AppThreadingDemo.dir/main.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo/main.cpp > CMakeFiles/AppThreadingDemo.dir/main.i
 
 Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/main.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppThreadingDemo.dir/main.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo/main.cpp -o CMakeFiles/AppThreadingDemo.dir/main.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo/main.cpp -o CMakeFiles/AppThreadingDemo.dir/main.s
 
 Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/main.o.requires:
 .PHONY : Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/main.o.requires
@@ -80,14 +80,14 @@ AppThreadingDemo_OBJECTS = \
 AppThreadingDemo_EXTERNAL_OBJECTS =
 
 Demos/ThreadingDemo/AppThreadingDemo: Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/main.o
-Demos/ThreadingDemo/AppThreadingDemo: src/BulletMultiThreaded/libBulletMultiThreaded.a
-Demos/ThreadingDemo/AppThreadingDemo: src/BulletDynamics/libBulletDynamics.a
-Demos/ThreadingDemo/AppThreadingDemo: src/BulletCollision/libBulletCollision.a
-Demos/ThreadingDemo/AppThreadingDemo: src/LinearMath/libLinearMath.a
+Demos/ThreadingDemo/AppThreadingDemo: src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib
+Demos/ThreadingDemo/AppThreadingDemo: src/BulletDynamics/libBulletDynamics.2.79.dylib
+Demos/ThreadingDemo/AppThreadingDemo: src/BulletCollision/libBulletCollision.2.79.dylib
+Demos/ThreadingDemo/AppThreadingDemo: src/LinearMath/libLinearMath.2.79.dylib
 Demos/ThreadingDemo/AppThreadingDemo: Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/build.make
 Demos/ThreadingDemo/AppThreadingDemo: Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable AppThreadingDemo"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppThreadingDemo.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppThreadingDemo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/build: Demos/ThreadingDemo/AppThreadingDemo
@@ -97,10 +97,10 @@ Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/requires: Demos/ThreadingDem
 .PHONY : Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/requires
 
 Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/clean:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppThreadingDemo.dir/cmake_clean.cmake
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppThreadingDemo.dir/cmake_clean.cmake
 .PHONY : Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/clean
 
 Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/depend:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Demos/ThreadingDemo/CMakeFiles/AppThreadingDemo.dir/depend
 

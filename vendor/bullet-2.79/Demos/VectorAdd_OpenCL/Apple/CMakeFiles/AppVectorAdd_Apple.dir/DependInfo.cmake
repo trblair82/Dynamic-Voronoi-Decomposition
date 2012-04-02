@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/VectorAdd_OpenCL/MiniCL_VectorAdd.cpp" "/Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/VectorAdd_OpenCL/Apple/CMakeFiles/AppVectorAdd_Apple.dir/__/MiniCL_VectorAdd.o"
+  "/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/VectorAdd_OpenCL/MiniCL_VectorAdd.cpp" "/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/VectorAdd_OpenCL/Apple/CMakeFiles/AppVectorAdd_Apple.dir/__/MiniCL_VectorAdd.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,5 +15,5 @@ SET(CMAKE_TARGET_DEFINITIONS
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/LinearMath/CMakeFiles/LinearMath.dir/DependInfo.cmake"
+  "/Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/LinearMath/CMakeFiles/LinearMath.dir/DependInfo.cmake"
   )

@@ -11,6 +11,8 @@ import javax.swing.*;
  *
  * @author trblair
  */
+
+
 public class DynamicBlockSimulation {
     public static MyCanvas canvas;
     /**
@@ -18,7 +20,9 @@ public class DynamicBlockSimulation {
      */
     
     public static void main(String[] args) {
-    canvas = new MyCanvas();
+    
+        
+        canvas = new MyCanvas();
         
     }
 }

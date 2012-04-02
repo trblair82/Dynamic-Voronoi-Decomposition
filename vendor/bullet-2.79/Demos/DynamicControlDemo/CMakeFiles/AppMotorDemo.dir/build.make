@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/cmake"
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/bin/ccmake
+CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/ccmake"
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_SOURCE_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_BINARY_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # Include any dependencies generated for this target.
 include Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/depend.make
@@ -51,17 +51,17 @@ include Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/flags.make
 
 Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/MotorDemo.o: Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/flags.make
 Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/MotorDemo.o: Demos/DynamicControlDemo/MotorDemo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/MotorDemo.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppMotorDemo.dir/MotorDemo.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/MotorDemo.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppMotorDemo.dir/MotorDemo.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/MotorDemo.cpp
 
 Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/MotorDemo.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppMotorDemo.dir/MotorDemo.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/MotorDemo.cpp > CMakeFiles/AppMotorDemo.dir/MotorDemo.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/MotorDemo.cpp > CMakeFiles/AppMotorDemo.dir/MotorDemo.i
 
 Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/MotorDemo.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppMotorDemo.dir/MotorDemo.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/MotorDemo.cpp -o CMakeFiles/AppMotorDemo.dir/MotorDemo.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/MotorDemo.cpp -o CMakeFiles/AppMotorDemo.dir/MotorDemo.s
 
 Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/MotorDemo.o.requires:
 .PHONY : Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/MotorDemo.o.requires
@@ -74,17 +74,17 @@ Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/MotorDemo.o.provides.build:
 
 Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/main.o: Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/flags.make
 Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/main.o: Demos/DynamicControlDemo/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/main.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppMotorDemo.dir/main.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/main.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppMotorDemo.dir/main.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/main.cpp
 
 Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/main.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppMotorDemo.dir/main.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/main.cpp > CMakeFiles/AppMotorDemo.dir/main.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/main.cpp > CMakeFiles/AppMotorDemo.dir/main.i
 
 Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/main.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppMotorDemo.dir/main.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/main.cpp -o CMakeFiles/AppMotorDemo.dir/main.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/main.cpp -o CMakeFiles/AppMotorDemo.dir/main.s
 
 Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/main.o.requires:
 .PHONY : Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/main.o.requires
@@ -105,14 +105,14 @@ AppMotorDemo_EXTERNAL_OBJECTS =
 
 Demos/DynamicControlDemo/AppMotorDemo: Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/MotorDemo.o
 Demos/DynamicControlDemo/AppMotorDemo: Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/main.o
-Demos/DynamicControlDemo/AppMotorDemo: Demos/OpenGL/libOpenGLSupport.a
-Demos/DynamicControlDemo/AppMotorDemo: src/BulletDynamics/libBulletDynamics.a
-Demos/DynamicControlDemo/AppMotorDemo: src/BulletCollision/libBulletCollision.a
-Demos/DynamicControlDemo/AppMotorDemo: src/LinearMath/libLinearMath.a
+Demos/DynamicControlDemo/AppMotorDemo: Demos/OpenGL/libOpenGLSupport.dylib
+Demos/DynamicControlDemo/AppMotorDemo: src/BulletDynamics/libBulletDynamics.2.79.dylib
+Demos/DynamicControlDemo/AppMotorDemo: src/BulletCollision/libBulletCollision.2.79.dylib
+Demos/DynamicControlDemo/AppMotorDemo: src/LinearMath/libLinearMath.2.79.dylib
 Demos/DynamicControlDemo/AppMotorDemo: Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/build.make
 Demos/DynamicControlDemo/AppMotorDemo: Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable AppMotorDemo"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppMotorDemo.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppMotorDemo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/build: Demos/DynamicControlDemo/AppMotorDemo
@@ -123,10 +123,10 @@ Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/requires: Demos/DynamicCont
 .PHONY : Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/requires
 
 Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/clean:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppMotorDemo.dir/cmake_clean.cmake
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppMotorDemo.dir/cmake_clean.cmake
 .PHONY : Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/clean
 
 Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/depend:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Demos/DynamicControlDemo/CMakeFiles/AppMotorDemo.dir/depend
 

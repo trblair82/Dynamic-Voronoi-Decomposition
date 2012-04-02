@@ -487,32 +487,37 @@ BulletMultiThreaded_OBJECTS = \
 # External object files for target BulletMultiThreaded
 BulletMultiThreaded_EXTERNAL_OBJECTS =
 
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuFakeDma.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuLibspe2Support.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/btThreadSupportInterface.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/Win32ThreadSupport.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/PosixThreadSupport.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SequentialThreadSupport.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuSampleTaskProcess.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuCollisionObjectWrapper.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuCollisionTaskProcess.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuGatheringCollisionDispatcher.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuContactManifoldCollisionAlgorithm.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/btParallelConstraintSolver.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuNarrowPhaseCollisionTask/boxBoxDistance.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuNarrowPhaseCollisionTask/SpuContactResult.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuNarrowPhaseCollisionTask/SpuMinkowskiPenetrationDepthSolver.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuNarrowPhaseCollisionTask/SpuGatheringCollisionTask.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuNarrowPhaseCollisionTask/SpuCollisionShapes.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/btGpu3DGridBroadphase.o
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/build.make
-src/BulletMultiThreaded/libBulletMultiThreaded.a: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libBulletMultiThreaded.a"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded && $(CMAKE_COMMAND) -P CMakeFiles/BulletMultiThreaded.dir/cmake_clean_target.cmake
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuFakeDma.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuLibspe2Support.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/btThreadSupportInterface.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/Win32ThreadSupport.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/PosixThreadSupport.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SequentialThreadSupport.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuSampleTaskProcess.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuCollisionObjectWrapper.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuCollisionTaskProcess.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuGatheringCollisionDispatcher.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuContactManifoldCollisionAlgorithm.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/btParallelConstraintSolver.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuNarrowPhaseCollisionTask/boxBoxDistance.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuNarrowPhaseCollisionTask/SpuContactResult.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuNarrowPhaseCollisionTask/SpuMinkowskiPenetrationDepthSolver.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuNarrowPhaseCollisionTask/SpuGatheringCollisionTask.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuNarrowPhaseCollisionTask/SpuCollisionShapes.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/btGpu3DGridBroadphase.o
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletDynamics/libBulletDynamics.2.79.dylib
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletCollision/libBulletCollision.2.79.dylib
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/LinearMath/libLinearMath.2.79.dylib
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/build.make
+src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library libBulletMultiThreaded.dylib"
 	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BulletMultiThreaded.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded && $(CMAKE_COMMAND) -E cmake_symlink_library libBulletMultiThreaded.2.79.dylib libBulletMultiThreaded.2.79.dylib libBulletMultiThreaded.dylib
+
+src/BulletMultiThreaded/libBulletMultiThreaded.dylib: src/BulletMultiThreaded/libBulletMultiThreaded.2.79.dylib
 
 # Rule to build all files generated by this target.
-src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/build: src/BulletMultiThreaded/libBulletMultiThreaded.a
+src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/build: src/BulletMultiThreaded/libBulletMultiThreaded.dylib
 .PHONY : src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/build
 
 src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/requires: src/BulletMultiThreaded/CMakeFiles/BulletMultiThreaded.dir/SpuFakeDma.o.requires

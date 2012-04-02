@@ -4,7 +4,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/BulletFileLoader.dir/bFile.o"
   "CMakeFiles/BulletFileLoader.dir/btBulletFile.o"
   "libBulletFileLoader.pdb"
-  "libBulletFileLoader.a"
+  "libBulletFileLoader.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

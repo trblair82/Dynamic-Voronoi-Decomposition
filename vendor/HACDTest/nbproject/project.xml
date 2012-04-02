@@ -10,7 +10,7 @@
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>../../Build/bullet-2.79/Extras/HACD</sourceRootElem>
+                <sourceRootElem>../bullet-2.79/Extras/HACD</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

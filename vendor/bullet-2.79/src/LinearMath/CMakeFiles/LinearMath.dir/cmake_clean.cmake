@@ -6,7 +6,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/LinearMath.dir/btQuickprof.o"
   "CMakeFiles/LinearMath.dir/btSerializer.o"
   "libLinearMath.pdb"
-  "libLinearMath.a"
+  "libLinearMath.dylib"
+  "libLinearMath.2.79.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

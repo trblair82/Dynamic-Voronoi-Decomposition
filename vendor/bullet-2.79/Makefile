@@ -321,19 +321,6 @@ BulletSoftBodySolvers_OpenCL_Mini/fast:
 	$(MAKE) -f src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/CMakeFiles/BulletSoftBodySolvers_OpenCL_Mini.dir/build.make src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/CMakeFiles/BulletSoftBodySolvers_OpenCL_Mini.dir/build
 .PHONY : BulletSoftBodySolvers_OpenCL_Mini/fast
 
-#=============================================================================
-# Target rules for targets named BulletSoftBodySolvers_OpenCL_Apple
-
-# Build rule for target.
-BulletSoftBodySolvers_OpenCL_Apple: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 BulletSoftBodySolvers_OpenCL_Apple
-.PHONY : BulletSoftBodySolvers_OpenCL_Apple
-
-# fast build rule for target.
-BulletSoftBodySolvers_OpenCL_Apple/fast:
-	$(MAKE) -f src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/build.make src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/build
-.PHONY : BulletSoftBodySolvers_OpenCL_Apple/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -360,7 +347,6 @@ help:
 	@echo "... LinearMath"
 	@echo "... BulletSoftBodySolvers_CPU"
 	@echo "... BulletSoftBodySolvers_OpenCL_Mini"
-	@echo "... BulletSoftBodySolvers_OpenCL_Apple"
 .PHONY : help
 
 

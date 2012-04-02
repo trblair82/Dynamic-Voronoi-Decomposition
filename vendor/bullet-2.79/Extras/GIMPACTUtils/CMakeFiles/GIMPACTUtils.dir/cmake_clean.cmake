@@ -1,7 +1,8 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/GIMPACTUtils.dir/btGImpactConvexDecompositionShape.o"
   "libGIMPACTUtils.pdb"
-  "libGIMPACTUtils.a"
+  "libGIMPACTUtils.dylib"
+  "libGIMPACTUtils.2.79.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

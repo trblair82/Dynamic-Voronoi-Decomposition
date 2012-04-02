@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/cmake"
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/bin/ccmake
+CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/ccmake"
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_SOURCE_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_BINARY_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # Include any dependencies generated for this target.
 include Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/depend.make
@@ -51,17 +51,17 @@ include Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/flags.make
 
 Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo.o: Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/flags.make
 Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo.o: Demos/ConcaveRaycastDemo/ConcaveRaycastDemo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo/ConcaveRaycastDemo.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo/ConcaveRaycastDemo.cpp
 
 Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo/ConcaveRaycastDemo.cpp > CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo/ConcaveRaycastDemo.cpp > CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo.i
 
 Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo/ConcaveRaycastDemo.cpp -o CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo/ConcaveRaycastDemo.cpp -o CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo.s
 
 Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo.o.requires:
 .PHONY : Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo.o.requires
@@ -74,17 +74,17 @@ Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo
 
 Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/main.o: Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/flags.make
 Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/main.o: Demos/ConcaveRaycastDemo/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/main.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppConcaveRayCastDemo.dir/main.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo/main.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppConcaveRayCastDemo.dir/main.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo/main.cpp
 
 Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/main.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppConcaveRayCastDemo.dir/main.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo/main.cpp > CMakeFiles/AppConcaveRayCastDemo.dir/main.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo/main.cpp > CMakeFiles/AppConcaveRayCastDemo.dir/main.i
 
 Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/main.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppConcaveRayCastDemo.dir/main.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo/main.cpp -o CMakeFiles/AppConcaveRayCastDemo.dir/main.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo/main.cpp -o CMakeFiles/AppConcaveRayCastDemo.dir/main.s
 
 Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/main.o.requires:
 .PHONY : Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/main.o.requires
@@ -105,14 +105,14 @@ AppConcaveRayCastDemo_EXTERNAL_OBJECTS =
 
 Demos/ConcaveRaycastDemo/AppConcaveRayCastDemo: Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/ConcaveRaycastDemo.o
 Demos/ConcaveRaycastDemo/AppConcaveRayCastDemo: Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/main.o
-Demos/ConcaveRaycastDemo/AppConcaveRayCastDemo: Demos/OpenGL/libOpenGLSupport.a
-Demos/ConcaveRaycastDemo/AppConcaveRayCastDemo: src/BulletDynamics/libBulletDynamics.a
-Demos/ConcaveRaycastDemo/AppConcaveRayCastDemo: src/BulletCollision/libBulletCollision.a
-Demos/ConcaveRaycastDemo/AppConcaveRayCastDemo: src/LinearMath/libLinearMath.a
+Demos/ConcaveRaycastDemo/AppConcaveRayCastDemo: Demos/OpenGL/libOpenGLSupport.dylib
+Demos/ConcaveRaycastDemo/AppConcaveRayCastDemo: src/BulletDynamics/libBulletDynamics.2.79.dylib
+Demos/ConcaveRaycastDemo/AppConcaveRayCastDemo: src/BulletCollision/libBulletCollision.2.79.dylib
+Demos/ConcaveRaycastDemo/AppConcaveRayCastDemo: src/LinearMath/libLinearMath.2.79.dylib
 Demos/ConcaveRaycastDemo/AppConcaveRayCastDemo: Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/build.make
 Demos/ConcaveRaycastDemo/AppConcaveRayCastDemo: Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable AppConcaveRayCastDemo"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppConcaveRayCastDemo.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppConcaveRayCastDemo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/build: Demos/ConcaveRaycastDemo/AppConcaveRayCastDemo
@@ -123,10 +123,10 @@ Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/requires: Demos/Co
 .PHONY : Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/requires
 
 Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/clean:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppConcaveRayCastDemo.dir/cmake_clean.cmake
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppConcaveRayCastDemo.dir/cmake_clean.cmake
 .PHONY : Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/clean
 
 Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/depend:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Demos/ConcaveRaycastDemo/CMakeFiles/AppConcaveRayCastDemo.dir/depend
 

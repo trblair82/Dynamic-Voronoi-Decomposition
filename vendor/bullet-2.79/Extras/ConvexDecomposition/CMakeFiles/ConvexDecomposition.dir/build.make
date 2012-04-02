@@ -391,28 +391,32 @@ ConvexDecomposition_OBJECTS = \
 # External object files for target ConvexDecomposition
 ConvexDecomposition_EXTERNAL_OBJECTS =
 
-Extras/ConvexDecomposition/libConvexDecomposition.a: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/bestfitobb.o
-Extras/ConvexDecomposition/libConvexDecomposition.a: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/ConvexBuilder.o
-Extras/ConvexDecomposition/libConvexDecomposition.a: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/cd_wavefront.o
-Extras/ConvexDecomposition/libConvexDecomposition.a: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/fitsphere.o
-Extras/ConvexDecomposition/libConvexDecomposition.a: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/meshvolume.o
-Extras/ConvexDecomposition/libConvexDecomposition.a: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/raytri.o
-Extras/ConvexDecomposition/libConvexDecomposition.a: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/vlookup.o
-Extras/ConvexDecomposition/libConvexDecomposition.a: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/bestfit.o
-Extras/ConvexDecomposition/libConvexDecomposition.a: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/cd_hull.o
-Extras/ConvexDecomposition/libConvexDecomposition.a: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/ConvexDecomposition.o
-Extras/ConvexDecomposition/libConvexDecomposition.a: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/concavity.o
-Extras/ConvexDecomposition/libConvexDecomposition.a: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/float_math.o
-Extras/ConvexDecomposition/libConvexDecomposition.a: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/planetri.o
-Extras/ConvexDecomposition/libConvexDecomposition.a: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/splitplane.o
-Extras/ConvexDecomposition/libConvexDecomposition.a: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/build.make
-Extras/ConvexDecomposition/libConvexDecomposition.a: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libConvexDecomposition.a"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Extras/ConvexDecomposition && $(CMAKE_COMMAND) -P CMakeFiles/ConvexDecomposition.dir/cmake_clean_target.cmake
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/bestfitobb.o
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/ConvexBuilder.o
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/cd_wavefront.o
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/fitsphere.o
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/meshvolume.o
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/raytri.o
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/vlookup.o
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/bestfit.o
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/cd_hull.o
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/ConvexDecomposition.o
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/concavity.o
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/float_math.o
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/planetri.o
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/splitplane.o
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: src/BulletCollision/libBulletCollision.2.79.dylib
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: src/LinearMath/libLinearMath.2.79.dylib
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/build.make
+Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library libConvexDecomposition.dylib"
 	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Extras/ConvexDecomposition && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ConvexDecomposition.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Extras/ConvexDecomposition && $(CMAKE_COMMAND) -E cmake_symlink_library libConvexDecomposition.2.79.dylib libConvexDecomposition.2.79.dylib libConvexDecomposition.dylib
+
+Extras/ConvexDecomposition/libConvexDecomposition.dylib: Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib
 
 # Rule to build all files generated by this target.
-Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/build: Extras/ConvexDecomposition/libConvexDecomposition.a
+Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/build: Extras/ConvexDecomposition/libConvexDecomposition.dylib
 .PHONY : Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/build
 
 Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/requires: Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/bestfitobb.o.requires

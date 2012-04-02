@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/cmake"
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/bin/ccmake
+CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/ccmake"
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_SOURCE_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_BINARY_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # Include any dependencies generated for this target.
 include Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/depend.make
@@ -51,17 +51,17 @@ include Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/flags.make
 
 Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/main.o: Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/flags.make
 Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/main.o: Demos/Benchmarks/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/main.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppBenchmarks.dir/main.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks/main.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppBenchmarks.dir/main.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks/main.cpp
 
 Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/main.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppBenchmarks.dir/main.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks/main.cpp > CMakeFiles/AppBenchmarks.dir/main.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks/main.cpp > CMakeFiles/AppBenchmarks.dir/main.i
 
 Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/main.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppBenchmarks.dir/main.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks/main.cpp -o CMakeFiles/AppBenchmarks.dir/main.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks/main.cpp -o CMakeFiles/AppBenchmarks.dir/main.s
 
 Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/main.o.requires:
 .PHONY : Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/main.o.requires
@@ -74,17 +74,17 @@ Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/main.o.provides.build: Demos/Bench
 
 Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/BenchmarkDemo.o: Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/flags.make
 Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/BenchmarkDemo.o: Demos/Benchmarks/BenchmarkDemo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/BenchmarkDemo.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppBenchmarks.dir/BenchmarkDemo.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks/BenchmarkDemo.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppBenchmarks.dir/BenchmarkDemo.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks/BenchmarkDemo.cpp
 
 Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/BenchmarkDemo.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppBenchmarks.dir/BenchmarkDemo.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks/BenchmarkDemo.cpp > CMakeFiles/AppBenchmarks.dir/BenchmarkDemo.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks/BenchmarkDemo.cpp > CMakeFiles/AppBenchmarks.dir/BenchmarkDemo.i
 
 Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/BenchmarkDemo.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppBenchmarks.dir/BenchmarkDemo.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks/BenchmarkDemo.cpp -o CMakeFiles/AppBenchmarks.dir/BenchmarkDemo.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks/BenchmarkDemo.cpp -o CMakeFiles/AppBenchmarks.dir/BenchmarkDemo.s
 
 Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/BenchmarkDemo.o.requires:
 .PHONY : Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/BenchmarkDemo.o.requires
@@ -105,14 +105,14 @@ AppBenchmarks_EXTERNAL_OBJECTS =
 
 Demos/Benchmarks/AppBenchmarks: Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/main.o
 Demos/Benchmarks/AppBenchmarks: Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/BenchmarkDemo.o
-Demos/Benchmarks/AppBenchmarks: Demos/OpenGL/libOpenGLSupport.a
-Demos/Benchmarks/AppBenchmarks: src/BulletDynamics/libBulletDynamics.a
-Demos/Benchmarks/AppBenchmarks: src/BulletCollision/libBulletCollision.a
-Demos/Benchmarks/AppBenchmarks: src/LinearMath/libLinearMath.a
+Demos/Benchmarks/AppBenchmarks: Demos/OpenGL/libOpenGLSupport.dylib
+Demos/Benchmarks/AppBenchmarks: src/BulletDynamics/libBulletDynamics.2.79.dylib
+Demos/Benchmarks/AppBenchmarks: src/BulletCollision/libBulletCollision.2.79.dylib
+Demos/Benchmarks/AppBenchmarks: src/LinearMath/libLinearMath.2.79.dylib
 Demos/Benchmarks/AppBenchmarks: Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/build.make
 Demos/Benchmarks/AppBenchmarks: Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable AppBenchmarks"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppBenchmarks.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppBenchmarks.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/build: Demos/Benchmarks/AppBenchmarks
@@ -123,10 +123,10 @@ Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/requires: Demos/Benchmarks/CMakeFi
 .PHONY : Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/requires
 
 Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/clean:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks && $(CMAKE_COMMAND) -P CMakeFiles/AppBenchmarks.dir/cmake_clean.cmake
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks && $(CMAKE_COMMAND) -P CMakeFiles/AppBenchmarks.dir/cmake_clean.cmake
 .PHONY : Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/clean
 
 Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/depend:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Demos/Benchmarks/CMakeFiles/AppBenchmarks.dir/depend
 

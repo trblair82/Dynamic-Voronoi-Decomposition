@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/cmake"
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/bin/ccmake
+CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/ccmake"
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_SOURCE_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_BINARY_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # Include any dependencies generated for this target.
 include src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/depend.make
@@ -51,17 +51,17 @@ include src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/Bulle
 
 src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.o: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/flags.make
 src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.o: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCL.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCL.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCL.cpp
 
 src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCL.cpp > CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCL.cpp > CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.i
 
 src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCL.cpp -o CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCL.cpp -o CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.s
 
 src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.o.requires:
 .PHONY : src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.o.requires
@@ -74,17 +74,17 @@ src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBod
 
 src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.o: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/flags.make
 src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.o: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCLSIMDAware.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCLSIMDAware.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCLSIMDAware.cpp
 
 src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCLSIMDAware.cpp > CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCLSIMDAware.cpp > CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.i
 
 src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCLSIMDAware.cpp -o CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCLSIMDAware.cpp -o CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.s
 
 src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.o.requires:
 .PHONY : src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.o.requires
@@ -103,16 +103,22 @@ BulletSoftBodySolvers_OpenCL_Apple_OBJECTS = \
 # External object files for target BulletSoftBodySolvers_OpenCL_Apple
 BulletSoftBodySolvers_OpenCL_Apple_EXTERNAL_OBJECTS =
 
-src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/libBulletSoftBodySolvers_OpenCL_Apple.a: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.o
-src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/libBulletSoftBodySolvers_OpenCL_Apple.a: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.o
-src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/libBulletSoftBodySolvers_OpenCL_Apple.a: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/build.make
-src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/libBulletSoftBodySolvers_OpenCL_Apple.a: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libBulletSoftBodySolvers_OpenCL_Apple.a"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && $(CMAKE_COMMAND) -P CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/cmake_clean_target.cmake
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/link.txt --verbose=$(VERBOSE)
+src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/libBulletSoftBodySolvers_OpenCL_Apple.2.79.dylib: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.o
+src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/libBulletSoftBodySolvers_OpenCL_Apple.2.79.dylib: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCLSIMDAware.o
+src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/libBulletSoftBodySolvers_OpenCL_Apple.2.79.dylib: src/BulletSoftBody/libBulletSoftBody.2.79.dylib
+src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/libBulletSoftBodySolvers_OpenCL_Apple.2.79.dylib: src/BulletDynamics/libBulletDynamics.2.79.dylib
+src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/libBulletSoftBodySolvers_OpenCL_Apple.2.79.dylib: src/BulletCollision/libBulletCollision.2.79.dylib
+src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/libBulletSoftBodySolvers_OpenCL_Apple.2.79.dylib: src/LinearMath/libLinearMath.2.79.dylib
+src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/libBulletSoftBodySolvers_OpenCL_Apple.2.79.dylib: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/build.make
+src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/libBulletSoftBodySolvers_OpenCL_Apple.2.79.dylib: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library libBulletSoftBodySolvers_OpenCL_Apple.dylib"
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && $(CMAKE_COMMAND) -E cmake_symlink_library libBulletSoftBodySolvers_OpenCL_Apple.2.79.dylib libBulletSoftBodySolvers_OpenCL_Apple.2.79.dylib libBulletSoftBodySolvers_OpenCL_Apple.dylib
+
+src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/libBulletSoftBodySolvers_OpenCL_Apple.dylib: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/libBulletSoftBodySolvers_OpenCL_Apple.2.79.dylib
 
 # Rule to build all files generated by this target.
-src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/build: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/libBulletSoftBodySolvers_OpenCL_Apple.a
+src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/build: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/libBulletSoftBodySolvers_OpenCL_Apple.dylib
 .PHONY : src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/build
 
 src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/requires: src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/__/btSoftBodySolver_OpenCL.o.requires
@@ -120,10 +126,10 @@ src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBod
 .PHONY : src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/requires
 
 src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/clean:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && $(CMAKE_COMMAND) -P CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/cmake_clean.cmake
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple && $(CMAKE_COMMAND) -P CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/cmake_clean.cmake
 .PHONY : src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/clean
 
 src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/depend:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/CMakeFiles/BulletSoftBodySolvers_OpenCL_Apple.dir/depend
 

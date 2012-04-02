@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/cmake"
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/bin/ccmake
+CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/ccmake"
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_SOURCE_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_BINARY_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # Include any dependencies generated for this target.
 include Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/depend.make
@@ -51,17 +51,17 @@ include Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/
 
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/main.o: Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/flags.make
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/main.o: Demos/ConvexDecompositionDemo/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/main.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppConvexDecompositionDemo.dir/main.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo/main.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppConvexDecompositionDemo.dir/main.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo/main.cpp
 
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/main.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppConvexDecompositionDemo.dir/main.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo/main.cpp > CMakeFiles/AppConvexDecompositionDemo.dir/main.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo/main.cpp > CMakeFiles/AppConvexDecompositionDemo.dir/main.i
 
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/main.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppConvexDecompositionDemo.dir/main.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo/main.cpp -o CMakeFiles/AppConvexDecompositionDemo.dir/main.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo/main.cpp -o CMakeFiles/AppConvexDecompositionDemo.dir/main.s
 
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/main.o.requires:
 .PHONY : Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/main.o.requires
@@ -74,17 +74,17 @@ Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/main.o.p
 
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/ConvexDecompositionDemo.o: Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/flags.make
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/ConvexDecompositionDemo.o: Demos/ConvexDecompositionDemo/ConvexDecompositionDemo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/ConvexDecompositionDemo.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppConvexDecompositionDemo.dir/ConvexDecompositionDemo.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo/ConvexDecompositionDemo.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppConvexDecompositionDemo.dir/ConvexDecompositionDemo.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo/ConvexDecompositionDemo.cpp
 
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/ConvexDecompositionDemo.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppConvexDecompositionDemo.dir/ConvexDecompositionDemo.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo/ConvexDecompositionDemo.cpp > CMakeFiles/AppConvexDecompositionDemo.dir/ConvexDecompositionDemo.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo/ConvexDecompositionDemo.cpp > CMakeFiles/AppConvexDecompositionDemo.dir/ConvexDecompositionDemo.i
 
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/ConvexDecompositionDemo.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppConvexDecompositionDemo.dir/ConvexDecompositionDemo.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo/ConvexDecompositionDemo.cpp -o CMakeFiles/AppConvexDecompositionDemo.dir/ConvexDecompositionDemo.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo/ConvexDecompositionDemo.cpp -o CMakeFiles/AppConvexDecompositionDemo.dir/ConvexDecompositionDemo.s
 
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/ConvexDecompositionDemo.o.requires:
 .PHONY : Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/ConvexDecompositionDemo.o.requires
@@ -105,20 +105,22 @@ AppConvexDecompositionDemo_EXTERNAL_OBJECTS =
 
 Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/main.o
 Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/ConvexDecompositionDemo.o
-Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: Demos/OpenGL/libOpenGLSupport.a
-Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: Extras/Serialize/BulletWorldImporter/libBulletWorldImporter.a
-Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: src/BulletDynamics/libBulletDynamics.a
-Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: src/BulletCollision/libBulletCollision.a
-Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: src/LinearMath/libLinearMath.a
-Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: Extras/Serialize/BulletFileLoader/libBulletFileLoader.a
-Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: Extras/HACD/libHACD.a
-Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: Extras/ConvexDecomposition/libConvexDecomposition.a
+Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: Demos/OpenGL/libOpenGLSupport.dylib
+Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: Extras/Serialize/BulletWorldImporter/libBulletWorldImporter.dylib
+Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: src/BulletDynamics/libBulletDynamics.2.79.dylib
+Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: src/BulletCollision/libBulletCollision.2.79.dylib
+Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: src/LinearMath/libLinearMath.2.79.dylib
+Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: Extras/Serialize/BulletFileLoader/libBulletFileLoader.dylib
+Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: Extras/HACD/libHACD.2.79.dylib
+Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: Extras/ConvexDecomposition/libConvexDecomposition.2.79.dylib
+Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: src/BulletCollision/libBulletCollision.2.79.dylib
+Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: src/LinearMath/libLinearMath.2.79.dylib
 Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/build.make
 Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo: Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable AppConvexDecompositionDemo"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppConvexDecompositionDemo.dir/link.txt --verbose=$(VERBOSE)
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && /usr/local/bin/cmake -E copy_if_different /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/SerializeDemo/testFile.bullet /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo/testFile.bullet
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && /usr/local/bin/cmake -E copy_if_different /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/file.obj /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppConvexDecompositionDemo.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E copy_if_different /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/SerializeDemo/testFile.bullet /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo/testFile.bullet
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E copy_if_different /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/file.obj /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo
 
 # Rule to build all files generated by this target.
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/build: Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo
@@ -129,10 +131,10 @@ Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/requires
 .PHONY : Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/requires
 
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/clean:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppConvexDecompositionDemo.dir/cmake_clean.cmake
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppConvexDecompositionDemo.dir/cmake_clean.cmake
 .PHONY : Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/clean
 
 Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/depend:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Demos/ConvexDecompositionDemo/CMakeFiles/AppConvexDecompositionDemo.dir/depend
 

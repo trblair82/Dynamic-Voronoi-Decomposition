@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/BulletWorldImporter.dir/btBulletWorldImporter.o"
   "libBulletWorldImporter.pdb"
-  "libBulletWorldImporter.a"
+  "libBulletWorldImporter.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/cmake"
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/bin/ccmake
+CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/ccmake"
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_SOURCE_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_BINARY_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # Include any dependencies generated for this target.
 include Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/depend.make
@@ -51,17 +51,17 @@ include Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/flags.make
 
 Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/CollisionDemo.o: Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/flags.make
 Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/CollisionDemo.o: Demos/CollisionDemo/CollisionDemo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/CollisionDemo.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppCollisionDemo.dir/CollisionDemo.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo/CollisionDemo.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppCollisionDemo.dir/CollisionDemo.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo/CollisionDemo.cpp
 
 Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/CollisionDemo.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppCollisionDemo.dir/CollisionDemo.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo/CollisionDemo.cpp > CMakeFiles/AppCollisionDemo.dir/CollisionDemo.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo/CollisionDemo.cpp > CMakeFiles/AppCollisionDemo.dir/CollisionDemo.i
 
 Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/CollisionDemo.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppCollisionDemo.dir/CollisionDemo.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo/CollisionDemo.cpp -o CMakeFiles/AppCollisionDemo.dir/CollisionDemo.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo/CollisionDemo.cpp -o CMakeFiles/AppCollisionDemo.dir/CollisionDemo.s
 
 Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/CollisionDemo.o.requires:
 .PHONY : Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/CollisionDemo.o.requires
@@ -80,14 +80,14 @@ AppCollisionDemo_OBJECTS = \
 AppCollisionDemo_EXTERNAL_OBJECTS =
 
 Demos/CollisionDemo/AppCollisionDemo: Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/CollisionDemo.o
-Demos/CollisionDemo/AppCollisionDemo: Demos/OpenGL/libOpenGLSupport.a
-Demos/CollisionDemo/AppCollisionDemo: src/BulletDynamics/libBulletDynamics.a
-Demos/CollisionDemo/AppCollisionDemo: src/BulletCollision/libBulletCollision.a
-Demos/CollisionDemo/AppCollisionDemo: src/LinearMath/libLinearMath.a
+Demos/CollisionDemo/AppCollisionDemo: Demos/OpenGL/libOpenGLSupport.dylib
+Demos/CollisionDemo/AppCollisionDemo: src/BulletDynamics/libBulletDynamics.2.79.dylib
+Demos/CollisionDemo/AppCollisionDemo: src/BulletCollision/libBulletCollision.2.79.dylib
+Demos/CollisionDemo/AppCollisionDemo: src/LinearMath/libLinearMath.2.79.dylib
 Demos/CollisionDemo/AppCollisionDemo: Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/build.make
 Demos/CollisionDemo/AppCollisionDemo: Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable AppCollisionDemo"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppCollisionDemo.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppCollisionDemo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/build: Demos/CollisionDemo/AppCollisionDemo
@@ -97,10 +97,10 @@ Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/requires: Demos/CollisionDem
 .PHONY : Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/requires
 
 Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/clean:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppCollisionDemo.dir/cmake_clean.cmake
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppCollisionDemo.dir/cmake_clean.cmake
 .PHONY : Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/clean
 
 Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/depend:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Demos/CollisionDemo/CMakeFiles/AppCollisionDemo.dir/depend
 

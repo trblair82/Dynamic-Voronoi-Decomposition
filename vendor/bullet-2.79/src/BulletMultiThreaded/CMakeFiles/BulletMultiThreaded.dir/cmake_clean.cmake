@@ -18,7 +18,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/BulletMultiThreaded.dir/SpuNarrowPhaseCollisionTask/SpuCollisionShapes.o"
   "CMakeFiles/BulletMultiThreaded.dir/btGpu3DGridBroadphase.o"
   "libBulletMultiThreaded.pdb"
-  "libBulletMultiThreaded.a"
+  "libBulletMultiThreaded.dylib"
+  "libBulletMultiThreaded.2.79.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

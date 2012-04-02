@@ -823,46 +823,45 @@ GLUI_OBJECTS = \
 # External object files for target GLUI
 GLUI_EXTERNAL_OBJECTS =
 
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_checkbox.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_panel.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_spinner.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_treepanel.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_column.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_radio.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_statictext.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_window.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_add_controls.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_commandline.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_list.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_rollout.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_string.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/quaternion.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/algebra3.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_bitmap_img_data.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_control.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_listbox.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_rotation.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_textbox.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_bitmaps.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_edittext.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_mouse_iaction.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_scrollbar.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_translation.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/arcball.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_button.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_filebrowser.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_node.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_separator.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/glui_tree.o
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/build.make
-Extras/glui/libGLUI.a: Extras/glui/CMakeFiles/GLUI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libGLUI.a"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Extras/glui && $(CMAKE_COMMAND) -P CMakeFiles/GLUI.dir/cmake_clean_target.cmake
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_checkbox.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_panel.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_spinner.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_treepanel.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_column.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_radio.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_statictext.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_window.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_add_controls.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_commandline.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_list.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_rollout.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_string.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/quaternion.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/algebra3.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_bitmap_img_data.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_control.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_listbox.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_rotation.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_textbox.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_bitmaps.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_edittext.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_mouse_iaction.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_scrollbar.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_translation.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/arcball.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_button.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_filebrowser.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_node.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_separator.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/glui_tree.o
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/build.make
+Extras/glui/libGLUI.dylib: Extras/glui/CMakeFiles/GLUI.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library libGLUI.dylib"
 	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Extras/glui && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GLUI.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-Extras/glui/CMakeFiles/GLUI.dir/build: Extras/glui/libGLUI.a
+Extras/glui/CMakeFiles/GLUI.dir/build: Extras/glui/libGLUI.dylib
 .PHONY : Extras/glui/CMakeFiles/GLUI.dir/build
 
 Extras/glui/CMakeFiles/GLUI.dir/requires: Extras/glui/CMakeFiles/GLUI.dir/glui_checkbox.o.requires

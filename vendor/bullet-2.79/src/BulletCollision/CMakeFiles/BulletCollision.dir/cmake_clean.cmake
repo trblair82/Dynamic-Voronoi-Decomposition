@@ -92,7 +92,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/BulletCollision.dir/NarrowPhaseCollision/btVoronoiSimplexSolver.o"
   "CMakeFiles/BulletCollision.dir/NarrowPhaseCollision/btPolyhedralContactClipping.o"
   "libBulletCollision.pdb"
-  "libBulletCollision.a"
+  "libBulletCollision.dylib"
+  "libBulletCollision.2.79.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

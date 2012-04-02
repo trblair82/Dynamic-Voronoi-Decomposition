@@ -8,7 +8,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/BulletSoftBody.dir/btSoftSoftCollisionAlgorithm.o"
   "CMakeFiles/BulletSoftBody.dir/btDefaultSoftBodySolver.o"
   "libBulletSoftBody.pdb"
-  "libBulletSoftBody.a"
+  "libBulletSoftBody.dylib"
+  "libBulletSoftBody.2.79.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

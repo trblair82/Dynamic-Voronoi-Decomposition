@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/cmake"
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/bin/ccmake
+CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/ccmake"
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_SOURCE_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_BINARY_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # Include any dependencies generated for this target.
 include Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/depend.make
@@ -51,17 +51,17 @@ include Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/flags.make
 
 Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.o: Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/flags.make
 Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.o: Demos/ForkLiftDemo/ForkLiftDemo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo/ForkLiftDemo.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo/ForkLiftDemo.cpp
 
 Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo/ForkLiftDemo.cpp > CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo/ForkLiftDemo.cpp > CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.i
 
 Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo/ForkLiftDemo.cpp -o CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo/ForkLiftDemo.cpp -o CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.s
 
 Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.o.requires:
 .PHONY : Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.o.requires
@@ -74,17 +74,17 @@ Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.o.provides.build:
 
 Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/main.o: Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/flags.make
 Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/main.o: Demos/ForkLiftDemo/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/main.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppForkLiftDemo.dir/main.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo/main.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppForkLiftDemo.dir/main.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo/main.cpp
 
 Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/main.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppForkLiftDemo.dir/main.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo/main.cpp > CMakeFiles/AppForkLiftDemo.dir/main.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo/main.cpp > CMakeFiles/AppForkLiftDemo.dir/main.i
 
 Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/main.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppForkLiftDemo.dir/main.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo/main.cpp -o CMakeFiles/AppForkLiftDemo.dir/main.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo/main.cpp -o CMakeFiles/AppForkLiftDemo.dir/main.s
 
 Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/main.o.requires:
 .PHONY : Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/main.o.requires
@@ -105,14 +105,14 @@ AppForkLiftDemo_EXTERNAL_OBJECTS =
 
 Demos/ForkLiftDemo/AppForkLiftDemo: Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/ForkLiftDemo.o
 Demos/ForkLiftDemo/AppForkLiftDemo: Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/main.o
-Demos/ForkLiftDemo/AppForkLiftDemo: Demos/OpenGL/libOpenGLSupport.a
-Demos/ForkLiftDemo/AppForkLiftDemo: src/BulletDynamics/libBulletDynamics.a
-Demos/ForkLiftDemo/AppForkLiftDemo: src/BulletCollision/libBulletCollision.a
-Demos/ForkLiftDemo/AppForkLiftDemo: src/LinearMath/libLinearMath.a
+Demos/ForkLiftDemo/AppForkLiftDemo: Demos/OpenGL/libOpenGLSupport.dylib
+Demos/ForkLiftDemo/AppForkLiftDemo: src/BulletDynamics/libBulletDynamics.2.79.dylib
+Demos/ForkLiftDemo/AppForkLiftDemo: src/BulletCollision/libBulletCollision.2.79.dylib
+Demos/ForkLiftDemo/AppForkLiftDemo: src/LinearMath/libLinearMath.2.79.dylib
 Demos/ForkLiftDemo/AppForkLiftDemo: Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/build.make
 Demos/ForkLiftDemo/AppForkLiftDemo: Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable AppForkLiftDemo"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppForkLiftDemo.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppForkLiftDemo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/build: Demos/ForkLiftDemo/AppForkLiftDemo
@@ -123,10 +123,10 @@ Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/requires: Demos/ForkLiftDemo/C
 .PHONY : Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/requires
 
 Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/clean:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppForkLiftDemo.dir/cmake_clean.cmake
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppForkLiftDemo.dir/cmake_clean.cmake
 .PHONY : Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/clean
 
 Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/depend:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Demos/ForkLiftDemo/CMakeFiles/AppForkLiftDemo.dir/depend
 

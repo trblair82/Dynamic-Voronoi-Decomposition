@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/cmake"
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/bin/ccmake
+CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/ccmake"
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_SOURCE_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_BINARY_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # Include any dependencies generated for this target.
 include Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/depend.make
@@ -51,17 +51,17 @@ include Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/flags.make
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/DynamicCharacterController.o: Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/flags.make
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/DynamicCharacterController.o: Demos/CharacterDemo/DynamicCharacterController.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/DynamicCharacterController.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppCharacterDemo.dir/DynamicCharacterController.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/DynamicCharacterController.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppCharacterDemo.dir/DynamicCharacterController.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/DynamicCharacterController.cpp
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/DynamicCharacterController.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppCharacterDemo.dir/DynamicCharacterController.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/DynamicCharacterController.cpp > CMakeFiles/AppCharacterDemo.dir/DynamicCharacterController.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/DynamicCharacterController.cpp > CMakeFiles/AppCharacterDemo.dir/DynamicCharacterController.i
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/DynamicCharacterController.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppCharacterDemo.dir/DynamicCharacterController.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/DynamicCharacterController.cpp -o CMakeFiles/AppCharacterDemo.dir/DynamicCharacterController.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/DynamicCharacterController.cpp -o CMakeFiles/AppCharacterDemo.dir/DynamicCharacterController.s
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/DynamicCharacterController.o.requires:
 .PHONY : Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/DynamicCharacterController.o.requires
@@ -74,17 +74,17 @@ Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/DynamicCharacterController.o
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/CharacterDemo.o: Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/flags.make
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/CharacterDemo.o: Demos/CharacterDemo/CharacterDemo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/CharacterDemo.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppCharacterDemo.dir/CharacterDemo.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/CharacterDemo.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppCharacterDemo.dir/CharacterDemo.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/CharacterDemo.cpp
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/CharacterDemo.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppCharacterDemo.dir/CharacterDemo.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/CharacterDemo.cpp > CMakeFiles/AppCharacterDemo.dir/CharacterDemo.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/CharacterDemo.cpp > CMakeFiles/AppCharacterDemo.dir/CharacterDemo.i
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/CharacterDemo.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppCharacterDemo.dir/CharacterDemo.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/CharacterDemo.cpp -o CMakeFiles/AppCharacterDemo.dir/CharacterDemo.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/CharacterDemo.cpp -o CMakeFiles/AppCharacterDemo.dir/CharacterDemo.s
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/CharacterDemo.o.requires:
 .PHONY : Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/CharacterDemo.o.requires
@@ -97,17 +97,17 @@ Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/CharacterDemo.o.provides.bui
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.o: Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/flags.make
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.o: Demos/BspDemo/BspConverter.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/BspDemo/BspConverter.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/BspDemo/BspConverter.cpp
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/BspDemo/BspConverter.cpp > CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/BspDemo/BspConverter.cpp > CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.i
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/BspDemo/BspConverter.cpp -o CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/BspDemo/BspConverter.cpp -o CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.s
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.o.requires:
 .PHONY : Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.o.requires
@@ -120,17 +120,17 @@ Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.o.pr
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.o: Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/flags.make
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.o: Demos/BspDemo/BspLoader.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/BspDemo/BspLoader.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/BspDemo/BspLoader.cpp
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/BspDemo/BspLoader.cpp > CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/BspDemo/BspLoader.cpp > CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.i
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/BspDemo/BspLoader.cpp -o CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/BspDemo/BspLoader.cpp -o CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.s
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.o.requires:
 .PHONY : Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.o.requires
@@ -143,17 +143,17 @@ Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.o.provi
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/main.o: Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/flags.make
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/main.o: Demos/CharacterDemo/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/main.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppCharacterDemo.dir/main.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/main.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppCharacterDemo.dir/main.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/main.cpp
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/main.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppCharacterDemo.dir/main.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/main.cpp > CMakeFiles/AppCharacterDemo.dir/main.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/main.cpp > CMakeFiles/AppCharacterDemo.dir/main.i
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/main.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppCharacterDemo.dir/main.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/main.cpp -o CMakeFiles/AppCharacterDemo.dir/main.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/main.cpp -o CMakeFiles/AppCharacterDemo.dir/main.s
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/main.o.requires:
 .PHONY : Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/main.o.requires
@@ -180,15 +180,15 @@ Demos/CharacterDemo/AppCharacterDemo: Demos/CharacterDemo/CMakeFiles/AppCharacte
 Demos/CharacterDemo/AppCharacterDemo: Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspConverter.o
 Demos/CharacterDemo/AppCharacterDemo: Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/__/BspDemo/BspLoader.o
 Demos/CharacterDemo/AppCharacterDemo: Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/main.o
-Demos/CharacterDemo/AppCharacterDemo: Demos/OpenGL/libOpenGLSupport.a
-Demos/CharacterDemo/AppCharacterDemo: src/BulletDynamics/libBulletDynamics.a
-Demos/CharacterDemo/AppCharacterDemo: src/BulletCollision/libBulletCollision.a
-Demos/CharacterDemo/AppCharacterDemo: src/LinearMath/libLinearMath.a
+Demos/CharacterDemo/AppCharacterDemo: Demos/OpenGL/libOpenGLSupport.dylib
+Demos/CharacterDemo/AppCharacterDemo: src/BulletDynamics/libBulletDynamics.2.79.dylib
+Demos/CharacterDemo/AppCharacterDemo: src/BulletCollision/libBulletCollision.2.79.dylib
+Demos/CharacterDemo/AppCharacterDemo: src/LinearMath/libLinearMath.2.79.dylib
 Demos/CharacterDemo/AppCharacterDemo: Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/build.make
 Demos/CharacterDemo/AppCharacterDemo: Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable AppCharacterDemo"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppCharacterDemo.dir/link.txt --verbose=$(VERBOSE)
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && /usr/local/bin/cmake -E copy_if_different /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/BspDemo.bsp /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppCharacterDemo.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E copy_if_different /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/BspDemo.bsp /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo
 
 # Rule to build all files generated by this target.
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/build: Demos/CharacterDemo/AppCharacterDemo
@@ -202,10 +202,10 @@ Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/requires: Demos/CharacterDem
 .PHONY : Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/requires
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/clean:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppCharacterDemo.dir/cmake_clean.cmake
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppCharacterDemo.dir/cmake_clean.cmake
 .PHONY : Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/clean
 
 Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/depend:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Demos/CharacterDemo/CMakeFiles/AppCharacterDemo.dir/depend
 

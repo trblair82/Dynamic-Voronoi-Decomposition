@@ -30,7 +30,12 @@ import CGAL.Triangulation_3.Delaunay_triangulation_3_Facet;
 import CGAL.Triangulation_3.Delaunay_triangulation_3_Vertex_handle;
 import com.bulletphysics.collision.shapes.ConvexHullShape;
 import com.bulletphysics.util.ObjectArrayList;
+import com.sun.jna.Native;
+import com.sun.jna.Pointer;
+import com.sun.jna.Structure;
+import com.sun.jna.ptr.IntByReference;
 import com.sun.opengl.util.GLUT;
+//import dynamic.block.simulation.HACDdylib.JNACluster;
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -377,20 +382,43 @@ public class Delaunay {
              outer_hull.put("vertices", vertices);
 //             voronoi_cells.add(outer_hull);
              
-             float[][][] primitives = new float[triangles.size()][3][3];
-             
+             float[] primitives = new float[(triangles.size()*3)*3];
+             int primCount = 0;
              for(int i = 0;i<triangles.size();i++){
                  ArrayList triangle = (ArrayList)triangles.get(i);
                  for(int ini = 0;ini<3;ini++){
                      Point_3 point = (Point_3)triangle.get(ini);
-                     primitives[i][ini][0] = (float)point.x();
+                     primitives[primCount] = (float)point.x();
+                     primCount++;
                      this.writeFloat((float)point.x(), "triangles.txt");
-                     primitives[i][ini][1] = (float)point.y();
+                     primitives[primCount] = (float)point.y();
+                     primCount++;
                      this.writeFloat((float)point.y(), "triangles.txt");
-                     primitives[i][ini][2] = (float)point.z();
+                     primitives[primCount] = (float)point.z();
+                     primCount++;
                      this.writeFloat((float)point.z(), "triangles.txt");
                  }
              }
+             int numTris = triangles.size();
+             System.setProperty("jna.library.path", "/Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Extras/HACD");
+
+             HACDdylib HACDdylib = (HACDdylib)Native.loadLibrary("HACD",HACDdylib.class);
+             IntByReference pcount = new IntByReference();
+             
+             HACDdylib.JNAConvexDecomposition(primitives, numTris, pcount);
+             int testint = pcount.getValue();
+             
+             
+//             JNACluster[] clusters = (JNACluster[])pointer.toArray(18);
+//             JNACluster temp = clusters[1];
+//             
+//             
+//             
+//             int csize = temp.size;
+//             int nclust = temp.total;
+             
+             
+             
              ArrayList decomp = new ArrayList();
              this.readData(decomp);
              ArrayList decompCells = new ArrayList();
@@ -469,6 +497,9 @@ public class Delaunay {
                  
                 
              }
+             float garbage = primitives[0];
+             int garbageInt = numTris;
+             int testGarbage = pcount.getValue();
              cluster.put("triangles", endTriangles);
              if(endVertices.size()<20){
                  voronoi_cells.add(cluster);

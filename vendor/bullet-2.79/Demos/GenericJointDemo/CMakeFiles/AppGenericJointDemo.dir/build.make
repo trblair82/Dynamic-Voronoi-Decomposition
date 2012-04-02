@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/cmake"
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/bin/ccmake
+CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/ccmake"
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_SOURCE_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_BINARY_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # Include any dependencies generated for this target.
 include Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/depend.make
@@ -51,17 +51,17 @@ include Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/flags.make
 
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.o: Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/flags.make
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.o: Demos/GenericJointDemo/GenericJointDemo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/GenericJointDemo.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/GenericJointDemo.cpp
 
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/GenericJointDemo.cpp > CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/GenericJointDemo.cpp > CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.i
 
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/GenericJointDemo.cpp -o CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/GenericJointDemo.cpp -o CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.s
 
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.o.requires:
 .PHONY : Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.o.requires
@@ -74,17 +74,17 @@ Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.o.pro
 
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/Ragdoll.o: Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/flags.make
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/Ragdoll.o: Demos/GenericJointDemo/Ragdoll.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/Ragdoll.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppGenericJointDemo.dir/Ragdoll.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/Ragdoll.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppGenericJointDemo.dir/Ragdoll.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/Ragdoll.cpp
 
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/Ragdoll.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppGenericJointDemo.dir/Ragdoll.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/Ragdoll.cpp > CMakeFiles/AppGenericJointDemo.dir/Ragdoll.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/Ragdoll.cpp > CMakeFiles/AppGenericJointDemo.dir/Ragdoll.i
 
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/Ragdoll.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppGenericJointDemo.dir/Ragdoll.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/Ragdoll.cpp -o CMakeFiles/AppGenericJointDemo.dir/Ragdoll.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/Ragdoll.cpp -o CMakeFiles/AppGenericJointDemo.dir/Ragdoll.s
 
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/Ragdoll.o.requires:
 .PHONY : Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/Ragdoll.o.requires
@@ -97,17 +97,17 @@ Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/Ragdoll.o.provides.bui
 
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/main.o: Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/flags.make
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/main.o: Demos/GenericJointDemo/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/main.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppGenericJointDemo.dir/main.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/main.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppGenericJointDemo.dir/main.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/main.cpp
 
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/main.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppGenericJointDemo.dir/main.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/main.cpp > CMakeFiles/AppGenericJointDemo.dir/main.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/main.cpp > CMakeFiles/AppGenericJointDemo.dir/main.i
 
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/main.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppGenericJointDemo.dir/main.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/main.cpp -o CMakeFiles/AppGenericJointDemo.dir/main.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/main.cpp -o CMakeFiles/AppGenericJointDemo.dir/main.s
 
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/main.o.requires:
 .PHONY : Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/main.o.requires
@@ -130,14 +130,14 @@ AppGenericJointDemo_EXTERNAL_OBJECTS =
 Demos/GenericJointDemo/AppGenericJointDemo: Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/GenericJointDemo.o
 Demos/GenericJointDemo/AppGenericJointDemo: Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/Ragdoll.o
 Demos/GenericJointDemo/AppGenericJointDemo: Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/main.o
-Demos/GenericJointDemo/AppGenericJointDemo: Demos/OpenGL/libOpenGLSupport.a
-Demos/GenericJointDemo/AppGenericJointDemo: src/BulletDynamics/libBulletDynamics.a
-Demos/GenericJointDemo/AppGenericJointDemo: src/BulletCollision/libBulletCollision.a
-Demos/GenericJointDemo/AppGenericJointDemo: src/LinearMath/libLinearMath.a
+Demos/GenericJointDemo/AppGenericJointDemo: Demos/OpenGL/libOpenGLSupport.dylib
+Demos/GenericJointDemo/AppGenericJointDemo: src/BulletDynamics/libBulletDynamics.2.79.dylib
+Demos/GenericJointDemo/AppGenericJointDemo: src/BulletCollision/libBulletCollision.2.79.dylib
+Demos/GenericJointDemo/AppGenericJointDemo: src/LinearMath/libLinearMath.2.79.dylib
 Demos/GenericJointDemo/AppGenericJointDemo: Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/build.make
 Demos/GenericJointDemo/AppGenericJointDemo: Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable AppGenericJointDemo"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppGenericJointDemo.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppGenericJointDemo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/build: Demos/GenericJointDemo/AppGenericJointDemo
@@ -149,10 +149,10 @@ Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/requires: Demos/Generi
 .PHONY : Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/requires
 
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/clean:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppGenericJointDemo.dir/cmake_clean.cmake
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppGenericJointDemo.dir/cmake_clean.cmake
 .PHONY : Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/clean
 
 Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/depend:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Demos/GenericJointDemo/CMakeFiles/AppGenericJointDemo.dir/depend
 

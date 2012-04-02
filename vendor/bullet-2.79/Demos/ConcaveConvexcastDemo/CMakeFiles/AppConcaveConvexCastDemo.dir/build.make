@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/cmake"
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/bin/ccmake
+CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/ccmake"
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_SOURCE_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_BINARY_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # Include any dependencies generated for this target.
 include Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/depend.make
@@ -51,17 +51,17 @@ include Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/flag
 
 Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConvexcastDemo.o: Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/flags.make
 Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConvexcastDemo.o: Demos/ConcaveConvexcastDemo/ConcaveConvexcastDemo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConvexcastDemo.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConvexcastDemo.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo/ConcaveConvexcastDemo.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConvexcastDemo.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo/ConcaveConvexcastDemo.cpp
 
 Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConvexcastDemo.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConvexcastDemo.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo/ConcaveConvexcastDemo.cpp > CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConvexcastDemo.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo/ConcaveConvexcastDemo.cpp > CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConvexcastDemo.i
 
 Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConvexcastDemo.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConvexcastDemo.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo/ConcaveConvexcastDemo.cpp -o CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConvexcastDemo.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo/ConcaveConvexcastDemo.cpp -o CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConvexcastDemo.s
 
 Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConvexcastDemo.o.requires:
 .PHONY : Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConvexcastDemo.o.requires
@@ -74,17 +74,17 @@ Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConve
 
 Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/main.o: Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/flags.make
 Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/main.o: Demos/ConcaveConvexcastDemo/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/main.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppConcaveConvexCastDemo.dir/main.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo/main.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppConcaveConvexCastDemo.dir/main.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo/main.cpp
 
 Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/main.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppConcaveConvexCastDemo.dir/main.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo/main.cpp > CMakeFiles/AppConcaveConvexCastDemo.dir/main.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo/main.cpp > CMakeFiles/AppConcaveConvexCastDemo.dir/main.i
 
 Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/main.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppConcaveConvexCastDemo.dir/main.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo/main.cpp -o CMakeFiles/AppConcaveConvexCastDemo.dir/main.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo/main.cpp -o CMakeFiles/AppConcaveConvexCastDemo.dir/main.s
 
 Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/main.o.requires:
 .PHONY : Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/main.o.requires
@@ -105,14 +105,14 @@ AppConcaveConvexCastDemo_EXTERNAL_OBJECTS =
 
 Demos/ConcaveConvexcastDemo/AppConcaveConvexCastDemo: Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/ConcaveConvexcastDemo.o
 Demos/ConcaveConvexcastDemo/AppConcaveConvexCastDemo: Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/main.o
-Demos/ConcaveConvexcastDemo/AppConcaveConvexCastDemo: Demos/OpenGL/libOpenGLSupport.a
-Demos/ConcaveConvexcastDemo/AppConcaveConvexCastDemo: src/BulletDynamics/libBulletDynamics.a
-Demos/ConcaveConvexcastDemo/AppConcaveConvexCastDemo: src/BulletCollision/libBulletCollision.a
-Demos/ConcaveConvexcastDemo/AppConcaveConvexCastDemo: src/LinearMath/libLinearMath.a
+Demos/ConcaveConvexcastDemo/AppConcaveConvexCastDemo: Demos/OpenGL/libOpenGLSupport.dylib
+Demos/ConcaveConvexcastDemo/AppConcaveConvexCastDemo: src/BulletDynamics/libBulletDynamics.2.79.dylib
+Demos/ConcaveConvexcastDemo/AppConcaveConvexCastDemo: src/BulletCollision/libBulletCollision.2.79.dylib
+Demos/ConcaveConvexcastDemo/AppConcaveConvexCastDemo: src/LinearMath/libLinearMath.2.79.dylib
 Demos/ConcaveConvexcastDemo/AppConcaveConvexCastDemo: Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/build.make
 Demos/ConcaveConvexcastDemo/AppConcaveConvexCastDemo: Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable AppConcaveConvexCastDemo"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppConcaveConvexCastDemo.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppConcaveConvexCastDemo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/build: Demos/ConcaveConvexcastDemo/AppConcaveConvexCastDemo
@@ -123,10 +123,10 @@ Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/requires: De
 .PHONY : Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/requires
 
 Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/clean:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppConcaveConvexCastDemo.dir/cmake_clean.cmake
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppConcaveConvexCastDemo.dir/cmake_clean.cmake
 .PHONY : Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/clean
 
 Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/depend:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Demos/ConcaveConvexcastDemo/CMakeFiles/AppConcaveConvexCastDemo.dir/depend
 

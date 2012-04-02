@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/cmake"
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/bin/ccmake
+CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/ccmake"
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_SOURCE_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_BINARY_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # Include any dependencies generated for this target.
 include Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/depend.make
@@ -51,17 +51,17 @@ include Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/flags.ma
 
 Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/DoublePrecisionDemo.o: Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/flags.make
 Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/DoublePrecisionDemo.o: Demos/DoublePrecisionDemo/DoublePrecisionDemo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/DoublePrecisionDemo.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppDoublePrecisionDemo.dir/DoublePrecisionDemo.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo/DoublePrecisionDemo.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppDoublePrecisionDemo.dir/DoublePrecisionDemo.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo/DoublePrecisionDemo.cpp
 
 Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/DoublePrecisionDemo.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppDoublePrecisionDemo.dir/DoublePrecisionDemo.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo/DoublePrecisionDemo.cpp > CMakeFiles/AppDoublePrecisionDemo.dir/DoublePrecisionDemo.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo/DoublePrecisionDemo.cpp > CMakeFiles/AppDoublePrecisionDemo.dir/DoublePrecisionDemo.i
 
 Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/DoublePrecisionDemo.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppDoublePrecisionDemo.dir/DoublePrecisionDemo.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo/DoublePrecisionDemo.cpp -o CMakeFiles/AppDoublePrecisionDemo.dir/DoublePrecisionDemo.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo/DoublePrecisionDemo.cpp -o CMakeFiles/AppDoublePrecisionDemo.dir/DoublePrecisionDemo.s
 
 Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/DoublePrecisionDemo.o.requires:
 .PHONY : Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/DoublePrecisionDemo.o.requires
@@ -80,14 +80,14 @@ AppDoublePrecisionDemo_OBJECTS = \
 AppDoublePrecisionDemo_EXTERNAL_OBJECTS =
 
 Demos/DoublePrecisionDemo/AppDoublePrecisionDemo: Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/DoublePrecisionDemo.o
-Demos/DoublePrecisionDemo/AppDoublePrecisionDemo: Demos/OpenGL/libOpenGLSupport.a
-Demos/DoublePrecisionDemo/AppDoublePrecisionDemo: src/BulletDynamics/libBulletDynamics.a
-Demos/DoublePrecisionDemo/AppDoublePrecisionDemo: src/BulletCollision/libBulletCollision.a
-Demos/DoublePrecisionDemo/AppDoublePrecisionDemo: src/LinearMath/libLinearMath.a
+Demos/DoublePrecisionDemo/AppDoublePrecisionDemo: Demos/OpenGL/libOpenGLSupport.dylib
+Demos/DoublePrecisionDemo/AppDoublePrecisionDemo: src/BulletDynamics/libBulletDynamics.2.79.dylib
+Demos/DoublePrecisionDemo/AppDoublePrecisionDemo: src/BulletCollision/libBulletCollision.2.79.dylib
+Demos/DoublePrecisionDemo/AppDoublePrecisionDemo: src/LinearMath/libLinearMath.2.79.dylib
 Demos/DoublePrecisionDemo/AppDoublePrecisionDemo: Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/build.make
 Demos/DoublePrecisionDemo/AppDoublePrecisionDemo: Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable AppDoublePrecisionDemo"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppDoublePrecisionDemo.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppDoublePrecisionDemo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/build: Demos/DoublePrecisionDemo/AppDoublePrecisionDemo
@@ -97,10 +97,10 @@ Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/requires: Demos/
 .PHONY : Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/requires
 
 Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/clean:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppDoublePrecisionDemo.dir/cmake_clean.cmake
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppDoublePrecisionDemo.dir/cmake_clean.cmake
 .PHONY : Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/clean
 
 Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/depend:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Demos/DoublePrecisionDemo/CMakeFiles/AppDoublePrecisionDemo.dir/depend
 

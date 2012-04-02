@@ -34,7 +34,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/805184815/hacdHACD.o \
 	${OBJECTDIR}/main.o
 
 
@@ -52,20 +51,17 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../bullet-2.79/lib -lHACD -lcrypto -lssl -lz
+LDLIBSOPTIONS=-lcrypto -lssl -lz ../bullet-2.79/Extras/HACD/libHACD.dylib
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hacdtest
 
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hacdtest: ../bullet-2.79/Extras/HACD/libHACD.dylib
+
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hacdtest: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hacdtest ${OBJECTFILES} ${LDLIBSOPTIONS} 
-
-${OBJECTDIR}/_ext/805184815/hacdHACD.o: ../bullet-2.79/Extras/HACD/hacdHACD.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/805184815
-	${RM} $@.d
-	$(COMPILE.cc) -g -I../bullet-2.79/Extras/HACD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/805184815/hacdHACD.o ../bullet-2.79/Extras/HACD/hacdHACD.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

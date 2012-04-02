@@ -1,2 +1,1 @@
-/usr/bin/ar cr libGIMPACTUtils.a  CMakeFiles/GIMPACTUtils.dir/btGImpactConvexDecompositionShape.o
-/usr/bin/ranlib libGIMPACTUtils.a
+/usr/bin/c++  -g -D_DEBUG -arch i386 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.7.sdk -dynamiclib -Wl,-headerpad_max_install_names   -compatibility_version 2.79.0 -current_version 2.79.0 -o libGIMPACTUtils.2.79.dylib -install_name /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Extras/GIMPACTUtils/libGIMPACTUtils.2.79.dylib CMakeFiles/GIMPACTUtils.dir/btGImpactConvexDecompositionShape.o ../ConvexDecomposition/libConvexDecomposition.2.79.dylib ../../src/BulletCollision/libBulletCollision.2.79.dylib ../../src/LinearMath/libLinearMath.2.79.dylib 

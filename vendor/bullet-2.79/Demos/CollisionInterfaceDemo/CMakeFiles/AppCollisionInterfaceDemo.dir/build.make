@@ -26,19 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/cmake"
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = "/Applications/CMake 2.8-7.app/Contents/bin/cmake" -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/bin/ccmake
+CMAKE_EDIT_COMMAND = "/Applications/CMake 2.8-7.app/Contents/bin/ccmake"
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_SOURCE_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79
+CMAKE_BINARY_DIR = /Users/sikanrong/DynamicBlock/vendor/bullet-2.79
 
 # Include any dependencies generated for this target.
 include Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/depend.make
@@ -51,17 +51,17 @@ include Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/fl
 
 Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionInterfaceDemo.o: Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/flags.make
 Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionInterfaceDemo.o: Demos/CollisionInterfaceDemo/CollisionInterfaceDemo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionInterfaceDemo.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionInterfaceDemo.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo/CollisionInterfaceDemo.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionInterfaceDemo.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo/CollisionInterfaceDemo.cpp
 
 Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionInterfaceDemo.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionInterfaceDemo.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo/CollisionInterfaceDemo.cpp > CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionInterfaceDemo.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo/CollisionInterfaceDemo.cpp > CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionInterfaceDemo.i
 
 Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionInterfaceDemo.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionInterfaceDemo.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo/CollisionInterfaceDemo.cpp -o CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionInterfaceDemo.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo/CollisionInterfaceDemo.cpp -o CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionInterfaceDemo.s
 
 Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionInterfaceDemo.o.requires:
 .PHONY : Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionInterfaceDemo.o.requires
@@ -74,17 +74,17 @@ Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionI
 
 Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/main.o: Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/flags.make
 Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/main.o: Demos/CollisionInterfaceDemo/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/main.o"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppCollisionInterfaceDemo.dir/main.o -c /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo/main.cpp
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AppCollisionInterfaceDemo.dir/main.o -c /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo/main.cpp
 
 Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/main.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AppCollisionInterfaceDemo.dir/main.i"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo/main.cpp > CMakeFiles/AppCollisionInterfaceDemo.dir/main.i
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo/main.cpp > CMakeFiles/AppCollisionInterfaceDemo.dir/main.i
 
 Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/main.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AppCollisionInterfaceDemo.dir/main.s"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo/main.cpp -o CMakeFiles/AppCollisionInterfaceDemo.dir/main.s
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo/main.cpp -o CMakeFiles/AppCollisionInterfaceDemo.dir/main.s
 
 Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/main.o.requires:
 .PHONY : Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/main.o.requires
@@ -105,14 +105,14 @@ AppCollisionInterfaceDemo_EXTERNAL_OBJECTS =
 
 Demos/CollisionInterfaceDemo/AppCollisionInterfaceDemo: Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/CollisionInterfaceDemo.o
 Demos/CollisionInterfaceDemo/AppCollisionInterfaceDemo: Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/main.o
-Demos/CollisionInterfaceDemo/AppCollisionInterfaceDemo: Demos/OpenGL/libOpenGLSupport.a
-Demos/CollisionInterfaceDemo/AppCollisionInterfaceDemo: src/BulletDynamics/libBulletDynamics.a
-Demos/CollisionInterfaceDemo/AppCollisionInterfaceDemo: src/BulletCollision/libBulletCollision.a
-Demos/CollisionInterfaceDemo/AppCollisionInterfaceDemo: src/LinearMath/libLinearMath.a
+Demos/CollisionInterfaceDemo/AppCollisionInterfaceDemo: Demos/OpenGL/libOpenGLSupport.dylib
+Demos/CollisionInterfaceDemo/AppCollisionInterfaceDemo: src/BulletDynamics/libBulletDynamics.2.79.dylib
+Demos/CollisionInterfaceDemo/AppCollisionInterfaceDemo: src/BulletCollision/libBulletCollision.2.79.dylib
+Demos/CollisionInterfaceDemo/AppCollisionInterfaceDemo: src/LinearMath/libLinearMath.2.79.dylib
 Demos/CollisionInterfaceDemo/AppCollisionInterfaceDemo: Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/build.make
 Demos/CollisionInterfaceDemo/AppCollisionInterfaceDemo: Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable AppCollisionInterfaceDemo"
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppCollisionInterfaceDemo.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AppCollisionInterfaceDemo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/build: Demos/CollisionInterfaceDemo/AppCollisionInterfaceDemo
@@ -123,10 +123,10 @@ Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/requires: 
 .PHONY : Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/requires
 
 Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/clean:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppCollisionInterfaceDemo.dir/cmake_clean.cmake
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo && $(CMAKE_COMMAND) -P CMakeFiles/AppCollisionInterfaceDemo.dir/cmake_clean.cmake
 .PHONY : Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/clean
 
 Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/depend:
-	cd /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79 /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo /Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79 /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo /Users/sikanrong/DynamicBlock/vendor/bullet-2.79/Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Demos/CollisionInterfaceDemo/CMakeFiles/AppCollisionInterfaceDemo.dir/depend
 
