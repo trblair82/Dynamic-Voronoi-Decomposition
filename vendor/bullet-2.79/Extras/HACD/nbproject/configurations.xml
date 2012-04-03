@@ -22,6 +22,7 @@
       <in>hacdCircularList.inl</in>
       <in>hacdGraph.cpp</in>
       <in>hacdGraph.h</in>
+      <in>hacdHACD.cpp</in>
       <in>hacdHACD.h</in>
       <in>hacdICHull.cpp</in>
       <in>hacdICHull.h</in>
