@@ -22,16 +22,6 @@
 #include <set>
 #include <vector>
 #include <queue>
-struct JNACluster {
-    float* floats;
-    int size;
-    
-
-} ;       
-
-extern "C" JNACluster* JNAConvexDecomposition(float* inputConcave,int num_triangles, int *pcount);
-
-extern "C" void FreeJNAConvexDecomposition();
 
 namespace HACD
 {
