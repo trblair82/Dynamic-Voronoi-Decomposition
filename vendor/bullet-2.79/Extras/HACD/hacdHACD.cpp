@@ -31,198 +31,7 @@
 #include <cstdlib>
 #include <iomanip.h>
 #include <fstream.h>
-    
-void JNAConvexDecomposition(float* inputConcave, int num_triangles, int *pcount){
-    
-    int float_count = 0;
-    
-    std::map<std::string,HACD::Vec3<HACD::Real>* > my_map;
-    float*** triangles = (float ***) malloc (num_triangles * sizeof(float **));
-    //float*** triangles = float[num_triangles][3][3];
-    for(int i = 0;i<num_triangles;i++){
-        triangles[i] = (float **) malloc (3 * sizeof(float *));
-        for(int k = 0;k<3;k++){
-            triangles[i][k] = (float *) malloc (3 * sizeof(float));
-            for(int j = 0;j<3;j++){
-                triangles[i][k][j] = inputConcave[float_count];
-                float_count++;
-            }
-        }
-    }
-//    
-//    
-    for(int i = 0;i<num_triangles;i++){
-        for(int j =0;j<3;j++){
-            HACD::Vec3<HACD::Real>* point = new HACD::Vec3<HACD::Real>(triangles[i][j][0],triangles[i][j][1],triangles[i][j][2]);
-            int tester = my_map.size();
-            double x = point->X();
-            double y = point->Y();
-            double z = point->Z();
-            
-            
-            
-            char buffer[32];  // make sure this is big enough!!!
-            snprintf(buffer, sizeof(buffer), "%010.5f/%010.5f/%010.5f", x, y, z);
-            buffer[31]='\0';
-//            unsigned char key[17]; 
-//            MD5((const unsigned char*)buffer,32,key);
-//            key[16] = '\0';
-//            std::string key_str = reinterpret_cast<const char*>(buffer);
-            my_map[buffer] = point;
 
-            
-            int test = 0;
-            
-            
-            
-        }
-    }
-    int tester1 = my_map.size();
-    char** keys = (char**) malloc (my_map.size() * sizeof(char*));
-    HACD::Vec3<HACD::Real>* end_points = (HACD::Vec3<HACD::Real>*) malloc (my_map.size() * sizeof(HACD::Vec3<HACD::Real>));
-    int key_count = 0;
-    
-    std::map<std::string,HACD::Vec3<HACD::Real>* >::iterator key_iter;
-    for(key_iter = my_map.begin();key_iter!=my_map.end();key_iter++){
-        std::string temp_str = key_iter->first;
-       
-        int size;
-        int str_size = temp_str.size();
-        keys[key_count] = (char*) malloc(32 * sizeof(char));
-        size = temp_str.copy(keys[key_count],32);
-        
-        
-        char* pointer = keys[key_count];
-        end_points[key_count] = *key_iter->second;
-       
-        HACD::Vec3<HACD::Real> point_test = *key_iter->second;
-        double point_x = point_test.X();
-        double point_y = point_test.Y();
-        double point_z = point_test.Z();
-        key_count++;
-    }
-    
-  
-    HACD::Vec3<long>* end_triangles = (HACD::Vec3<long>*) malloc (num_triangles * sizeof(HACD::Vec3<long>));
-    for(int i = 0;i<num_triangles;i++){
-        long index[3];
-        int index_count = 0;
-        for(int j =0;j<3;j++){
-            HACD::Vec3<HACD::Real>* point = new HACD::Vec3<HACD::Real>(triangles[i][j][0],triangles[i][j][1],triangles[i][j][2]);
-           
-            double x = point->X();
-            double y = point->Y();
-            double z = point->Z();
-            
-            char buffer[32];  // make sure this is big enough!!!
-            snprintf(buffer, sizeof(buffer), "%010.5f/%010.5f/%010.5f", x, y, z);
-//            unsigned char key[17];
-//            
-//            MD5((const unsigned char*)buffer,32,key);
-//            key[16] = '\0';
-            buffer[31] = '\0';
-            int gay = 0;
-            for(int k = 0;k<my_map.size();k++){
-                char* key1 = (keys[k]);
-                std::string key1_str;
-                key1_str.assign(key1);
-                
-                
-                if(key1_str.compare(buffer)==0){
-                    index[index_count] = (long)k;
-                    index_count++;
-                }
-            }
-        }
-        HACD::Vec3<long>* triangle = new HACD::Vec3<long>(index[0],index[1],index[2]);
-        long test_index = index[0];
-        long test_index1 = index[1];
-        long test_index2 = index[2];
-        end_triangles[i] = *triangle;
-        int testert = 0;
-    }
-    
-//    int point_total= my_map.size();
-//    for(int i=0;i<point_total;i++){
-//        HACD::Vec3<HACD::Real> JNA_test_point = end_points[i];
-//        double x = JNA_test_point.X();
-//        double y = JNA_test_point.Y();
-//        double z = JNA_test_point.Z();
-////        pcount[0] = x;
-//    }
-    
-    
-    
-//    for(int i = 0;i<num_triangles;i++){
-//        HACD::Vec3<long> JNA_test_triangle = end_triangles[i];
-//        pcount[0] = (double)JNA_test_triangle.X();
-//        HACD::Vec3<HACD::Real> JNA_test_x = end_points[JNA_test_triangle.X()];
-//        HACD::Vec3<HACD::Real> JNA_test_y = end_points[JNA_test_triangle.Y()];
-//        HACD::Vec3<HACD::Real> JNA_test_z = end_points[JNA_test_triangle.Z()];
-//    }
-//    HACD::Vec3<long> JNA_test_triangle = end_triangles[0];
-//    pcount[0] = (double)JNA_test_triangle.X();
-    
-    
-    HACD::HACD my_hacd;
-    
-    my_hacd.SetNTriangles(num_triangles);
-    my_hacd.SetNPoints(my_map.size());
-    
-    my_hacd.SetPoints(end_points);
-    my_hacd.SetTriangles(end_triangles);
-    
-    my_hacd.SetCompacityWeight(0.1);
-    my_hacd.SetVolumeWeight(0.0);
-    my_hacd.SetNClusters(2);                     // minimum number of clusters
-    my_hacd.SetNVerticesPerCH(100);                      // max of 100 vertices per convex-hull
-    my_hacd.SetConcavity(100);                     // maximum concavity
-    my_hacd.SetAddExtraDistPoints(true);   
-    my_hacd.SetAddNeighboursDistPoints(true);   
-    my_hacd.SetAddFacesPoints(true); 
-    my_hacd.Compute();
-//    
-    int num_clusters = my_hacd.GetNClusters();
-    pcount[0] = num_clusters;
-    
-    
-    
-    JNACluster* clusters = (JNACluster*)malloc(num_clusters*sizeof(JNACluster));
-    int cluster_count =0;
-    int* cluster_size = (int*)malloc(num_clusters*sizeof(int));
-    for(size_t i = 0;i<num_clusters;i++){
-       size_t nPoints = my_hacd.GetNPointsCH(i);
-       cluster_size[i] = nPoints;
-       size_t nTriangles = my_hacd.GetNTrianglesCH(i); 
-       HACD::Vec3<HACD::Real>* cluster_points = new HACD::Vec3<HACD::Real>[nPoints];
-       HACD::Vec3<long>* cluster_triangles = new HACD::Vec3<long>[nTriangles];
-       my_hacd.GetCH(i,cluster_points,cluster_triangles);
-       float* end_cluster_points = (float*)malloc((nPoints*3)*sizeof(float));
-       for(size_t j = 0;j<nPoints;j++){
-           
-           double x = cluster_points[j].X();
-           end_cluster_points[j*3]=x;
-
-           double y = cluster_points[j].Y();
-           end_cluster_points[j*3+1]=y;
-
-           double z = cluster_points[j].Z();
-           end_cluster_points[j*3+2]=z;
-         
-           
-       }
-       int n_points = my_hacd.GetNPointsCH(cluster_count);
-       clusters[cluster_count].floats = end_cluster_points;
-       clusters[cluster_count].size = n_points*3;
-       clusters[cluster_count].total = num_clusters;
-       cluster_count++; 
-
-        delete[] cluster_points;
-        delete[] cluster_triangles;
-    }
-    
-//    return clusters;
-}
 
 namespace HACD
 { 
@@ -1029,4 +838,182 @@ namespace HACD
             return false;
         }
     }
+}
+
+//Start JNA binding code
+JNACluster* clusters;
+HACD::Vec3<long>* end_triangles;
+HACD::Vec3<HACD::Real>* end_points;
+HACD::HACD my_hacd;
+
+void FreeJNAConvexDecomposition(){
+    delete[] clusters;
+    delete[] end_triangles;
+    delete[] end_points;
+    
+    
+}
+
+JNACluster* JNAConvexDecomposition(float* inputConcave, int num_triangles, int *pcount){
+    
+    int float_count = 0;
+    
+    std::map<std::string,HACD::Vec3<HACD::Real>* > my_map;
+    float*** triangles = (float ***) malloc (num_triangles * sizeof(float **));
+    
+    for(int i = 0;i<num_triangles;i++){
+        triangles[i] = (float **) malloc (3 * sizeof(float *));
+        for(int k = 0;k<3;k++){
+            triangles[i][k] = (float *) malloc (3 * sizeof(float));
+            for(int j = 0;j<3;j++){
+                triangles[i][k][j] = inputConcave[float_count];
+                float_count++;
+            }
+        }
+    }
+    
+    for(int i = 0;i<num_triangles;i++){
+        for(int j =0;j<3;j++){
+            HACD::Vec3<HACD::Real>* point = new HACD::Vec3<HACD::Real>(triangles[i][j][0],triangles[i][j][1],triangles[i][j][2]);
+            int tester = my_map.size();
+            double x = point->X();
+            double y = point->Y();
+            double z = point->Z();
+            
+            
+            
+            char buffer[32];  
+            snprintf(buffer, sizeof(buffer), "%010.5f/%010.5f/%010.5f", x, y, z);
+
+            my_map[buffer] = point;
+
+            
+
+            
+            
+            
+        }
+    }
+    std::vector<std::string> keys;
+
+    end_points = (HACD::Vec3<HACD::Real>*) malloc (my_map.size() * sizeof(HACD::Vec3<HACD::Real>));
+    int key_count = 0;
+    
+    std::map<std::string,HACD::Vec3<HACD::Real>* >::iterator key_iter;
+    for(key_iter = my_map.begin();key_iter!=my_map.end();key_iter++){
+        std::string temp_str = key_iter->first;
+        keys.push_back(temp_str);
+
+        
+        
+        
+        end_points[key_count] = *key_iter->second;
+       
+
+        key_count++;
+    }
+    
+  
+    end_triangles = (HACD::Vec3<long>*) malloc (num_triangles * sizeof(HACD::Vec3<long>));
+    for(int i = 0;i<num_triangles;i++){
+        long index[3];
+        int index_count = 0;
+        for(int j =0;j<3;j++){
+            HACD::Vec3<HACD::Real>* point = new HACD::Vec3<HACD::Real>(triangles[i][j][0],triangles[i][j][1],triangles[i][j][2]);
+           
+            double x = point->X();
+            double y = point->Y();
+            double z = point->Z();
+            
+            char buffer[32];  
+            snprintf(buffer, sizeof(buffer), "%010.5f/%010.5f/%010.5f", x, y, z);
+
+            
+            for(int k = 0;k<keys.size();k++){
+
+                std::string key1_str = keys.at(k);
+
+                
+                
+                if(key1_str.compare(buffer)==0){
+                    index[index_count] = (long)k;
+                    index_count++;
+                }
+            }
+        }
+        HACD::Vec3<long>* triangle = new HACD::Vec3<long>(index[0],index[1],index[2]);
+
+        end_triangles[i] = *triangle;
+        int testert = 0;
+    }
+    
+
+    for(int i =0;i<num_triangles;i++){
+        for(int j =0;j<3;j++){
+            
+            delete[] triangles[i][j];
+        }
+        delete[] triangles[i];
+    }
+    
+    
+    
+    my_hacd.SetNTriangles(num_triangles);
+    my_hacd.SetNPoints(my_map.size());
+    
+    my_hacd.SetPoints(end_points);
+    my_hacd.SetTriangles(end_triangles);
+    
+    my_hacd.SetCompacityWeight(0.1);
+    my_hacd.SetVolumeWeight(0.0);
+    my_hacd.SetNClusters(2);                     // minimum number of clusters
+    my_hacd.SetNVerticesPerCH(100);                      // max of 100 vertices per convex-hull
+    my_hacd.SetConcavity(100);                     // maximum concavity
+    my_hacd.SetAddExtraDistPoints(true);   
+    my_hacd.SetAddNeighboursDistPoints(true);   
+    my_hacd.SetAddFacesPoints(true); 
+    my_hacd.Compute();
+//    
+    int num_clusters = my_hacd.GetNClusters();
+    pcount[0] = num_clusters;
+    
+    
+    
+    
+    clusters = (JNACluster*)malloc(num_clusters*sizeof(JNACluster));
+    int cluster_count =0;
+
+    for(size_t i = 0;i<num_clusters;i++){
+       size_t nPoints = my_hacd.GetNPointsCH(i);
+
+       size_t nTriangles = my_hacd.GetNTrianglesCH(i); 
+       HACD::Vec3<HACD::Real>* cluster_points = new HACD::Vec3<HACD::Real>[nPoints];
+       HACD::Vec3<long>* cluster_triangles = new HACD::Vec3<long>[nTriangles];
+       my_hacd.GetCH(i,cluster_points,cluster_triangles);
+       float* end_cluster_points = (float*)malloc((nPoints*3)*sizeof(float));
+       for(size_t j = 0;j<nPoints;j++){
+           
+           double x = cluster_points[j].X();
+           end_cluster_points[j*3]=x;
+
+           double y = cluster_points[j].Y();
+           end_cluster_points[j*3+1]=y;
+
+           double z = cluster_points[j].Z();
+           end_cluster_points[j*3+2]=z;
+         
+           
+       }
+       int n_points = my_hacd.GetNPointsCH(cluster_count);
+       clusters[cluster_count].floats = end_cluster_points;
+       clusters[cluster_count].size = n_points*3;
+       
+       cluster_count++; 
+
+        delete[] cluster_points;
+        delete[] cluster_triangles;
+    }
+
+    return clusters;
+    
 }

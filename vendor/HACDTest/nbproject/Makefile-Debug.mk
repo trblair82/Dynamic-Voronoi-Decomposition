@@ -51,7 +51,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lcrypto -lssl -lz ../bullet-2.79/Extras/HACD/libHACD.dylib
+LDLIBSOPTIONS=../bullet-2.79/Extras/HACD/libHACD.dylib
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}

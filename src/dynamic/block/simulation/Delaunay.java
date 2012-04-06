@@ -37,6 +37,7 @@ import com.sun.jna.ptr.DoubleByReference;
 import com.sun.jna.ptr.IntByReference;
 import com.sun.opengl.util.GLUT;
 //import dynamic.block.simulation.HACDdylib.JNACluster;
+import dynamic.block.simulation.HACDdylib.JNACluster;
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -93,30 +94,30 @@ public class Delaunay {
         planes = dt_bounds.getPlanes();
         
         
-//        for(int i = 0;i<num_points;i++){
-//            
-//            double x = (Math.random()*1000)%(dt_size);
-//            double y = (Math.random()*1000)%(dt_size);
-//            double z = (Math.random()*1000)%(dt_size);
-//            input_points.add(new Point_3(x,y,z));
+        for(int i = 0;i<num_points;i++){
+            
+            double x = (Math.random()*1000)%(dt_size);
+            double y = (Math.random()*1000)%(dt_size);
+            double z = (Math.random()*1000)%(dt_size);
+            input_points.add(new Point_3(x,y,z));
 //            save_points.add(new Point3d(x,y,z));
-//        }
-        ArrayList corners = dt_bounds.getCorners();
-//        for(int i = 0;i<corners.size();i++){
-//            float3 cornerf = (float3)corners.get(i);
-//            Point_3 corner = new Point_3(cornerf.x,cornerf.y,cornerf.z);
-//            input_points.add(corner);
-//            save_points.add(new Point3d(corner.x(),corner.y(),corner.z()));
-//        }
-        
-        DelaunayPoints dt_points = new DelaunayPoints(save_points);
-//        dt_points.saveArray(save_points, "points.txt");
-        save_points = dt_points.loadArray("points.txt");
-        for(int i = 0;i<save_points.size();i++){
-            Point3d p = (Point3d)save_points.get(i);
-            Point_3 p1 = new Point_3(p.x,p.y,p.z);
-            input_points.add(p1);
         }
+        ArrayList corners = dt_bounds.getCorners();
+        for(int i = 0;i<corners.size();i++){
+            float3 cornerf = (float3)corners.get(i);
+            Point_3 corner = new Point_3(cornerf.x,cornerf.y,cornerf.z);
+            input_points.add(corner);
+//            save_points.add(new Point3d(corner.x(),corner.y(),corner.z()));
+        }
+        
+//        DelaunayPoints dt_points = new DelaunayPoints(save_points);
+//        dt_points.saveArray(save_points, "points.txt");
+//        save_points = dt_points.loadArray("points.txt");
+//        for(int i = 0;i<save_points.size();i++){
+//            Point3d p = (Point3d)save_points.get(i);
+//            Point_3 p1 = new Point_3(p.x,p.y,p.z);
+//            input_points.add(p1);
+//        }
         
         
         dt.insert(input_points.iterator());
@@ -391,13 +392,13 @@ public class Delaunay {
                      Point_3 point = (Point_3)triangle.get(ini);
                      primitives[primCount] = (float)point.x();
                      primCount++;
-                     this.writeFloat((float)point.x(), "triangles.txt");
+//                     this.writeFloat((float)point.x(), "triangles.txt");
                      primitives[primCount] = (float)point.y();
                      primCount++;
-                     this.writeFloat((float)point.y(), "triangles.txt");
+//                     this.writeFloat((float)point.y(), "triangles.txt");
                      primitives[primCount] = (float)point.z();
                      primCount++;
-                     this.writeFloat((float)point.z(), "triangles.txt");
+//                     this.writeFloat((float)point.z(), "triangles.txt");
                  }
              }
              int numTris = triangles.size();
@@ -405,47 +406,65 @@ public class Delaunay {
 
              HACDdylib HACDdylib = (HACDdylib)Native.loadLibrary("HACD",HACDdylib.class);
              IntByReference pcount = new IntByReference();
+             JNACluster pointer;
+             pointer = HACDdylib.JNAConvexDecomposition(primitives, numTris, pcount);
+             int cluster_total = pcount.getValue();
              
-             HACDdylib.JNAConvexDecomposition(primitives, numTris, pcount);
-             int testint = pcount.getValue();
-             
-             
-//             JNACluster[] clusters = (JNACluster[])pointer.toArray(18);
-//             JNACluster temp = clusters[1];
-//             
-//             
-//             
-//             int csize = temp.size;
-//             int nclust = temp.total;
-             
-             
-             
-             ArrayList decomp = new ArrayList();
-             this.readData(decomp);
              ArrayList decompCells = new ArrayList();
-             HashMap decompCell = new HashMap();
-             ArrayList decompVertices = new ArrayList();
              
-             for(int i = 0;i<decomp.size();i++){
-                 String fileString = (String)decomp.get(i);
-                 if(fileString.contains("next")&& !decompVertices.isEmpty()){
-                     ArrayList decompEndV = (ArrayList)decompVertices.clone();
-                     decompCell.put("vertices", decompEndV);
-                     HashMap decompEnd = (HashMap)decompCell.clone();
-                     decompCells.add(decompEnd);
-                     decompCell.clear();
-                     decompVertices.clear();
-                     
-                     
-                 }else{ 
-                     Float decompFloat = new Float(fileString);
-                     decompVertices.add(decompFloat);
-                 
-                 
+             JNACluster[] clusters = (JNACluster[])pointer.toArray(cluster_total);
+             for(int i =0;i<cluster_total;i++){
+                 HashMap decompCell = new HashMap();
+                 ArrayList decompVertices = new ArrayList();
+                 JNACluster temp_cluster = clusters[i];
+                 int csize = temp_cluster.size;
+                 Pointer floats = temp_cluster.floats;
+                 float[] cluster_floats = floats.getFloatArray(0, csize);
+                 for(int j = 0;j<csize;j++){
+                     decompVertices.add(cluster_floats[j]);
                  }
-                 
+                 decompCell.put("vertices", decompVertices);
+                 decompCells.add(decompCell);
                  
              }
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+//             this.readData(decomp);
+//             ArrayList decompCells = new ArrayList();
+             
+             
+//             for(int i = 0;i<decomp.size();i++){
+//                 String fileString = (String)decomp.get(i);
+//                 if(fileString.contains("next")&& !decompVertices.isEmpty()){
+//                     ArrayList decompEndV = (ArrayList)decompVertices.clone();
+//                     decompCell.put("vertices", decompEndV);
+//                     HashMap decompEnd = (HashMap)decompCell.clone();
+//                     decompCells.add(decompEnd);
+//                     decompCell.clear();
+//                     decompVertices.clear();
+//                     
+//                     
+//                 }else{ 
+//                     Float decompFloat = new Float(fileString);
+//                     decompVertices.add(decompFloat);
+//                 
+//                 
+//                 }
+//                 
+//                 
+//             }
              for(int i =0;i<decompCells.size();i++){
                  float3 centroid = new float3();
                  ArrayList endVertices = new ArrayList();

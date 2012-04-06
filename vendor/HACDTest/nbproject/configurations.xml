@@ -45,9 +45,6 @@
         <linkerTool>
           <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hacdtest</output>
           <linkerLibItems>
-            <linkerLibLibItem>crypto</linkerLibLibItem>
-            <linkerLibLibItem>ssl</linkerLibLibItem>
-            <linkerLibLibItem>z</linkerLibLibItem>
             <linkerLibFileItem>../bullet-2.79/Extras/HACD/libHACD.dylib</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>

@@ -238,8 +238,8 @@ GLUT_cocoa_LIBRARY:STRING=-framework Cocoa
 //GLUT library for OSX
 GLUT_glut_LIBRARY:STRING=-framework GLUT
 
-//Dependencies for the target
-HACD_LIB_DEPENDS:STATIC=general;ssl;general;crypto;
+//Dependencies for target
+HACD_LIB_DEPENDS:STATIC=
 
 //The subdirectory to the header prefix
 INCLUDE_INSTALL_DIR:PATH=/usr/local/include/bullet

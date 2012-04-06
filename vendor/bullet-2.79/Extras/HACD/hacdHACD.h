@@ -25,11 +25,13 @@
 struct JNACluster {
     float* floats;
     int size;
-    int total;
+    
 
 } ;       
 
-extern "C" void JNAConvexDecomposition(float* inputConcave,int num_triangles, int *pcount);
+extern "C" JNACluster* JNAConvexDecomposition(float* inputConcave,int num_triangles, int *pcount);
+
+extern "C" void FreeJNAConvexDecomposition();
 
 namespace HACD
 {

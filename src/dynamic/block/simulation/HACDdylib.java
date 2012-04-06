@@ -16,19 +16,19 @@ import com.sun.jna.ptr.IntByReference;
  * @author trblair
  */
 public interface HACDdylib extends Library {
-//    public class JNACluster extends Structure{
-//        public JNACluster(){
-//            
-//        }
-//        public JNACluster(Pointer pointer){
-//            super(pointer);
-//            this.read();
-//        }
-//        public Pointer floats;
-//        public int size;
-//        public int total;
-//    }
-    void JNAConvexDecomposition(float[] inputConcave, int num_triangles, IntByReference pcount);
+    public class JNACluster extends Structure{
+        public JNACluster(){
+            
+        }
+        public JNACluster(Pointer pointer){
+            super(pointer);
+            this.read();
+        }
+        public Pointer floats;
+        public int size;
+        
+    }
+    JNACluster JNAConvexDecomposition(float[] inputConcave, int num_triangles, IntByReference pcount);
     
     
 }
