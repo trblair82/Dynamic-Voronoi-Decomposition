@@ -7,7 +7,7 @@ JNACluster* clusters;
 HACD::Vec3<long>* end_triangles;
 HACD::Vec3<HACD::Real>* end_points;
 HACD::HACD my_hacd;
-
+//
 void FreeJNAConvexDecomposition(struct JNACluster* cluster){
     delete[] cluster;
 //    delete[] end_triangles;
