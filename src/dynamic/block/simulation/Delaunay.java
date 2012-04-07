@@ -36,7 +36,7 @@ import com.sun.jna.Structure;
 import com.sun.jna.ptr.DoubleByReference;
 import com.sun.jna.ptr.IntByReference;
 import com.sun.opengl.util.GLUT;
-//import dynamic.block.simulation.HACDdylib.JNACluster;
+
 import dynamic.block.simulation.HACDdylib.JNACluster;
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
@@ -70,7 +70,7 @@ public class Delaunay {
     public boolean hit = true;
     public ArrayList infinite_cells = new ArrayList();
     public float3 center;
-    
+    ArrayList JNACells = new ArrayList();
     
     private float dt_size;
     private BoundingBox dt_bounds;
@@ -82,7 +82,7 @@ public class Delaunay {
     public static int display_cell = 0;
     
     
-    
+    //creates delaunay triangulation with given number of points and size of cube
     public Delaunay(int num_points,float size) throws Exception{   
         dt_size = size;
         ArrayList save_points = new ArrayList();
@@ -93,40 +93,34 @@ public class Delaunay {
         dt_bounds.setPlanes();
         planes = dt_bounds.getPlanes();
         
-        
+        //generate random points for triangulation
         for(int i = 0;i<num_points;i++){
             
             double x = (Math.random()*1000)%(dt_size);
             double y = (Math.random()*1000)%(dt_size);
             double z = (Math.random()*1000)%(dt_size);
             input_points.add(new Point_3(x,y,z));
-//            save_points.add(new Point3d(x,y,z));
+
         }
+        //generate corners of cube for triangulation
         ArrayList corners = dt_bounds.getCorners();
         for(int i = 0;i<corners.size();i++){
             float3 cornerf = (float3)corners.get(i);
             Point_3 corner = new Point_3(cornerf.x,cornerf.y,cornerf.z);
             input_points.add(corner);
-//            save_points.add(new Point3d(corner.x(),corner.y(),corner.z()));
+
         }
         
-//        DelaunayPoints dt_points = new DelaunayPoints(save_points);
-//        dt_points.saveArray(save_points, "points.txt");
-//        save_points = dt_points.loadArray("points.txt");
-//        for(int i = 0;i<save_points.size();i++){
-//            Point3d p = (Point3d)save_points.get(i);
-//            Point_3 p1 = new Point_3(p.x,p.y,p.z);
-//            input_points.add(p1);
-//        }
+
         
-        
+        //insert point list for delaunay triangulation
         dt.insert(input_points.iterator());
         
         
 //        
         
         HashMap boulder_hull = new HashMap();
-        
+        //compute voronoi diagram from delaunay triangulation
         ArrayList all_voronoi = new ArrayList();
         Delaunay_triangulation_3_All_vertices_iterator verts = dt.all_vertices();
              while(verts.hasNext()){
@@ -152,7 +146,7 @@ public class Delaunay {
                          
                         
                         
-                                
+                                //calculate intersection points of voroni cells with bounds of cube
                                 voronoi_cell.add(vcell);
                                 if(dt_bounds.isClose(vcell)){
                                     
@@ -186,6 +180,7 @@ public class Delaunay {
 
                      }
                  }
+                 //set voronoi cell points to cube intersection points
                  float3 centroid = new float3();
                  for(int i =0;i<voronoi_cell.size();i++){
                      Point_3 cellp = (Point_3)voronoi_cell.get(i);
@@ -212,7 +207,8 @@ public class Delaunay {
                         
                      }
                  }
-                if(final_cell.size()>5){       //if delaunay cell is infinite create cell with centroid of finite facet and three neighboring voronoi
+                 //compute triangles for each voronoi cell
+                if(final_cell.size()>5){      
                     
                     all_voronoi.addAll(final_cell);
                     centroid.x=centroid.x/final_cell.size();
@@ -264,8 +260,8 @@ public class Delaunay {
                      
                      
                      cell.put("triangles", triangles);
-//                    
-                     
+                   
+                     //master voronoi cells list
                      voronoi_cells.add(cell);
                 }
                     
@@ -273,7 +269,7 @@ public class Delaunay {
                     
              
              
-             
+             //compute triangles of outer cube hull for processing in HACD
              ArrayList vertices = new ArrayList();
              
              Iterator iter3 = boulder_hull.keySet().iterator();
@@ -379,11 +375,12 @@ public class Delaunay {
                      
                  }
              }
+             //outer hull to be sent to HACD
              outer_hull.put("inner_tris", triangles);
              outer_hull.put("triangles", triangles);
              outer_hull.put("vertices", vertices);
-//             voronoi_cells.add(outer_hull);
-             
+
+             //break down triangles of outer hull to primitives for JNA call to HACD
              float[] primitives = new float[(triangles.size()*3)*3];
              int primCount = 0;
              for(int i = 0;i<triangles.size();i++){
@@ -402,9 +399,10 @@ public class Delaunay {
                  }
              }
              int numTris = triangles.size();
-             System.setProperty("jna.library.path", "/Users/trblair/NetBeansProjects/DynamicBlock/vendor/bullet-2.79/Extras/HACD");
-
-             HACDdylib HACDdylib = (HACDdylib)Native.loadLibrary("HACD",HACDdylib.class);
+             //load HACD library
+//             System.setProperty("jna.library.path", "/Users/trblair/NetBeansProjects/HACD_JNA_Binding/dist/Debug/GNU-MacOSX");
+             //compute HACD convex decomposition
+             HACDdylib HACDdylib = (HACDdylib)Native.loadLibrary("HACD_JNA_Binding",HACDdylib.class);
              IntByReference pcount = new IntByReference();
              JNACluster pointer;
              pointer = HACDdylib.JNAConvexDecomposition(primitives, numTris, pcount);
@@ -441,30 +439,8 @@ public class Delaunay {
              
              
              
-//             this.readData(decomp);
-//             ArrayList decompCells = new ArrayList();
-             
-             
-//             for(int i = 0;i<decomp.size();i++){
-//                 String fileString = (String)decomp.get(i);
-//                 if(fileString.contains("next")&& !decompVertices.isEmpty()){
-//                     ArrayList decompEndV = (ArrayList)decompVertices.clone();
-//                     decompCell.put("vertices", decompEndV);
-//                     HashMap decompEnd = (HashMap)decompCell.clone();
-//                     decompCells.add(decompEnd);
-//                     decompCell.clear();
-//                     decompVertices.clear();
-//                     
-//                     
-//                 }else{ 
-//                     Float decompFloat = new Float(fileString);
-//                     decompVertices.add(decompFloat);
-//                 
-//                 
-//                 }
-//                 
-//                 
-//             }
+
+             //organize JNA HACD data into cells
              for(int i =0;i<decompCells.size();i++){
                  float3 centroid = new float3();
                  ArrayList endVertices = new ArrayList();
@@ -487,6 +463,7 @@ public class Delaunay {
                  centroid.y = centroid.y/endVertices.size();
                  centroid.z = centroid.z/endVertices.size();
                  cluster.put("vertices", endVertices);
+                 cluster.put("centroid", centroid);
                  Triangulation_3_All_cells_iterator decompTriIter = decompTriangulation.all_cells();
                  while(decompTriIter.hasNext()){
                      Triangulation_3_Cell_handle tri = decompTriIter.next();
@@ -521,11 +498,37 @@ public class Delaunay {
              int garbageInt = numTris;
              int testGarbage = pcount.getValue();
              cluster.put("triangles", endTriangles);
-             if(endVertices.size()<20){
-                 voronoi_cells.add(cluster);
-             }
+             JNACells.add(cluster);
              
-             }   
+
+             
+             }
+             //remove invalid center HACD cell
+             Integer to_remove = null;
+             Float old_distance = null;
+             Point3f dt_centroid = new Point3f(dt_size/2,dt_size/2,dt_size/2);
+             for(int i = 0;i<JNACells.size();i++){
+                 HashMap JNACell = (HashMap)JNACells.get(i);
+                 float3 centroid = (float3)JNACell.get("centroid");
+                 Point3f cell_centroid = new Point3f(centroid.x,centroid.y,centroid.z);
+                 Float distance = dt_centroid.distance(cell_centroid);
+                 if(old_distance==null){
+                     old_distance = distance;
+                     to_remove = i;
+                 }
+                 if(distance<old_distance){
+                     old_distance = distance;
+                     to_remove = i;
+                 }
+             }
+             int remove = to_remove;
+             JNACells.remove(remove);
+             //add HACD cells to voronoi master list
+             for(int i =0;i<JNACells.size();i++){
+                 HashMap final_cell = (HashMap)JNACells.get(i);
+                 voronoi_cells.add(final_cell);
+             }
+             HACDdylib.FreeJNAConvexDecomposition(clusters);
              
                      
              

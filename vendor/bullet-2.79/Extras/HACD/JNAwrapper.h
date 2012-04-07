@@ -17,7 +17,7 @@ struct JNACluster {
 
 extern "C" JNACluster* JNAConvexDecomposition(float* inputConcave,int num_triangles, int *pcount);
 
-extern "C" void FreeJNAConvexDecomposition();
+extern "C" void FreeJNAConvexDecomposition(struct JNACluster* clusters);
 
 
 #endif	/* JNAWRAPPER_H */
