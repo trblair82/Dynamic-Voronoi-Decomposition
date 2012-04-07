@@ -402,7 +402,7 @@ public class Delaunay {
              //load HACD library
 //             System.setProperty("jna.library.path", "/Users/trblair/NetBeansProjects/HACD_JNA_Binding/dist/Debug/GNU-MacOSX");
              //compute HACD convex decomposition
-             HACDdylib HACDdylib = (HACDdylib)Native.loadLibrary("HACD_JNA_Binding",HACDdylib.class);
+             HACDdylib HACDdylib = (HACDdylib)Native.loadLibrary("HACD_Binding",HACDdylib.class);
              IntByReference pcount = new IntByReference();
              JNACluster pointer;
              pointer = HACDdylib.JNAConvexDecomposition(primitives, numTris, pcount);
