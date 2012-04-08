@@ -30,5 +30,13 @@ public interface HACDdylib extends Library {
     }
     JNACluster JNAConvexDecomposition(float[] inputConcave, int num_triangles, IntByReference pcount);
     void FreeJNAConvexDecomposition(JNACluster[] clusters);
+    void JNASetCompacityWeight(float weight);
+    void JNASetVolumeWeight(float weight);
+    void JNASetNClusters(int num_clusters);
+    void JNASetNVerticesPerCH(int num_vertices);
+    void JNASetConcavity(int concavity);
+    void JNASetAddExtraDistPoints(boolean addDistPoints);
+    void JNASetAddNeighboursDistPoints(boolean addNeighboursDistPoints);
+    void JNASetAddFacesPoints(boolean addFacePoints);
     
 }

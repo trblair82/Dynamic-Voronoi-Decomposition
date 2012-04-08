@@ -405,6 +405,15 @@ public class Delaunay {
              HACDdylib HACDdylib = (HACDdylib)Native.loadLibrary("HACD_Binding",HACDdylib.class);
              IntByReference pcount = new IntByReference();
              JNACluster pointer;
+             float weight = 0.1f;
+             HACDdylib.JNASetCompacityWeight(weight);
+             HACDdylib.JNASetVolumeWeight(0.0f);
+             HACDdylib.JNASetNClusters(2);
+             HACDdylib.JNASetNVerticesPerCH(100);
+             HACDdylib.JNASetConcavity(100);
+             HACDdylib.JNASetAddExtraDistPoints(true);
+             HACDdylib.JNASetAddNeighboursDistPoints(true);
+             HACDdylib.JNASetAddFacesPoints(true);
              pointer = HACDdylib.JNAConvexDecomposition(primitives, numTris, pcount);
              int cluster_total = pcount.getValue();
              
